@@ -1,6 +1,7 @@
 import "./App.css";
 import "bulma/css/bulma.css";
 import Pokedex from "./pokedex.json";
+import AnswerKey from "./answerKey.json";
 import { useEffect, useState } from "react";
 import GameContainer from "./components/GameContainer";
 import Title from "./components/Title";
@@ -10,10 +11,15 @@ import StatsModal from "./components/StatsModal";
 import SettingsModal from "./components/SettingsModal";
 import Footer from "./components/Footer";
 import calculateStats from "./helpers/calculateStats";
-import { generateAnswer, generateAttacks } from "./helpers/generateAnswer";
+import { generateRandomAnswer, generateRandomAttacks } from "./helpers/generateRandomAnswer";
 import filterPokemonInput from "./helpers/filterPokemonInput";
 import generateFeedback from "./helpers/generateFeedback";
 import filterPokedex from "./helpers/filterPokedex";
+
+// const START_DATE = new Date(new Date("February 1, 2022 00:00:00").setUTCHours(8, 0, 0, 0));
+const START_DATE = new Date("February 21, 2022 00:00:00");
+console.log(`Start Date: ${START_DATE}`);
+const MILLISECONDS_TO_DAYS = 1000 * 60 * 60 * 24;
 
 const FLIP_DURATION = 300;
 const STATS_MODAL_DELAY = 4000;
@@ -30,7 +36,9 @@ function App() {
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
 
   const [pokedex, setPokedex] = useState(null);
+  const [answerIndex, setAnswerIndex] = useState(null);
   const [answer, setAnswer] = useState(null);
+  const [nextWordleDate, setNextWordleDate] = useState(null);
 
   const [gameLoading, setGameLoading] = useState(true);
   const [gameOn, setGameOn] = useState(false);
@@ -88,8 +96,13 @@ function App() {
   }
 
   function renderAttack() {
-    const randomAttack = generateAttacks(answer);
-    setAnswerAttack(randomAttack);
+    // for testing
+    // const attack = AnswerKey[answerIndex].randomAttacks[guessFeedback.length - 1];
+    const attack = generateRandomAttacks(answer);
+
+    setAnswerAttack(attack);
+
+    // setAnswerAttack(randomAttack);
     setShowAnswerAttack(true);
     setTimeout(() => {
       setShowAnswerAttack(false);
@@ -104,7 +117,7 @@ function App() {
   useEffect(async () => {
     setPokedex(Pokedex);
     setFilteredList(Pokedex);
-    console.log("pokedex loaded");
+    console.log("Pokedex loaded");
 
     // delete deprecated boardState for beta testers
     const boardState = localStorage.getItem("SQWORDL.boardState");
@@ -136,11 +149,38 @@ function App() {
       }, INFO_MODAL_DELAY);
     }
 
-    // TODO: reset gameState in localStorage if new sqwordle day
-    const todaysAnswer = await generateAnswer(Pokedex);
-    setAnswer(todaysAnswer);
-    setGameLoading(false);
+    const todaysDate = new Date(new Date().setHours(0, 0, 0, 0));
+    console.log(`Local Date: ${todaysDate}`);
+    const tempAnswerIndex = (todaysDate - START_DATE) / MILLISECONDS_TO_DAYS;
+    setAnswerIndex(tempAnswerIndex);
+    console.log(`Answer index: ${tempAnswerIndex}`);
+
+    //getDate returns the day of the month... will this work when going forward a month?
+    const nextWordleDate = todaysDate.setDate(todaysDate.getDate() + 1);
+    setNextWordleDate(nextWordleDate);
+
+    // TODO: reset gameState in localStorage if new sqwordle day, else load gameState
+    const lastPlayed = JSON.parse(localStorage.getItem(LOCAL_STORAGE_GAMESTATE)).lastPlayed;
+    console.log(lastPlayed);
+    // if (Date.now() is one day greater than lastPlayed) {
+    //   console.log("new wordle. resetting gameState");
+    // } else {
+    //   console.log("new wordle not available yet. Loading gameState");
+    // }
   }, []);
+
+  useEffect(() => {
+    if (!answerIndex) return;
+
+    // For random testing:
+    const todaysAnswerName = generateRandomAnswer(Pokedex).name;
+    // const todaysAnswerName = AnswerKey[answerIndex].answer;
+    const todaysAnswer = Pokedex.find((pokemon) => pokemon.name === todaysAnswerName);
+    console.log(`Answer: ${todaysAnswer.name}`);
+    setAnswer(todaysAnswer);
+
+    setGameLoading(false);
+  }, [answerIndex]);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_STATS, JSON.stringify(stats));
@@ -185,7 +225,7 @@ function App() {
 
     const feedback = generateFeedback(guessedPokemon, answer, guessFeedback);
     setGuessFeedback(feedback);
-    localStorage.setItem(LOCAL_STORAGE_GAMESTATE, JSON.stringify(feedback));
+    localStorage.setItem(LOCAL_STORAGE_GAMESTATE, JSON.stringify({ feedback, lastPlayed: Date.now() }));
     console.log(feedback);
 
     const tempPokedex = [...pokedex];
@@ -220,6 +260,7 @@ function App() {
         win={win}
         lose={lose}
         stats={stats}
+        nextWordleDate={nextWordleDate}
       />
       <SettingsModal isSettingsModalOpen={isSettingsModalOpen} setIsSettingsModalOpen={setIsSettingsModalOpen} />
       <Title gameOn={gameOn} win={win} lose={lose} />
