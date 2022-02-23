@@ -1,11 +1,24 @@
 import { useState } from "react";
+import Countdown, { zeroPad } from "react-countdown";
 import { trainerQuotes } from "../helpers/trainerQuotes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import GuessDistribution from "./GuessDistribution";
 
-const StatsModal = ({ isStatsModalOpen, setIsStatsModalOpen, guessFeedback, win, lose, stats }) => {
+const StatsModal = ({ isStatsModalOpen, setIsStatsModalOpen, guessFeedback, win, lose, stats, nextWordleDate }) => {
   const [isCopyStats, setIsCopyStats] = useState(false);
+
+  // const currentWordleDate = new Date(new Date().setUTCHours(0, 0, 0, 0));
+  // const nextWordleDate = currentWordleDate.setDate(currentWordleDate.getDate() + 1);
+  // console.log(nextWordleDate);
+
+  const renderer = ({ hours, minutes, seconds }) => {
+    return (
+      <span>
+        {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
+      </span>
+    );
+  };
 
   function handleCloseStats() {
     setIsStatsModalOpen(false);
@@ -96,16 +109,22 @@ const StatsModal = ({ isStatsModalOpen, setIsStatsModalOpen, guessFeedback, win,
                   );
                 })}
             </div>
+            {(win || lose) && (
+              <div className="custom-share-div">
+                <div className="custom-countdown">
+                  <p className="">Next Sqwordle</p>
+                  <Countdown date={nextWordleDate} renderer={renderer} zeroPadTime={2} />
+                </div>
+                <div className="custom-share-div-border"></div>
+                <button className="button" onClick={handleCopyStats} disabled={win || lose ? false : true}>
+                  <span>SHARE</span>
+                  <span className="icon is-medium">
+                    <FontAwesomeIcon className="fas fa-lg fa-solid" icon={faShareNodes} />
+                  </span>
+                </button>
+              </div>
+            )}
 
-            <div className="custom-share-div">
-              <p>Next Sqwordle countdown here</p>
-              <button className="button" onClick={handleCopyStats} disabled={win || lose ? false : true}>
-                <span>SHARE</span>
-                <span className="icon is-medium">
-                  <FontAwesomeIcon className="fas fa-lg fa-solid" icon={faShareNodes} />
-                </span>
-              </button>
-            </div>
             {isCopyStats && (
               <div className={`notification container custom-copy-stats-message`}>
                 <span>Copied results to clipboard</span>

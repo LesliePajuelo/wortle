@@ -6,7 +6,7 @@ const GuessDistribution = ({ guess, maxGuesses, guessFeedback, win }) => {
   return (
     <>
       <div className="custom-dist-guess-container">
-        <span className="custom-dist-guess-num">{key}</span>
+        <span>{key}</span>
         <div
           style={{ width: `${10 + 90 * (value / maxGuesses)}%` }}
           className={`custom-dist-bar ${

@@ -85,7 +85,7 @@ function GameContainer(props) {
   });
 
   return (
-    <div className="container mt-4 is-flex is-justify-content-center custom-game-width">
+    <div className="container mt-4 is-flex is-justify-content-center">
       <div className="is-flex is-flex-direction-column">
         <Navbar
           setIsInfoModalOpen={setIsInfoModalOpen}
@@ -113,7 +113,14 @@ function GameContainer(props) {
                   <div className="custom-sprite-gallery-images">
                     {pokedex &&
                       pokedex.map((pokemon, index) => {
-                        return <Sprite key={index} pokemon={pokemon} />;
+                        return (
+                          <Sprite
+                            key={index}
+                            pokemon={pokemon}
+                            setGuessInput={setGuessInput}
+                            setSuggestionClicked={setSuggestionClicked}
+                          />
+                        );
                       })}
                   </div>
                 </div>

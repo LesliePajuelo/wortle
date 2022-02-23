@@ -17,18 +17,18 @@ const Navbar = ({ setIsInfoModalOpen, setIsStatsModalOpen, setIsSettingsModalOpe
   return (
     <div className="toggles is-flex is-justify-content-space-between">
       <span className="icon-text custom-cursor" onClick={handleOpenInfo}>
-        <span className="icon is-medium">
+        <span className="icon custom-navbar-icon is-medium">
           <FontAwesomeIcon className="fas fa-lg fa-solid" icon={faInfoCircle} />
         </span>
       </span>
       <div>
         <span className="icon-text custom-cursor" onClick={handleOpenStats}>
-          <span className="icon is-medium">
+          <span className="icon custom-navbar-icon is-medium">
             <FontAwesomeIcon className="fas fa-lg fa-solid" icon={faChartColumn} />
           </span>
         </span>
         <span className="icon-text custom-cursor" onClick={handleOpenSettings}>
-          <span className="icon is-medium">
+          <span className="icon custom-navbar-icon is-medium">
             <FontAwesomeIcon className="fas fa-lg fa-solid" icon={faGear} />
           </span>
         </span>
