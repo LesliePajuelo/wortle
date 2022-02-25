@@ -17,9 +17,8 @@ export default function calculateStats(stats, pokemon, guessFeedback, winBoolean
     if (statistics.currentStreak > statistics.maxStreak) {
       statistics.maxStreak += 1;
     }
-    if (pokemon in statistics.pokemonCaught) {
-      // change this silly logic
-    } else {
+
+    if (!statistics.pokemonCaught.includes(pokemon)) {
       statistics.pokemonCaught.push(pokemon);
     }
   } else {
