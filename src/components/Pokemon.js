@@ -1,11 +1,10 @@
-function Pokemon({ index, pokeman, setGuessInput, suggestionClicked, setSuggestionClicked }) {
+function Pokemon({ index, pokeman, setGuessInput, setSuggestionClicked }) {
   function handleSuggestionClick(e) {
     setGuessInput(e.target.innerText);
-    //focus back on input field
+
+    // focus back on inputfield
     const inputField = document.querySelector("[data-guess-input]");
     inputField.focus();
-    inputField.select(); // do I need this?
-    //TODO: close suggestion popup... can't easily do this with how i've set things up
     setSuggestionClicked(true);
   }
 
