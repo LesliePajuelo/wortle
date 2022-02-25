@@ -21,7 +21,13 @@ const Navbar = ({ setIsInfoModalOpen, setIsStatsModalOpen, setIsSettingsModalOpe
           <FontAwesomeIcon className="fas fa-lg fa-solid" icon={faInfoCircle} />
         </span>
       </span>
-      <div>
+      <div className="is-flex is-align-items-center">
+        <a
+          className="custom-navbar-icon is-uppercase pr-2 has-text-weight-bold"
+          href="https://sqwordle-safari-zone-beta.netlify.app/"
+        >
+          Visit The Safari Zone
+        </a>
         <span className="icon-text custom-cursor" onClick={handleOpenStats}>
           <span className="icon custom-navbar-icon is-medium">
             <FontAwesomeIcon className="fas fa-lg fa-solid" icon={faChartColumn} />
