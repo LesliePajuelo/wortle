@@ -22,7 +22,7 @@ const InstructionsModal = ({ isInfoModalOpen, setIsInfoModalOpen }) => {
           <button className="delete custom-delete-button" aria-label="close" onClick={handleCloseInfo}></button>
         </header>
         <section className="modal-card-body has-background-dark has-text-white">
-          <div className="content">
+          <div className="content custom-intruction-text">
             <p>
               Guess the mystery <strong className="has-text-white is-uppercase">Pokémon</strong> in six tries.
             </p>
@@ -83,7 +83,7 @@ const InstructionsModal = ({ isInfoModalOpen, setIsInfoModalOpen }) => {
                 <img src={gameExamplePokedex} />
               </figure>
               <p>
-                In addition, after each guess the pokédex will filter based on what you know about{" "}
+                After each guess the pokédex will filter based on what you know about{" "}
                 <span className="has-text-weight-bold">Type</span> and{" "}
                 <span className="has-text-weight-bold">Evolution Tree (EvT)</span>, and the mystery Pokémon will attack
                 you.

@@ -5,7 +5,7 @@ function GuessHeaders() {
         <div className="column pt-1 pb-1 has-text-black has-text-weight-bold has-text-centered is-uppercase is-3">
           Pokémon
         </div>
-        <div className="column pt-1 pb-1 has-text-black has-text-weight-bold has-text-centered is-uppercase is-2">
+        <div className="column pt-1 pb-1 has-text-black has-text-weight-bold has-text-centered is-uppercase is-2 is-3-mobile">
           Type
         </div>
         <div className="column pt-1 pb-1 has-text-black has-text-weight-bold has-text-centered is-uppercase">

@@ -32,6 +32,7 @@ body {
 }
 
 .custom-navbar-icon {
+  cursor: pointer;
   color: #ddd;
 }
 
@@ -313,6 +314,10 @@ body {
   transform: translateX(-50%) rotateX(90deg);
 }
 
+.custom-guess-text {
+  font-size: 0.8rem;
+}
+
 .custom-input-container {
   position: relative;
 }
@@ -354,10 +359,6 @@ body {
 
 .custom-filtered-text {
   opacity: 0.4;
-}
-
-.custom-guess-text {
-  font-size: 0.8rem;
 }
 
 .custom-sprite-img {
@@ -446,20 +447,45 @@ body {
 
 @media screen and (max-width: 500px) {
   .custom-type-text {
-    display: inline-block;
-    max-width: 4ch;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     text-transform: capitalize;
+    /* display: inline-block; */
+    /* max-width: 6ch; */
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
+  }
+
+  .custom-intruction-text {
+    font-size: 0.85rem;
+  }
+
+  .custom-game-example {
+    position: relative !important;
+    width: 100%;
+    left: -7.5%;
+    /* left: -2.25em; */
+  }
+
+  .custom-guess-text {
+    font-size: 0.55rem;
   }
 }
 
 @media screen and (max-width: 700px) {
   .custom-squirtle-image-left,
   .custom-squirtle-image-right {
+    /* width: 50px; */
+    /* top: -2px; */
     display: none !important;
   }
+
+  /* .custom-squirtle-image-left {
+    margin-right: -10px;
+  }
+
+  .custom-squirtle-image-right {
+    margin-left: -10px;
+  } */
 
   .custom-card-size {
     width: 95vw;

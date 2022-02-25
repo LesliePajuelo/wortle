@@ -6,7 +6,7 @@ function GuessFeedback({ guess }) {
           <span className={`has-text-${guess.evolutionCheck}`}>{guess.name.toUpperCase()}</span>
         </div>
 
-        <div className="column pt-1 pb-1 has-text-black has-text-centered custom-border is-2">
+        <div className="column pt-1 pb-1 has-text-black has-text-centered custom-border is-2 is-3-mobile">
           {guess.types.map((type, index) => {
             return (
               <span className={`has-text-${type.colour} custom-type-text`} key={index}>

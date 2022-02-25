@@ -11,8 +11,6 @@ import GameOver from "./GameOver";
 import pokedexTitle from "../img/pokedex-title.png";
 import AnswerAttack from "./AnswerAttack";
 
-import { useEffect, useRef } from "react";
-
 function GameContainer(props) {
   const {
     setIsInfoModalOpen,
@@ -24,7 +22,6 @@ function GameContainer(props) {
     pokedex,
     filteredList,
     showFilteredList,
-    suggestionClicked,
     setSuggestionClicked,
     guessInput,
     setGuessInput,
@@ -38,11 +35,11 @@ function GameContainer(props) {
     isAnimation,
     answerAttack,
     showAnswerAttack,
+    isGymLeaderMode,
+    isEliteFourMode,
   } = props;
 
   const guessNumber = [1, 2, 3, 4, 5, 6];
-
-  const inputElement = useRef(null);
 
   function handleStartGame() {
     if (gameLoading) return;
@@ -73,17 +70,6 @@ function GameContainer(props) {
     setGuessToCheck(sanitizedInput);
   }
 
-  useEffect(() => {
-    if (!inputElement.current) return;
-    inputElement.current.onfocus = () => {
-      const inputEl = document.querySelector("[data-guess-input]");
-      // window.scrollTo(0, 0);
-      inputEl.scrollIntoView(false); // check this
-      // inputEl.scrollTo
-      // document.body.scrollTop = 0;
-    };
-  });
-
   return (
     <div className="container mt-4 is-flex is-justify-content-center">
       <div className="is-flex is-flex-direction-column">
@@ -105,7 +91,7 @@ function GameContainer(props) {
               )}
 
               {(win || lose) && <img className="custom-sprite-img" src={spriteUrl} alt="Placeholder image" />}
-              {gameOn ? (
+              {gameOn && !isEliteFourMode ? (
                 <div className="custom-sprite-gallery">
                   <div className="custom-pokedex-title">
                     <img className="custom-pokedex-title-img" src={pokedexTitle} />
@@ -155,7 +141,6 @@ function GameContainer(props) {
                                     index={index}
                                     pokeman={pokeman}
                                     setGuessInput={setGuessInput}
-                                    suggestionClicked={suggestionClicked}
                                     setSuggestionClicked={setSuggestionClicked}
                                   />
                                 );
@@ -166,7 +151,6 @@ function GameContainer(props) {
                       )}
                       <div className="custom-input">
                         <input
-                          ref={inputElement}
                           className="input"
                           type="text"
                           placeholder={`Guess #${guessFeedback.length + 1}...`}
@@ -191,7 +175,9 @@ function GameContainer(props) {
                     if (num > guessFeedback.length + 1) return <RemainingGuesses key={num} num={num} />;
                   })}
 
-                  {showAnswerAttack && !win && <AnswerAttack answerAttack={answerAttack} />}
+                  {showAnswerAttack && !win && !isGymLeaderMode && !isEliteFourMode && (
+                    <AnswerAttack answerAttack={answerAttack} />
+                  )}
                   {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
                   {(win || lose) && <GameOver answer={answer} win={win} lose={lose} isAnimation={isAnimation} />}
                 </div>

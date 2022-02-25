@@ -5,7 +5,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import GuessDistribution from "./GuessDistribution";
 
-const StatsModal = ({ isStatsModalOpen, setIsStatsModalOpen, guessFeedback, win, lose, stats, nextWordleDate }) => {
+const StatsModal = (props) => {
+  const {
+    isStatsModalOpen,
+    setIsStatsModalOpen,
+    guessFeedback,
+    win,
+    lose,
+    stats,
+    nextWordleDate,
+    isGymLeaderMode,
+    isEliteFourMode,
+    answerIndex,
+  } = props;
+
   const [isCopyStats, setIsCopyStats] = useState(false);
 
   // const currentWordleDate = new Date(new Date().setUTCHours(0, 0, 0, 0));
@@ -48,13 +61,16 @@ const StatsModal = ({ isStatsModalOpen, setIsStatsModalOpen, guessFeedback, win,
       statText += `\n${stat}`;
     });
 
+    const gameNumber = answerIndex + 1;
     const numGuesses = lose ? "X" : stats.length;
-    const randomNumber = Math.floor(Math.random() * (trainerQuotes.length - 1 - 0) + 0);
-    const randomQuote = trainerQuotes[randomNumber];
+    const gameMode = isGymLeaderMode ? "*" : isEliteFourMode ? "**" : "";
+
+    const randomQuoteNumber = Math.floor(Math.random() * (trainerQuotes.length - 1 - 0) + 0);
+    const randomQuote = trainerQuotes[randomQuoteNumber];
 
     const link = "https://sqwordle-beta.netlify.app/";
 
-    const statsToCopy = `Sqwordle #64 ${numGuesses}/6\n${statText}\n\n"${randomQuote.quote}" -${randomQuote.trainer}\n${link}`;
+    const statsToCopy = `Sqwordle #${gameNumber} ${numGuesses}/6${gameMode}\n${statText}\n\n"${randomQuote.quote}" -${randomQuote.trainer}\n${link}`;
     navigator.clipboard.writeText(statsToCopy);
     console.log(statsToCopy);
 
@@ -132,8 +148,15 @@ const StatsModal = ({ isStatsModalOpen, setIsStatsModalOpen, guessFeedback, win,
             )}
           </div>
         </section>
-        <footer className="modal-card-foot">
+        <footer className="modal-card-foot is-flex is-flex-direction-column">
           <p className="has-text-weight-bold">New SQWORDLE available every day!</p>
+          <p className="has-text-weight-bold pt-2 has-text-centered">
+            Or visit the{" "}
+            <a className="has-text-grey-dark is-underlined" href="https://sqwordle-safari-zone-beta.netlify.app/">
+              SAFARI ZONE
+            </a>{" "}
+            for unlimited practice.
+          </p>
         </footer>
       </div>
     </div>
