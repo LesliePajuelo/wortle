@@ -1,5 +1,6 @@
 import Pic from "../img/mystery.jpg";
-import pokeball from "../img/pokeball.png";
+import pokeball from "../img/pokeball-2.png";
+
 import GuessHeaders from "./GuessHeaders";
 import ErrorMessage from "./ErrorMessage";
 import Sprite from "./Sprite";

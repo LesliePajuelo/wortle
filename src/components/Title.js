@@ -1,6 +1,4 @@
-// import squirtle from "../img/squirtle.png";
 import squirtle from "../img/squirtle_official.png";
-// title-1 to title-5 available
 import title from "../img/title-6.png";
 
 function Title({ gameOn, win, lose }) {

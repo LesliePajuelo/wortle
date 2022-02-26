@@ -14,6 +14,7 @@ const pokedex = Pokedex;
     const answer = pokemon.name;
 
     // generate 5 attacks
+    //TODO: consider filtering out unique attacks that make the game too easy, or else place those attacks at the end for later rounds
     const numMoves = pokemon.moves.length;
     let randomAttacks = [];
     for (let i = 0; i < 5; i++) {

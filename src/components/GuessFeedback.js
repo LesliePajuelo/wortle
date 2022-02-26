@@ -20,9 +20,6 @@ function GuessFeedback({ guess }) {
         <div className={`column pt-1 pb-1 has-text-${guess.numEvolutionCheck} has-text-centered custom-border`}>
           {guess.numEvolutions}
         </div>
-
-        {/* <div className="column pt-1 pb-1 has-text-black has-text-centered custom-border">{guess.numSharedMoves}%</div> */}
-
         <div className="column pt-1 pb-1 has-text-black has-text-centered custom-border">{`${guess.attackCheck}`}</div>
         <div className="column pt-1 pb-1 has-text-black has-text-centered custom-border">{`${guess.defenseCheck}`}</div>
 

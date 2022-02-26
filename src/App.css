@@ -373,8 +373,8 @@ body {
   position: absolute !important;
   width: 25%;
   left: 16%;
-  top: 25%;
-  font-size: 1.2rem;
+  top: 30%;
+  font-size: 1.2em;
 
   z-index: 1;
 }
@@ -387,7 +387,7 @@ body {
   top: 17%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.2rem;
+  font-size: 0.85em;
   font-weight: bold;
   width: 100%;
   cursor: pointer;
@@ -406,7 +406,7 @@ body {
   width: 30%;
   transform-origin: (50%);
   transform: rotate(20deg) translate(-10%, -8%);
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
 }
 
 .custom-modes-div {

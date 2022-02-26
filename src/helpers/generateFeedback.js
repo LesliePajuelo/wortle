@@ -25,7 +25,6 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
 
   // types
   const answerTypes = answer.types.map((item) => item.type.name);
-  // could relable below to guessTypes
   const types = guessedPokemon.types.map((item) => {
     const type = item.type.name;
     let colour;
@@ -34,7 +33,6 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
     } else {
       colour = "danger";
     }
-
     return { type, colour };
   });
 
@@ -58,7 +56,7 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
     defenseCheck = "✅";
   }
 
-  // taller or shorter
+  // height
   let heightCheck;
   if (guessedPokemon.height > answer.height) {
     heightCheck = "🔻";
@@ -68,7 +66,7 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
     heightCheck = "✅";
   }
 
-  // heavier or lighter
+  // weight
   let weightCheck;
   if (guessedPokemon.weight > answer.weight) {
     weightCheck = "🔻";

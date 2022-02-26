@@ -2,7 +2,6 @@ function Pokemon({ index, pokeman, setGuessInput, setSuggestionClicked }) {
   function handleSuggestionClick(e) {
     setGuessInput(e.target.innerText);
 
-    // focus back on inputfield
     const inputField = document.querySelector("[data-guess-input]");
     inputField.focus();
     setSuggestionClicked(true);
@@ -22,7 +21,7 @@ function Pokemon({ index, pokeman, setGuessInput, setSuggestionClicked }) {
       if (!nextFilterEl) {
         const inputField = document.querySelector("[data-guess-input]");
         inputField.focus();
-        inputField.select(); // do I need this?
+        inputField.select(); // TODO: check if I need this?
         return;
       }
       nextFilterEl.focus();

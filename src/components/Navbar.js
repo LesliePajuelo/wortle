@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle, faGear, faChartColumn } from "@fortawesome/free-solid-svg-icons";
+import { safariZoneUrl } from "../helpers/links.js";
 
 const Navbar = ({ setIsInfoModalOpen, setIsStatsModalOpen, setIsSettingsModalOpen }) => {
   function handleOpenInfo() {
@@ -22,10 +23,7 @@ const Navbar = ({ setIsInfoModalOpen, setIsStatsModalOpen, setIsSettingsModalOpe
         </span>
       </span>
       <div className="is-flex is-align-items-center">
-        <a
-          className="custom-navbar-icon is-uppercase pr-2 has-text-weight-bold"
-          href="https://sqwordle-safari-zone-beta.netlify.app/"
-        >
+        <a className="custom-navbar-icon is-uppercase pr-2 has-text-weight-bold" href={safariZoneUrl}>
           Visit The Safari Zone
         </a>
         <span className="icon-text custom-cursor" onClick={handleOpenStats}>

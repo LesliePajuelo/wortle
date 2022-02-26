@@ -1,8 +1,7 @@
 const GuessDistribution = ({ guess, maxGuesses, guessFeedback, win }) => {
   // console.log(guess);
-
   const [key, value] = guess;
-  // console.log(guess);
+
   return (
     <>
       <div className="custom-dist-guess-container">

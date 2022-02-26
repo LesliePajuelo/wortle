@@ -6,7 +6,8 @@ export default function calculateStats(stats, pokemon, guessFeedback, winBoolean
     statistics.currentStreak += 1;
     statistics.guesses[guessFeedback.length] += 1;
     statistics.winPercentage = Math.round((statistics.gamesWon / statistics.gamesPlayed) * 100);
-    // could use reduce here instead
+
+    // TODO: could use reduce here instead
     let sumGuesses = 0;
     for (const [key, value] of Object.entries(statistics.guesses)) {
       if (key !== "fail") {
@@ -30,14 +31,3 @@ export default function calculateStats(stats, pokemon, guessFeedback, winBoolean
   }
   return statistics;
 }
-
-// {
-//   averageGuesses: 2,
-//   currentStreak: 1,
-//   gamesPlayed: 1,
-//   gamesWon: 1,
-//   guesses: { 1: 0, 2: 1, 3: 0, 4: 0, 5: 0, 6: 0, fail: 0 },
-//   maxStreak: 1,
-//   winPercentage: 100,
-//   pokemonCaught: ["zapdos", "pikachu", "weedle"],
-// }

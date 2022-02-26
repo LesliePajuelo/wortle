@@ -7,7 +7,6 @@ const GameOver = ({ answer, win, lose, isAnimation }) => {
     >
       {win && (
         <>
-          {/* <span>All right! </span> */}
           <span className="is-uppercase">{answer.name} </span>
           <span>was caught!</span>
         </>

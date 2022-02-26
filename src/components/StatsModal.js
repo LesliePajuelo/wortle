@@ -4,6 +4,7 @@ import { trainerQuotes } from "../helpers/trainerQuotes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import GuessDistribution from "./GuessDistribution";
+import { dailyGameUrl, safariZoneUrl } from "../helpers/links.js";
 
 const StatsModal = (props) => {
   const {
@@ -21,10 +22,6 @@ const StatsModal = (props) => {
 
   const [isCopyStats, setIsCopyStats] = useState(false);
 
-  // const currentWordleDate = new Date(new Date().setUTCHours(0, 0, 0, 0));
-  // const nextWordleDate = currentWordleDate.setDate(currentWordleDate.getDate() + 1);
-  // console.log(nextWordleDate);
-
   const renderer = ({ hours, minutes, seconds }) => {
     return (
       <span>
@@ -35,6 +32,10 @@ const StatsModal = (props) => {
 
   function handleCloseStats() {
     setIsStatsModalOpen(false);
+  }
+
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   }
 
   function handleCopyStats() {
@@ -48,7 +49,7 @@ const StatsModal = (props) => {
           typeCheck = "success";
         }
       }
-      console.log(stat.types);
+
       const string = `${typeCheck === "success" ? "✅" : "❌"}${stat.numEvolutionCheck === "success" ? "✅" : "❌"}${
         stat.attackCheck
       }${stat.defenseCheck}${stat.heightCheck}${stat.weightCheck}`;
@@ -68,16 +69,21 @@ const StatsModal = (props) => {
     const randomQuoteNumber = Math.floor(Math.random() * (trainerQuotes.length - 1 - 0) + 0);
     const randomQuote = trainerQuotes[randomQuoteNumber];
 
-    const link = "https://sqwordle-beta.netlify.app/";
+    const link = dailyGameUrl;
 
     const statsToCopy = `Sqwordle #${gameNumber} ${numGuesses}/6${gameMode}\n${statText}\n\n"${randomQuote.quote}" -${randomQuote.trainer}\n${link}`;
-    navigator.clipboard.writeText(statsToCopy);
-    console.log(statsToCopy);
 
-    setIsCopyStats(true);
-    setTimeout(() => {
-      setIsCopyStats(false);
-    }, 1500);
+    const isMob = isMobile();
+    if (isMob) {
+      navigator.share({ text: statsToCopy });
+    } else {
+      navigator.clipboard.writeText(statsToCopy);
+      setIsCopyStats(true);
+      setTimeout(() => {
+        setIsCopyStats(false);
+      }, 1500);
+    }
+    console.log(statsToCopy);
   }
 
   return (
@@ -151,11 +157,11 @@ const StatsModal = (props) => {
         <footer className="modal-card-foot is-flex is-flex-direction-column">
           <p className="has-text-weight-bold">New SQWORDLE available every day!</p>
           <p className="has-text-weight-bold pt-2 has-text-centered">
-            Or visit the{" "}
-            <a className="has-text-grey-dark is-underlined" href="https://sqwordle-safari-zone-beta.netlify.app/">
+            <span>Or visit the </span>
+            <a className="has-text-grey-dark is-underlined" href={safariZoneUrl}>
               SAFARI ZONE
-            </a>{" "}
-            for unlimited practice.
+            </a>
+            <span> for unlimited practice.</span>
           </p>
         </footer>
       </div>

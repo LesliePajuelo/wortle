@@ -1,20 +1,15 @@
-// TODO: break into components
-import { useState, useEffect } from "react";
-import { isDOMComponentElement } from "react-dom/cjs/react-dom-test-utils.production.min";
-import GuessFeedback from "./GuessFeedback";
-
-const SettingsModal = ({
-  isSettingsModalOpen,
-  setIsSettingsModalOpen,
-  isPokemonTrainerMode,
-  setIsPokemonTrainerMode,
-  isGymLeaderMode,
-  setIsGymLeaderMode,
-  isEliteFourMode,
-  setIsEliteFourMode,
-  guessFeedback,
-}) => {
-  // const [isChecked, setIsChecked] = useState(false);
+const SettingsModal = (props) => {
+  const {
+    isSettingsModalOpen,
+    setIsSettingsModalOpen,
+    isPokemonTrainerMode,
+    setIsPokemonTrainerMode,
+    isGymLeaderMode,
+    setIsGymLeaderMode,
+    isEliteFourMode,
+    setIsEliteFourMode,
+    guessFeedback,
+  } = props;
 
   function handleTrainerModeChange() {
     if (guessFeedback.length > 0) return;

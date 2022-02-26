@@ -5,7 +5,6 @@ import AnswerKey from "./answerKey.json";
 import { useEffect, useRef, useState } from "react";
 import GameContainer from "./components/GameContainer";
 import Title from "./components/Title";
-// import { fetchPokedex } from "./helpers/fetchFunctions";
 import InstructionsModal from "./components/InstructionsModal";
 import StatsModal from "./components/StatsModal";
 import SettingsModal from "./components/SettingsModal";
@@ -16,9 +15,8 @@ import filterPokemonInput from "./helpers/filterPokemonInput";
 import generateFeedback from "./helpers/generateFeedback";
 import filterPokedex from "./helpers/filterPokedex";
 
-// const START_DATE = new Date(new Date("February 1, 2022 00:00:00").setUTCHours(8, 0, 0, 0));
 const START_DATE = new Date("February 21, 2022 00:00:00");
-console.log(`Start Date: ${START_DATE}`);
+// console.log(`Start Date: ${START_DATE}`);
 const MILLISECONDS_TO_DAYS = 1000 * 60 * 60 * 24;
 
 const FLIP_DURATION = 300;
@@ -103,14 +101,13 @@ function App() {
   }
 
   function renderAttack() {
+    // for deployment
     const attack = AnswerKey[answerIndex].randomAttacks[guessFeedback.length - 1];
 
     // for testing
     // const attack = generateRandomAttacks(answer);
 
     setAnswerAttack(attack);
-
-    // setAnswerAttack(randomAttack);
     setShowAnswerAttack(true);
     setTimeout(() => {
       setShowAnswerAttack(false);
@@ -121,38 +118,31 @@ function App() {
     setErrorMessage(null);
   }
 
-  // Load page and calculate answer index
+  // LOAD PAGE AND CALCULATE ANSWER INDEX
   useEffect(async () => {
     const todaysDate = new Date(new Date().setHours(0, 0, 0, 0));
-    console.log(`Local Date: ${todaysDate}`);
+    // console.log(`Local Date: ${todaysDate}`);
     setTodaysDate(todaysDate);
 
     const nextWordleDate = new Date(new Date().setHours(24, 0, 0, 0));
-    console.log(`Next Wordle Date: ${nextWordleDate}`);
+    // console.log(`Next Wordle Date: ${nextWordleDate}`);
     setNextWordleDate(nextWordleDate);
 
     const tempAnswerIndex = (todaysDate - START_DATE) / MILLISECONDS_TO_DAYS;
     setAnswerIndex(tempAnswerIndex);
-    console.log(`Answer index: ${tempAnswerIndex}`);
+    // console.log(`Answer index: ${tempAnswerIndex}`);
 
     setPokedex([...Pokedex]);
     setFilteredList([...Pokedex]);
-    console.log("Pokedex loaded");
+    // console.log("Pokedex loaded");
 
-    // delete deprecated boardState for beta testers (remove this for website launch)
-    const boardState = localStorage.getItem("SQWORDL.boardState");
-    if (boardState != null) {
-      localStorage.removeItem("SQWORDL.boardState");
-      console.log("removing deprecated boardState from beta tester's local storage");
-    }
-
-    // check for user's stats
+    // check for user's existing stats
     const jsonStats = localStorage.getItem(LOCAL_STORAGE_STATS);
     if (jsonStats != null) {
+      // console.log("Returning user. Loading user stats from local storage.");
       setStats(JSON.parse(jsonStats));
-      console.log("Returning user. Loading user stats from local storage.");
     } else {
-      console.log("New user. Saving new stats to local storage. Showing info modal in 1 second.");
+      // console.log("New user. Saving new stats to local storage and displaying instructions modal in 1 second.");
       const newUserStats = {
         averageGuesses: 0,
         currentStreak: 0,
@@ -170,23 +160,24 @@ function App() {
     }
   }, []);
 
-  // Set daily answer
+  // SET DAILY ANSWER
   useEffect(() => {
     if (!answerIndex) return;
 
-    // For random testing:
+    // For testing:
     // const todaysAnswerName = generateRandomAnswer(Pokedex).name;
 
-    // For daily SQWORDLE
+    // For deployment
     const todaysAnswerName = AnswerKey[answerIndex].answer;
+
     const todaysAnswer = Pokedex.find((pokemon) => pokemon.name === todaysAnswerName);
-    console.log(`Answer: ${todaysAnswer.name}`);
     setAnswer(todaysAnswer);
+    // console.log(`Answer: ${todaysAnswer.name}`);
 
     setGameLoading(false);
   }, [answerIndex]);
 
-  // Load user's game state from current day
+  // LOAD USER'S GAME STATE FROM CURRENT DAY
   useEffect(() => {
     if (!answerIndex) return;
 
@@ -194,27 +185,29 @@ function App() {
     if (jsonGameState != null) {
       const parsedGameState = JSON.parse(jsonGameState);
       const lastPlayed = parsedGameState.lastPlayed;
-      console.log(lastPlayed);
+      // console.log(lastPlayed);
 
-      // 30 second date check for testing
+      // for testing:
       // const testDateCheck = new Date(new Date(lastPlayed));
       // testDateCheck.setSeconds(testDateCheck.getSeconds() + 20);
       // console.log(testDateCheck);
       // const currentTime = new Date(Date.now());
       // console.log(currentTime);
 
+      // for deployement
       const dateLastPlayed = new Date(new Date(lastPlayed).setHours(0, 0, 0, 0));
-      console.log(`Today's date: ${todaysDate}`);
-      console.log(`Date last played: ${dateLastPlayed}`);
-      console.log(todaysDate - dateLastPlayed);
+      // console.log(`Today's date: ${todaysDate}`);
+      // console.log(`Date last played: ${dateLastPlayed}`);
+      // console.log(todaysDate - dateLastPlayed);
 
       if (todaysDate > dateLastPlayed) {
+        // for testing:
         // if (currentTime > testDateCheck) {
+        // console.log("New sqwordle available. Deleting previous game state.");
         localStorage.removeItem(LOCAL_STORAGE_GAMESTATE);
-        console.log("New wordle available. Deleting previous game state.");
       } else {
+        // console.log("Loading user's game state for current game.");
         // render all components of the game properly: feedback, filtered pokedex, difficulty settings, win/lose state, gameOn
-        console.log("Loading user's game state for current game.");
         setIsPokemonTrainerMode(parsedGameState.pokemonTrainerMode);
         setIsGymLeaderMode(parsedGameState.gymLeaderMode);
         setIsEliteFourMode(parsedGameState.eliteFourMode);
@@ -232,21 +225,23 @@ function App() {
         setGameOn(parsedGameState.gameOn);
       }
     } else {
-      console.log("No previous game state.");
+      // console.log("No previous game state.");
     }
   }, [answer]);
 
+  // STORE STATS TO LOCAL STORAGE
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_STATS, JSON.stringify(stats));
   }, [stats]);
 
-  // Filter input list when typing in a guess
+  // FILTER INPUT SUGGESTIONS WHEN TYPING IN GUESS INPUT FIELD
   useEffect(() => {
     if (!guessInput) return;
     const tempFilteredList = filterPokemonInput([...pokedex], guessInput);
     setFilteredList(tempFilteredList);
   }, [guessInput]);
 
+  // SHOW OR HIDE FILTERED LIST
   useEffect(() => {
     if (!filteredList) return;
     if (suggestionClicked) return;
@@ -257,18 +252,18 @@ function App() {
     }
   }, [filteredList]);
 
+  // HIDE FILTERED LIST WHEN SUGGESTION CLICKED
   useEffect(() => {
     if (!suggestionClicked) return;
     setShowFilteredList(false);
   }, [suggestionClicked]);
 
-  // Generate user feedback to a guess
+  // GENERATE FEEDBACK FOR A GUESS
   useEffect(async () => {
     if (!guessToCheck) return;
     clearErrorMessages();
 
     const guessedPokemon = pokedex.filter((pokemon) => pokemon.name === guessToCheck)[0];
-    //guard clause for spelling errors:
     if (!guessedPokemon) {
       setErrorMessage("Not a pokemon, please check spelling");
       setTimeout(() => {
@@ -292,7 +287,7 @@ function App() {
         gameOn: gameOn,
       })
     );
-    console.log(feedback);
+    // console.log(feedback);
 
     const tempPokedex = [...pokedex];
     const filteredPokedex = filterPokedex(feedback[feedback.length - 1], tempPokedex);
@@ -303,7 +298,7 @@ function App() {
     setGuessInput("");
   }, [guessToCheck]);
 
-  // Check for game win/loss or attack
+  // CHECK FOR WIN, LOSS, OR ATTACK
   useEffect(async () => {
     if (!guessToCheck) return;
 
@@ -316,6 +311,7 @@ function App() {
     }
   }, [guessFeedback]);
 
+  // STORE GAMESTATE AFTER WIN OR LOSS
   useEffect(() => {
     //try useRef guard clause here
     if (!isPageRefreshed.current) {
