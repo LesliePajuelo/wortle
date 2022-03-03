@@ -5,6 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import GuessDistribution from "./GuessDistribution";
 import { dailyGameUrl, safariZoneUrl } from "../helpers/links.js";
+import boulderBadge from "../img/badges/boulder-badge-210.png";
+import cascadeBadge from "../img/badges/cascade-badge-210.png";
+import thunderBadge from "../img/badges/thunder-badge-210.png";
+import rainbowBadge from "../img/badges/rainbow-badge-210.png";
+import soulBadge from "../img/badges/soul-badge-210.png";
+import marshBadge from "../img/badges/marsh-badge-210.png";
+import volcanoBadge from "../img/badges/volcano-badge-210.png";
+import earthBadge from "../img/badges/earth-badge-210.png";
+import GymBadge from "./GymBadge";
 
 const StatsModal = (props) => {
   const {
@@ -108,13 +117,76 @@ const StatsModal = (props) => {
               </div>
               <div className="r">
                 <p>{stats ? stats.currentStreak : "0"}</p>
-                <p className="">CurrentStreak</p>
+                <p className="">Current Streak</p>
               </div>
               <div className="">
                 <p>{stats ? stats.maxStreak : "0"}</p>
                 <p className="">Max Streak</p>
               </div>
             </div>
+            <p className="custom-distribution-title">Gym Badges</p>
+            <div className="custom-gym-badge-div">
+              <GymBadge
+                badge={boulderBadge}
+                badgeName={"Boulder Badge"}
+                location={"Pewter City Gym"}
+                description={"Play Sqwordle 5 times."}
+                stats={stats}
+              />
+              <GymBadge
+                badge={cascadeBadge}
+                badgeName={"Cascade Badge"}
+                location={"Cerulean City Gym"}
+                description={"Get a Max Streak of 10."}
+                stats={stats}
+              />
+              <GymBadge
+                badge={thunderBadge}
+                badgeName={"Thunder Badge"}
+                location={"Vermillion City Gym"}
+                description={"Catch 20 different Pokémon."}
+                stats={stats}
+              />
+              <GymBadge
+                badge={rainbowBadge}
+                badgeName={"Rainbow Badge"}
+                location={"Celadon City Gym"}
+                description={"10 wins with 3 or fewer guesses."}
+                stats={stats}
+              />
+              <GymBadge
+                badge={soulBadge}
+                badgeName={"Soul Badge"}
+                location={"Fuchsia City Gym"}
+                description={""}
+                comingSoon={true}
+                stats={stats}
+              />
+              <GymBadge
+                badge={marshBadge}
+                badgeName={"Marsh Badge"}
+                location={"Saffron City Gym"}
+                description={""}
+                comingSoon={true}
+                stats={stats}
+              />
+              <GymBadge
+                badge={volcanoBadge}
+                badgeName={"Volcano Badge"}
+                location={"Cinnabar Island City Gym"}
+                description={""}
+                comingSoon={true}
+                stats={stats}
+              />
+              <GymBadge
+                badge={earthBadge}
+                badgeName={"Earth Badge"}
+                location={"Viridian City Gym"}
+                description={"Capture the 3 Legendary birds (Moltres, Zapdos, Articuno)."}
+                stats={stats}
+              />
+            </div>
+
             <p className="custom-distribution-title">Guess Distribution</p>
             <div className="custom-distribution-container">
               {stats &&
@@ -154,7 +226,7 @@ const StatsModal = (props) => {
             )}
           </div>
         </section>
-        <footer className="modal-card-foot is-flex is-flex-direction-column">
+        <footer className="modal-card-foot is-flex is-flex-direction-column custom-stats-footer">
           <p className="has-text-weight-bold">New SQWORDLE available every day!</p>
           <p className="has-text-weight-bold pt-2 has-text-centered">
             <span>Or visit the </span>

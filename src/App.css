@@ -48,6 +48,17 @@ body {
   color: #999;
 }
 
+.custom-source-div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1em;
+}
+
+.custom-pokeball-bullet {
+  width: 5%;
+}
+
 .custom-info-modal {
   z-index: 1000;
 }
@@ -236,6 +247,63 @@ body {
   font-size: 0.7rem;
 }
 
+.custom-gym-badge-div {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.custom-gym-badge {
+  width: 10%;
+  cursor: pointer;
+}
+
+.custom-badge-locked {
+  opacity: 0.15;
+}
+
+.custom-badge-locked:hover {
+  opacity: 0.4;
+}
+
+.custom-badge-unlocked {
+  opacity: 1;
+}
+
+.custom-badge-unlocked:hover {
+  opacity: 0.7;
+}
+
+.custom-badge-modal-locked {
+  opacity: 0.15;
+}
+
+.custom-badge-modal-unlocked {
+  opacity: 1;
+}
+
+.custom-badge-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-badge-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.custom-badge-info-img {
+  width: 4em;
+}
+
+.custom-badge-info {
+  position: absolute !important;
+  width: 70%;
+  z-index: 1000;
+  /* top: 300px; */
+}
+
 .custom-distribution-title {
   font-weight: bold;
   text-align: center;
@@ -387,7 +455,8 @@ body {
   top: 17%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.85em;
+  font-size: 80%;
+
   font-weight: bold;
   width: 100%;
   cursor: pointer;
@@ -497,7 +566,8 @@ body {
   }
 
   .custom-start-text {
-    font-size: 0.7rem;
+    /* font-size: 0.7rem; */
+    font-size: 50%;
   }
 
   .custom-game-over {
@@ -525,5 +595,20 @@ body {
 
   .custom-title-img-game-on-mobile {
     display: none !important;
+  }
+
+  .custom-badge-info-img {
+    width: 2.5em;
+  }
+
+  .custom-stats-footer {
+    /* background-color: red !important; */
+    font-size: 0.8rem;
+    padding-top: 0.25em !important;
+    padding-bottom: 0.25em !important;
+  }
+
+  .custom-share-div {
+    margin-top: 1em !important;
   }
 }

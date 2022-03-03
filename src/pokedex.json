@@ -1444,7 +1444,7 @@
       },
       { "base_stat": 35, "effort": 0, "stat": { "name": "speed", "url": "https://pokeapi.co/api/v2/stat/6/" } }
     ],
-    "types": [{ "slot": 1, "type": { "name": "fairy", "url": "https://pokeapi.co/api/v2/type/18/" } }],
+    "types": [{ "slot": 1, "type": { "name": "normal", "url": "https://pokeapi.co/api/v2/type/1/" } }],
     "moves": [
       { "move": "pound", "level": 1 },
       { "move": "double-slap", "level": 18 },
@@ -1500,7 +1500,7 @@
       },
       { "base_stat": 60, "effort": 0, "stat": { "name": "speed", "url": "https://pokeapi.co/api/v2/stat/6/" } }
     ],
-    "types": [{ "slot": 1, "type": { "name": "fairy", "url": "https://pokeapi.co/api/v2/type/18/" } }],
+    "types": [{ "slot": 1, "type": { "name": "normal", "url": "https://pokeapi.co/api/v2/type/1/" } }],
     "moves": [
       { "move": "pound", "level": 1 },
       { "move": "double-slap", "level": 1 },
@@ -1635,10 +1635,7 @@
       },
       { "base_stat": 20, "effort": 0, "stat": { "name": "speed", "url": "https://pokeapi.co/api/v2/stat/6/" } }
     ],
-    "types": [
-      { "slot": 1, "type": { "name": "normal", "url": "https://pokeapi.co/api/v2/type/1/" } },
-      { "slot": 2, "type": { "name": "fairy", "url": "https://pokeapi.co/api/v2/type/18/" } }
-    ],
+    "types": [{ "slot": 1, "type": { "name": "normal", "url": "https://pokeapi.co/api/v2/type/1/" } }],
     "moves": [
       { "move": "pound", "level": 9 },
       { "move": "double-slap", "level": 24 },
@@ -1686,10 +1683,7 @@
       },
       { "base_stat": 45, "effort": 0, "stat": { "name": "speed", "url": "https://pokeapi.co/api/v2/stat/6/" } }
     ],
-    "types": [
-      { "slot": 1, "type": { "name": "normal", "url": "https://pokeapi.co/api/v2/type/1/" } },
-      { "slot": 2, "type": { "name": "fairy", "url": "https://pokeapi.co/api/v2/type/18/" } }
-    ],
+    "types": [{ "slot": 1, "type": { "name": "normal", "url": "https://pokeapi.co/api/v2/type/1/" } }],
     "moves": [
       { "move": "pound", "level": 1 },
       { "move": "double-slap", "level": 1 },
@@ -3483,10 +3477,7 @@
       },
       { "base_stat": 45, "effort": 0, "stat": { "name": "speed", "url": "https://pokeapi.co/api/v2/stat/6/" } }
     ],
-    "types": [
-      { "slot": 1, "type": { "name": "electric", "url": "https://pokeapi.co/api/v2/type/13/" } },
-      { "slot": 2, "type": { "name": "steel", "url": "https://pokeapi.co/api/v2/type/9/" } }
-    ],
+    "types": [{ "slot": 1, "type": { "name": "electric", "url": "https://pokeapi.co/api/v2/type/13/" } }],
     "moves": [
       { "move": "tackle", "level": 1 },
       { "move": "supersonic", "level": 29 },
@@ -3530,10 +3521,7 @@
       },
       { "base_stat": 70, "effort": 0, "stat": { "name": "speed", "url": "https://pokeapi.co/api/v2/stat/6/" } }
     ],
-    "types": [
-      { "slot": 1, "type": { "name": "electric", "url": "https://pokeapi.co/api/v2/type/13/" } },
-      { "slot": 2, "type": { "name": "steel", "url": "https://pokeapi.co/api/v2/type/9/" } }
-    ],
+    "types": [{ "slot": 1, "type": { "name": "electric", "url": "https://pokeapi.co/api/v2/type/13/" } }],
     "moves": [
       { "move": "tackle", "level": 1 },
       { "move": "supersonic", "level": 29 },
@@ -5308,10 +5296,7 @@
       },
       { "base_stat": 90, "effort": 0, "stat": { "name": "speed", "url": "https://pokeapi.co/api/v2/stat/6/" } }
     ],
-    "types": [
-      { "slot": 1, "type": { "name": "psychic", "url": "https://pokeapi.co/api/v2/type/14/" } },
-      { "slot": 2, "type": { "name": "fairy", "url": "https://pokeapi.co/api/v2/type/18/" } }
-    ],
+    "types": [{ "slot": 1, "type": { "name": "psychic", "url": "https://pokeapi.co/api/v2/type/14/" } }],
     "moves": [
       { "move": "pound", "level": 1 },
       { "move": "double-slap", "level": 31 },
@@ -5889,7 +5874,7 @@
       { "move": "discharge", "level": 78 },
       { "move": "baby-doll-eyes", "level": 9 }
     ],
-    "evolutions": ["eevee", "vaporeon"],
+    "evolutions": ["eevee", "jolteon"],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png",
     "filtered": false
   },
@@ -5941,7 +5926,7 @@
       { "move": "lava-plume", "level": 78 },
       { "move": "baby-doll-eyes", "level": 9 }
     ],
-    "evolutions": ["eevee", "vaporeon"],
+    "evolutions": ["eevee", "flareon"],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png",
     "filtered": false
   },

@@ -1,3 +1,9 @@
+/* IMPORTANT: the following changes need to be made for a Gen 1 only game
+- Clefairy/Clefable & Jigglypuff/Wigglytuff changed to Normal from Fairy
+- Mr. Mime changed from Psychic/Fairy to only Psychic
+- Magnemite/Magneton changed from electric/steel to only electric
+*/
+
 // TODO: add try catches to all fetch calls
 const fetch = require("node-fetch");
 const fs = require("fs");

@@ -14,6 +14,7 @@ import { generateRandomAnswer, generateRandomAttacks } from "./helpers/generateR
 import filterPokemonInput from "./helpers/filterPokemonInput";
 import generateFeedback from "./helpers/generateFeedback";
 import filterPokedex from "./helpers/filterPokedex";
+import DataSources from "./components/DataSources";
 
 const START_DATE = new Date("February 21, 2022 00:00:00");
 // console.log(`Start Date: ${START_DATE}`);
@@ -34,6 +35,7 @@ function App() {
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false);
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
+  const [isSourcesModalOpen, setIsSourcesModalOpen] = useState(false);
 
   const [pokedex, setPokedex] = useState(null);
   const [answerIndex, setAnswerIndex] = useState(null);
@@ -140,7 +142,25 @@ function App() {
     const jsonStats = localStorage.getItem(LOCAL_STORAGE_STATS);
     if (jsonStats != null) {
       // console.log("Returning user. Loading user stats from local storage.");
-      setStats(JSON.parse(jsonStats));
+
+      let newStats = JSON.parse(jsonStats);
+
+      // check if badges exist in local storage
+      if (newStats.badges === undefined) {
+        console.log("no badges found");
+        newStats.badges = {
+          "Boulder Badge": false,
+          "Cascade Badge": false,
+          "Thunder Badge": false,
+          "Rainbow Badge": false,
+          "Soul Badge": false,
+          "Marsh Badge": false,
+          "Volcano Badge": false,
+          "Earth Badge": false,
+        };
+      }
+
+      setStats(newStats);
     } else {
       // console.log("New user. Saving new stats to local storage and displaying instructions modal in 1 second.");
       const newUserStats = {
@@ -152,6 +172,16 @@ function App() {
         maxStreak: 0,
         winPercentage: 0,
         pokemonCaught: [],
+        badges: {
+          "Boulder Badge": false,
+          "Cascade Badge": false,
+          "Thunder Badge": false,
+          "Rainbow Badge": false,
+          "Soul Badge": false,
+          "Marsh Badge": false,
+          "Volcano Badge": false,
+          "Earth Badge": false,
+        },
       };
       setStats(newUserStats);
       setTimeout(() => {
@@ -231,6 +261,24 @@ function App() {
 
   // STORE STATS TO LOCAL STORAGE
   useEffect(() => {
+    if (!stats) return;
+    // check for missing badges here
+    // console.log(stats);
+    // let newStats = { ...stats };
+    // if (stats.badges === undefined) {
+    //   console.log("no badges found");
+    //   newStats.badges = {
+    //     "Boulder Badge": false,
+    //     "Cascade Badge": false,
+    //     "Thunder Badge": false,
+    //     "Rainbow Badge": false,
+    //     "Soul Badge": false,
+    //     "Marsh Badge": false,
+    //     "Volcano Badge": false,
+    //     "Earth Badge": false,
+    //   };
+    // }
+    // localStorage.setItem(LOCAL_STORAGE_STATS, JSON.stringify(stats));
     localStorage.setItem(LOCAL_STORAGE_STATS, JSON.stringify(stats));
   }, [stats]);
 
@@ -265,7 +313,7 @@ function App() {
 
     const guessedPokemon = pokedex.filter((pokemon) => pokemon.name === guessToCheck)[0];
     if (!guessedPokemon) {
-      setErrorMessage("Not a pokemon, please check spelling");
+      setErrorMessage("Not a Pokémon, please check spelling");
       setTimeout(() => {
         clearErrorMessages();
       }, 3000);
@@ -337,18 +385,21 @@ function App() {
   return (
     <>
       <InstructionsModal isInfoModalOpen={isInfoModalOpen} setIsInfoModalOpen={setIsInfoModalOpen} />
-      <StatsModal
-        isStatsModalOpen={isStatsModalOpen}
-        setIsStatsModalOpen={setIsStatsModalOpen}
-        guessFeedback={guessFeedback}
-        win={win}
-        lose={lose}
-        stats={stats}
-        nextWordleDate={nextWordleDate}
-        isGymLeaderMode={isGymLeaderMode}
-        isEliteFourMode={isEliteFourMode}
-        answerIndex={answerIndex}
-      />
+      {stats && (
+        <StatsModal
+          isStatsModalOpen={isStatsModalOpen}
+          setIsStatsModalOpen={setIsStatsModalOpen}
+          guessFeedback={guessFeedback}
+          win={win}
+          lose={lose}
+          stats={stats}
+          nextWordleDate={nextWordleDate}
+          isGymLeaderMode={isGymLeaderMode}
+          isEliteFourMode={isEliteFourMode}
+          answerIndex={answerIndex}
+        />
+      )}
+
       <SettingsModal
         isSettingsModalOpen={isSettingsModalOpen}
         setIsSettingsModalOpen={setIsSettingsModalOpen}
@@ -360,6 +411,7 @@ function App() {
         setIsEliteFourMode={setIsEliteFourMode}
         guessFeedback={guessFeedback}
       />
+      <DataSources isSourcesModalOpen={isSourcesModalOpen} setIsSourcesModalOpen={setIsSourcesModalOpen} />
       <Title gameOn={gameOn} win={win} lose={lose} />
       <GameContainer
         setIsInfoModalOpen={setIsInfoModalOpen}
@@ -387,7 +439,7 @@ function App() {
         isGymLeaderMode={isGymLeaderMode}
         isEliteFourMode={isEliteFourMode}
       />
-      <Footer />
+      <Footer setIsSourcesModalOpen={setIsSourcesModalOpen} />
     </>
   );
 }

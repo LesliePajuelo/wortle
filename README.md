@@ -1,6 +1,6 @@
 # Sqwordle - Wordle for Pokémon!
 
-A Pokémon guessing game, inspired by the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html) by [Josh Wardle](https://twitter.com/powerlanguish).
+A daily Pokémon guessing game, inspired by the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html) by [Josh Wardle](https://twitter.com/powerlanguish).
 
 Currently deployed at https://www.sqwordle.io/.
 
@@ -14,7 +14,7 @@ Currently deployed at https://www.sqwordle.io/.
 - Bulma.io CSS framework + custom CSS
 - Responsive design
 - [react-countdown](https://www.npmjs.com/package/react-countdown) for countdown clock
-- [PokéAPi](https://pokeapi.co/) for Pokémon data
+- [PokéApi](https://pokeapi.co/) for Pokémon data
 
   <br />
 
@@ -79,7 +79,7 @@ Build for production with `npm run build`. Deploy the `build` folder.
 <br />
 <br />
 <kbd>
-<img src="https://user-images.githubusercontent.com/85373263/155868977-f4579f02-b8f9-436a-a34a-dd68148efe93.png"/>
+<img src="https://user-images.githubusercontent.com/85373263/156083562-8ec68a38-daf6-467a-8fbe-b6f6ad2976e2.png"/>
 </kbd>
 <br />
 <br />
