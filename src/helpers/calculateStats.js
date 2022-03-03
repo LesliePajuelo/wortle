@@ -40,7 +40,7 @@ export default function calculateStats(stats, pokemon, guessFeedback, winBoolean
 
     // Rainbow Badge
     const threeAndFewerGuesses = statistics.guesses["1"] + statistics.guesses["2"] + statistics.guesses["3"];
-    console.log(threeAndFewerGuesses);
+    // console.log(threeAndFewerGuesses);
     if (threeAndFewerGuesses > 9) {
       statistics.badges["Rainbow Badge"] = true;
     }

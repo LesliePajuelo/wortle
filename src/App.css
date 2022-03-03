@@ -370,7 +370,8 @@ body {
   background-color: hsl(0, 0%, 7%) !important;
   color: white;
   position: absolute !important;
-  top: 0em;
+  top: 50%;
+  /* bottom: 20em; */
   left: 50%;
   transform: translateX(-50%);
   padding-right: 24px !important;

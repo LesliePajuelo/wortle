@@ -14,6 +14,7 @@ import marshBadge from "../img/badges/marsh-badge-210.png";
 import volcanoBadge from "../img/badges/volcano-badge-210.png";
 import earthBadge from "../img/badges/earth-badge-210.png";
 import GymBadge from "./GymBadge";
+import { UAParser } from "ua-parser-js";
 
 const StatsModal = (props) => {
   const {
@@ -31,6 +32,12 @@ const StatsModal = (props) => {
 
   const [isCopyStats, setIsCopyStats] = useState(false);
 
+  // move to own helper module
+  const webShareApiDeviceTypes = ["mobile", "smarttv", "wearable"];
+  const parser = new UAParser();
+  const browser = parser.getBrowser();
+  const device = parser.getDevice();
+
   const renderer = ({ hours, minutes, seconds }) => {
     return (
       <span>
@@ -43,9 +50,9 @@ const StatsModal = (props) => {
     setIsStatsModalOpen(false);
   }
 
-  function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  }
+  // function isMobile() {
+  //   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  // }
 
   function handleCopyStats() {
     const stats = [...guessFeedback];
@@ -82,17 +89,37 @@ const StatsModal = (props) => {
 
     const statsToCopy = `Sqwordle #${gameNumber} ${numGuesses}/6${gameMode}\n${statText}\n\n"${randomQuote.quote}" -${randomQuote.trainer}\n${link}`;
 
-    const isMob = isMobile();
-    if (isMob) {
-      navigator.share({ text: statsToCopy });
-    } else {
-      navigator.clipboard.writeText(statsToCopy);
+    const DataToShare = { text: statsToCopy };
+    let shareSuccess = false;
+    try {
+      if (attemptShare(DataToShare)) {
+        navigator.share(DataToShare);
+        shareSuccess = true;
+      }
+    } catch (error) {
+      shareSuccess = false;
+    }
+
+    if (!shareSuccess) {
+      navigator.clipboard.writeText(DataToShare.text);
+
       setIsCopyStats(true);
       setTimeout(() => {
         setIsCopyStats(false);
       }, 1500);
     }
     console.log(statsToCopy);
+  }
+
+  function attemptShare(statsToCopy) {
+    return (
+      // Firefox+Android issue with Web Shate API. Currently exluding any Firefox Mobile user (copies to clipboard instead)
+      browser.name?.toUpperCase().indexOf("FIREFOX") === -1 &&
+      webShareApiDeviceTypes.indexOf(device.type ?? "") !== -1 &&
+      navigator.canShare &&
+      navigator.canShare(statsToCopy) &&
+      navigator.share
+    );
   }
 
   return (
