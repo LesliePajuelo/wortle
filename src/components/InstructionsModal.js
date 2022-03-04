@@ -1,7 +1,10 @@
 import profOak from "../img/prof-oak-3.png";
-import gameExampleHorseaOmanyte from "../img/game-example-horsea-omanyte.png";
-import gameExampleHorseaSeadra from "../img/game-example-horsea-seadra.png";
-import gameExamplePokedexHorsea from "../img/game-example-pokedex-horsea.png";
+import gameExampleHorseaOmanyteEn from "../img/game-example-horsea-omanyte.png";
+import gameExampleHorseaOmanyteEs from "../img/game-example-horsea-omanyte-es.png";
+import gameExampleHorseaSeadraEn from "../img/game-example-horsea-seadra.png";
+import gameExampleHorseaSeadraEs from "../img/game-example-horsea-seadra-es.png";
+import gameExamplePokedexHorseaEn from "../img/game-example-pokedex-horsea.png";
+import gameExamplePokedexHorseaEs from "../img/game-example-pokedex-horsea-es.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
@@ -97,7 +100,7 @@ const InstructionsModal = (props) => {
               </p>
 
               <figure className="image custom-game-example mb-2">
-                <img src={gameExampleHorseaOmanyte} />
+                <img src={currentLanguageCode === "es" ? gameExampleHorseaOmanyteEs : gameExampleHorseaOmanyteEn} />
               </figure>
               <p>
                 <Trans i18nKey="instructions.example1">
@@ -112,7 +115,7 @@ const InstructionsModal = (props) => {
               </p>
 
               <figure className="image custom-game-example mb-2">
-                <img src={gameExampleHorseaSeadra} />
+                <img src={currentLanguageCode === "es" ? gameExampleHorseaSeadraEs : gameExampleHorseaSeadraEn} />
               </figure>
               <p>
                 <Trans i18nKey="instructions.example2">
@@ -123,7 +126,7 @@ const InstructionsModal = (props) => {
               </p>
 
               <figure className="image custom-game-example mb-2">
-                <img src={gameExamplePokedexHorsea} />
+                <img src={currentLanguageCode === "es" ? gameExamplePokedexHorseaEs : gameExamplePokedexHorseaEn} />
               </figure>
               <p>
                 <Trans i18nKey="instructions.example3.line1">

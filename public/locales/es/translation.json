@@ -46,11 +46,11 @@
       "a": "Por ejemplo",
       "b": " (El Pokémon misterioso es Horsea)"
     },
-    "example1": "Tu intentaste con <1>Omanyte</1>. El Pokémon misterioso es de tipo <3>agua</3> como Horsea pero no es tipo <5>roca</5>. El pokémon misterioso tiene el mismo número de Pokémon en su árbol de evolución (EvT) que Horsea (<7>2</7>, p.ej. Horsea y Seadra). El Pokémon misterioso tiene menor defensa y es más pesado que Horsea, pero tiene el mismo ataque y altura.",
+    "example1": "Tu intento fue con <1>Omanyte</1>. El Pokémon misterioso es de tipo <3>agua</3> como Horsea pero no es tipo <5>roca</5>. El pokémon misterioso tiene el mismo número de Pokémon en su árbol de evolución (EvT) que Horsea (<7>2</7>, p.ej. Horsea y Seadra). El Pokémon misterioso tiene menor defensa y mayor peso que Horsea, pero tiene el mismo de ataque y altura.",
     "example2": "Intentaste con <1>Seadra</1>. Seadra está en <3>amarillo</3> para indicar que el Pokémon misterioso está en el arbol de evolución de Seadra.",
     "example3": {
       "line1": "Luego de cada intento, la pokedex va a filtrar basándose en que sabes según el <1>tipo</1> y árbol de <3>evolución (EvT)</3>, ¡El Pokémon misterioso te va a atacar!",
-      "line2": "Siguiendo el mismo ejemplo, todos los Pokémon de tipo <1>planta</1> y <3>veneno</3>, y los que están en un árbol de evolución superior a <5>3</5> (EvT) están grises. El Pokémon misterioso te ha atacado con <7>trueno</7>, ¡Usa esto como una pista para saber quien es!"
+      "line2": "Siguiendo el mismo ejemplo, todos los Pokémon de tipo <1>planta</1> y <3>veneno</3>, y los que están en un árbol de evolución superior a <5>3</5> (EvT) están grises. El Pokémon misterioso te ha atacado con <7>hidrobomba</7>, ¡Usa esto como una pista para saber quien es!"
     }
   },
   "statsModal": {
