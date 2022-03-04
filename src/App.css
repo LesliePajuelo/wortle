@@ -40,6 +40,30 @@ body {
   color: #999;
 }
 
+.custom-language-button {
+  background-color: transparent !important;
+  border: none !important;
+  padding-left: 0.8em !important;
+}
+
+.custom-language-button-instr {
+  padding-left: 0.5em !important;
+  padding-bottom: 1em !important;
+}
+
+.custom-language-button:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.custom-language-menu {
+  min-width: 100px !important;
+}
+
+.custom-language-menu-instr {
+  margin-top: -0.5em;
+}
+
 .custom-cursor {
   cursor: pointer;
 }
@@ -518,15 +542,14 @@ body {
 @media screen and (max-width: 500px) {
   .custom-type-text {
     text-transform: capitalize;
-    /* display: inline-block; */
-    /* max-width: 6ch; */
-    /* white-space: nowrap; */
-    /* overflow: hidden; */
-    /* text-overflow: ellipsis; */
   }
 
   .custom-intruction-text {
     font-size: 0.85rem;
+  }
+
+  .custom-language-button-instr {
+    font-size: 0.85rem !important;
   }
 
   .custom-game-example {

@@ -1,3 +1,5 @@
+import { Trans, useTranslation } from "react-i18next";
+
 const SettingsModal = (props) => {
   const {
     isSettingsModalOpen,
@@ -10,6 +12,8 @@ const SettingsModal = (props) => {
     setIsEliteFourMode,
     guessFeedback,
   } = props;
+
+  const { t } = useTranslation();
 
   function handleTrainerModeChange() {
     if (guessFeedback.length > 0) return;
@@ -46,19 +50,17 @@ const SettingsModal = (props) => {
       <div className="modal-background"></div>
       <div className="modal-card">
         <header className="modal-card-head">
-          <p className="modal-card-title">Settings</p>
+          <p className="modal-card-title">{t("settingsModal.header")}</p>
           <button className="delete" aria-label="close" onClick={handleCloseSettings}></button>
         </header>
         <section className="modal-card-body has-background-dark has-text-white">
           <div className="content">
             <div className="custom-modes-div">
-              <p className="custom-mode-header">MODES</p>
+              <p className="custom-mode-header">{t("settingsModal.modesTitle")}</p>
               <div className="custom-mode">
                 <div className="custom-mode-descr-div">
-                  <p className="custom-mode-title">Pokémon Trainer</p>
-                  <p className="custom-mode-descr">
-                    Pokédex is shown and filtered after each guess. Mystery Pokémon attacks after each guess.
-                  </p>
+                  <p className="custom-mode-title">{t("settingsModal.trainerMode.name")}</p>
+                  <p className="custom-mode-descr">{t("settingsModal.trainerMode.description")}</p>
                 </div>
                 <input
                   type="checkbox"
@@ -69,8 +71,8 @@ const SettingsModal = (props) => {
               </div>
               <div className="custom-mode">
                 <div className="custom-mode-descr-div">
-                  <p className="custom-mode-title">Gym Leader</p>
-                  <p className="custom-mode-descr">Mystery Pokémon does not attack.</p>
+                  <p className="custom-mode-title">{t("settingsModal.gymLeaderMode.name")}</p>
+                  <p className="custom-mode-descr">{t("settingsModal.gymLeaderMode.description")}</p>
                 </div>
                 <input
                   type="checkbox"
@@ -81,8 +83,8 @@ const SettingsModal = (props) => {
               </div>
               <div className="custom-mode">
                 <div className="custom-mode-descr-div">
-                  <p className="custom-mode-title">Elite Four</p>
-                  <p className="custom-mode-descr">Pokédex is hidden and mystery Pokémon does not attack.</p>
+                  <p className="custom-mode-title">{t("settingsModal.eliteFourMode.name")}</p>
+                  <p className="custom-mode-descr">{t("settingsModal.eliteFourMode.description")}</p>
                 </div>
                 <input
                   type="checkbox"
@@ -92,13 +94,13 @@ const SettingsModal = (props) => {
                 ></input>
               </div>
               <div className="custom-mode mt-2 mb-2">
-                <p className="is-size-7">*Game mode can only be changed before the start of a round.</p>
+                <p className="is-size-7">*{t("settingsModal.modeWarning")}</p>
               </div>
             </div>
           </div>
         </section>
         <footer className="modal-card-foot">
-          <p className="has-text-weight-bold">New SQWORDLE available every day!</p>
+          <p className="has-text-weight-bold">{t("modalFooter.newSqwordle")}</p>
         </footer>
       </div>
     </div>

@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 
 const GymBadge = ({ badge, badgeName, location, description, stats, comingSoon }) => {
+  const { t } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(false);
 
   // const unlocked = stats.badges[badgeName];
@@ -43,13 +46,15 @@ const GymBadge = ({ badge, badgeName, location, description, stats, comingSoon }
               {description}
               {comingSoon && (
                 <>
-                  Coming soon... Suggestions welcome at this{" "}
-                  <a
-                    href="https://www.reddit.com/r/pokemon/comments/t1htd3/sqwordle_wordle_for_pokémon/?utm_source=share&utm_medium=web2x&context=3"
-                    target="blank"
-                  >
-                    Reddit Post
-                  </a>
+                  <Trans i18nKey="statsModal.gymBadges.comingSoon">
+                    Coming soon... Suggestions welcome at this
+                    <a
+                      href="https://www.reddit.com/r/pokemon/comments/t1htd3/sqwordle_wordle_for_pokémon/?utm_source=share&utm_medium=web2x&context=3"
+                      target="blank"
+                    >
+                      Reddit Post
+                    </a>
+                  </Trans>
                 </>
               )}
             </div>

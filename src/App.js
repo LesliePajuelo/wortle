@@ -16,6 +16,8 @@ import generateFeedback from "./helpers/generateFeedback";
 import filterPokedex from "./helpers/filterPokedex";
 import DataSources from "./components/DataSources";
 
+import { useTranslation } from "react-i18next";
+
 const START_DATE = new Date("February 21, 2022 00:00:00");
 // console.log(`Start Date: ${START_DATE}`);
 const MILLISECONDS_TO_DAYS = 1000 * 60 * 60 * 24;
@@ -30,6 +32,8 @@ const LOCAL_STORAGE_GAMESTATE = `${LOCAL_STORAGE_PREFIX}.gameState`;
 const LOCAL_STORAGE_STATS = `${LOCAL_STORAGE_PREFIX}.stats`;
 
 function App() {
+  const { t, i18n } = useTranslation();
+
   const isPageRefreshed = useRef(true);
 
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
@@ -67,6 +71,15 @@ function App() {
   const [spriteUrl, setSpriteUrl] = useState(null);
   const [isAnimation, setIsAnimation] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
+
+  const [showLanguage, setShowLanguage] = useState(false);
+  const [currentLanguageCode, setCurrentLanguageCode] = useState(localStorage.getItem("i18nextLng") || "en");
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+    setShowLanguage(!showLanguage);
+    setCurrentLanguageCode(language);
+  };
 
   function renderGameWin() {
     setSpriteUrl(answer.spriteUrl);
@@ -313,7 +326,7 @@ function App() {
 
     const guessedPokemon = pokedex.filter((pokemon) => pokemon.name === guessToCheck)[0];
     if (!guessedPokemon) {
-      setErrorMessage("Not a Pokémon, please check spelling");
+      setErrorMessage(t("inputErrorMessage"));
       setTimeout(() => {
         clearErrorMessages();
       }, 3000);
@@ -384,7 +397,14 @@ function App() {
 
   return (
     <>
-      <InstructionsModal isInfoModalOpen={isInfoModalOpen} setIsInfoModalOpen={setIsInfoModalOpen} />
+      <InstructionsModal
+        isInfoModalOpen={isInfoModalOpen}
+        setIsInfoModalOpen={setIsInfoModalOpen}
+        showLanguage={showLanguage}
+        setShowLanguage={setShowLanguage}
+        changeLanguage={changeLanguage}
+        currentLanguageCode={currentLanguageCode}
+      />
       {stats && (
         <StatsModal
           isStatsModalOpen={isStatsModalOpen}
@@ -414,6 +434,10 @@ function App() {
       <DataSources isSourcesModalOpen={isSourcesModalOpen} setIsSourcesModalOpen={setIsSourcesModalOpen} />
       <Title gameOn={gameOn} win={win} lose={lose} />
       <GameContainer
+        showLanguage={showLanguage}
+        setShowLanguage={setShowLanguage}
+        changeLanguage={changeLanguage}
+        currentLanguageCode={currentLanguageCode}
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsStatsModalOpen={setIsStatsModalOpen}
         setIsSettingsModalOpen={setIsSettingsModalOpen}

@@ -16,6 +16,8 @@ import earthBadge from "../img/badges/earth-badge-210.png";
 import GymBadge from "./GymBadge";
 import { UAParser } from "ua-parser-js";
 
+import { Trans, useTranslation } from "react-i18next";
+
 const StatsModal = (props) => {
   const {
     isStatsModalOpen,
@@ -29,6 +31,8 @@ const StatsModal = (props) => {
     isEliteFourMode,
     answerIndex,
   } = props;
+
+  const { t } = useTranslation();
 
   const [isCopyStats, setIsCopyStats] = useState(false);
 
@@ -49,10 +53,6 @@ const StatsModal = (props) => {
   function handleCloseStats() {
     setIsStatsModalOpen(false);
   }
-
-  // function isMobile() {
-  //   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  // }
 
   function handleCopyStats() {
     const stats = [...guessFeedback];
@@ -127,94 +127,94 @@ const StatsModal = (props) => {
       <div className="modal-background"></div>
       <div className="modal-card">
         <header className="modal-card-head">
-          <p className="modal-card-title">Stats</p>
+          <p className="modal-card-title">{t("statsModal.header")}</p>
           <button className="delete" aria-label="close" onClick={handleCloseStats}></button>
         </header>
         <section className="modal-card-body has-background-dark has-text-white">
           <div className="content">
-            <p className="custom-statistics-title">Statistics</p>
+            <p className="custom-statistics-title">{t("statsModal.statistics")}</p>
             <div className="custom-quick-stats">
               <div className="">
                 <p>{stats ? stats.gamesPlayed : "0"}</p>
-                <p className="">Played</p>
+                <p className="">{t("statsModal.played")}</p>
               </div>
               <div className="">
                 <p>{stats ? stats.winPercentage : "0"}</p>
-                <p className="">Win %</p>
+                <p className="">{t("statsModal.win")}</p>
               </div>
               <div className="r">
                 <p>{stats ? stats.currentStreak : "0"}</p>
-                <p className="">Current Streak</p>
+                <p className="">{t("statsModal.currentStreak")}</p>
               </div>
               <div className="">
                 <p>{stats ? stats.maxStreak : "0"}</p>
-                <p className="">Max Streak</p>
+                <p className="">{t("statsModal.maxStreak")}</p>
               </div>
             </div>
-            <p className="custom-distribution-title">Gym Badges</p>
+            <p className="custom-distribution-title">{t("statsModal.gymBadges.header")}</p>
             <div className="custom-gym-badge-div">
               <GymBadge
                 badge={boulderBadge}
-                badgeName={"Boulder Badge"}
-                location={"Pewter City Gym"}
-                description={"Play Sqwordle 5 times."}
+                badgeName={t("statsModal.gymBadges.boulderBadge.name")}
+                location={t("statsModal.gymBadges.boulderBadge.gym")}
+                description={t("statsModal.gymBadges.boulderBadge.description")}
                 stats={stats}
               />
               <GymBadge
                 badge={cascadeBadge}
-                badgeName={"Cascade Badge"}
-                location={"Cerulean City Gym"}
-                description={"Get a Max Streak of 10."}
+                badgeName={t("statsModal.gymBadges.cascadeBadge.name")}
+                location={t("statsModal.gymBadges.cascadeBadge.gym")}
+                description={t("statsModal.gymBadges.cascadeBadge.description")}
                 stats={stats}
               />
               <GymBadge
                 badge={thunderBadge}
-                badgeName={"Thunder Badge"}
-                location={"Vermillion City Gym"}
-                description={"Catch 20 different Pokémon."}
+                badgeName={t("statsModal.gymBadges.thunderBadge.name")}
+                location={t("statsModal.gymBadges.thunderBadge.gym")}
+                description={t("statsModal.gymBadges.thunderBadge.description")}
                 stats={stats}
               />
               <GymBadge
                 badge={rainbowBadge}
-                badgeName={"Rainbow Badge"}
-                location={"Celadon City Gym"}
-                description={"10 wins with 3 or fewer guesses."}
+                badgeName={t("statsModal.gymBadges.rainbowBadge.name")}
+                location={t("statsModal.gymBadges.rainbowBadge.gym")}
+                description={t("statsModal.gymBadges.rainbowBadge.description")}
                 stats={stats}
               />
               <GymBadge
                 badge={soulBadge}
-                badgeName={"Soul Badge"}
-                location={"Fuchsia City Gym"}
-                description={""}
+                badgeName={t("statsModal.gymBadges.soulBadge.name")}
+                location={t("statsModal.gymBadges.soulBadge.gym")}
+                description={t("statsModal.gymBadges.soulBadge.description")}
                 comingSoon={true}
                 stats={stats}
               />
               <GymBadge
                 badge={marshBadge}
-                badgeName={"Marsh Badge"}
-                location={"Saffron City Gym"}
-                description={""}
+                badgeName={t("statsModal.gymBadges.marshBadge.name")}
+                location={t("statsModal.gymBadges.marshBadge.gym")}
+                description={t("statsModal.gymBadges.marshBadge.description")}
                 comingSoon={true}
                 stats={stats}
               />
               <GymBadge
                 badge={volcanoBadge}
-                badgeName={"Volcano Badge"}
-                location={"Cinnabar Island City Gym"}
-                description={""}
+                badgeName={t("statsModal.gymBadges.volcanoBadge.name")}
+                location={t("statsModal.gymBadges.volcanoBadge.gym")}
+                description={t("statsModal.gymBadges.volcanoBadge.description")}
                 comingSoon={true}
                 stats={stats}
               />
               <GymBadge
                 badge={earthBadge}
-                badgeName={"Earth Badge"}
-                location={"Viridian City Gym"}
-                description={"Capture the 3 Legendary birds (Moltres, Zapdos, Articuno)."}
+                badgeName={t("statsModal.gymBadges.earthBadge.name")}
+                location={t("statsModal.gymBadges.earthBadge.gym")}
+                description={t("statsModal.gymBadges.earthBadge.description")}
                 stats={stats}
               />
             </div>
 
-            <p className="custom-distribution-title">Guess Distribution</p>
+            <p className="custom-distribution-title">{t("statsModal.guessDistribution")}</p>
             <div className="custom-distribution-container">
               {stats &&
                 Object.entries(stats.guesses).map(([key, value]) => {
@@ -233,12 +233,12 @@ const StatsModal = (props) => {
             {(win || lose) && (
               <div className="custom-share-div">
                 <div className="custom-countdown">
-                  <p className="">Next Sqwordle</p>
+                  <p className="">{t("statsModal.nextSqwordle")}</p>
                   <Countdown date={nextWordleDate} renderer={renderer} zeroPadTime={2} />
                 </div>
                 <div className="custom-share-div-border"></div>
                 <button className="button" onClick={handleCopyStats} disabled={win || lose ? false : true}>
-                  <span>SHARE</span>
+                  <span className="is-uppercase">{t("statsModal.share")}</span>
                   <span className="icon is-medium">
                     <FontAwesomeIcon className="fas fa-lg fa-solid" icon={faShareNodes} />
                   </span>
@@ -248,19 +248,21 @@ const StatsModal = (props) => {
 
             {isCopyStats && (
               <div className={`notification container custom-copy-stats-message`}>
-                <span>Copied results to clipboard</span>
+                <span>{t("statsModal.copiedResultsMessage")}</span>
               </div>
             )}
           </div>
         </section>
         <footer className="modal-card-foot is-flex is-flex-direction-column custom-stats-footer">
-          <p className="has-text-weight-bold">New SQWORDLE available every day!</p>
+          <p className="has-text-weight-bold">{t("modalFooter.newSqwordle")}</p>
           <p className="has-text-weight-bold pt-2 has-text-centered">
-            <span>Or visit the </span>
-            <a className="has-text-grey-dark is-underlined" href={safariZoneUrl}>
-              SAFARI ZONE
-            </a>
-            <span> for unlimited practice.</span>
+            <Trans i18nKey="modalFooter.safariZone">
+              <span>Or visit the </span>
+              <a className="has-text-grey-dark is-underlined" href={safariZoneUrl}>
+                SAFARI ZONE
+              </a>
+              <span> for unlimited practice.</span>
+            </Trans>
           </p>
         </footer>
       </div>

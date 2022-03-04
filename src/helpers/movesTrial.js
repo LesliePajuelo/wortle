@@ -53,7 +53,7 @@ const pokedex = Pokedex;
 
   const moveListStringified = JSON.stringify(moveList);
 
-  fs.writeFile("trial.json", moveListStringified, "utf8", function (error) {
+  fs.writeFile("moveList.json", moveListStringified, "utf8", function (error) {
     if (error) {
       console.log("An error occured while writing JSON Object to file.");
       return console.log(error);

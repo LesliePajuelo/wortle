@@ -12,8 +12,14 @@ import GameOver from "./GameOver";
 import pokedexTitle from "../img/pokedex-title.png";
 import AnswerAttack from "./AnswerAttack";
 
+import { useTranslation } from "react-i18next";
+
 function GameContainer(props) {
   const {
+    showLanguage,
+    setShowLanguage,
+    changeLanguage,
+    currentLanguageCode,
     setIsInfoModalOpen,
     setIsStatsModalOpen,
     setIsSettingsModalOpen,
@@ -39,6 +45,8 @@ function GameContainer(props) {
     isGymLeaderMode,
     isEliteFourMode,
   } = props;
+
+  const { t } = useTranslation();
 
   const guessNumber = [1, 2, 3, 4, 5, 6];
 
@@ -78,6 +86,10 @@ function GameContainer(props) {
           setIsInfoModalOpen={setIsInfoModalOpen}
           setIsStatsModalOpen={setIsStatsModalOpen}
           setIsSettingsModalOpen={setIsSettingsModalOpen}
+          showLanguage={showLanguage}
+          setShowLanguage={setShowLanguage}
+          changeLanguage={changeLanguage}
+          currentLanguageCode={currentLanguageCode}
         />
         <div className="game mt-3">
           <div className="card custom-card-size">
@@ -85,7 +97,7 @@ function GameContainer(props) {
               {!gameOn && !win && !lose && (
                 <div className="custom-start-img">
                   <button className="custom-start-text is-loading" onClick={handleStartGame}>
-                    {gameLoading ? "Loading..." : "Game Start"}
+                    {gameLoading ? t("gameLoading") : t("gameStart")}
                   </button>
                   <img className="" src={pokeball} alt="Placeholder image" onClick={handleStartGame} />
                 </div>
@@ -154,7 +166,7 @@ function GameContainer(props) {
                         <input
                           className="input"
                           type="text"
-                          placeholder={`Guess #${guessFeedback.length + 1}...`}
+                          placeholder={`${t("guessPlaceholderText")}${guessFeedback.length + 1}...`}
                           value={guessInput}
                           onChange={handleGuessInput}
                           onKeyPress={handleEnterKey}

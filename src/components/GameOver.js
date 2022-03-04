@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const GameOver = ({ answer, win, lose, isAnimation }) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className={`notification container has-text-centered custom-game-over ${
@@ -8,12 +12,12 @@ const GameOver = ({ answer, win, lose, isAnimation }) => {
       {win && (
         <>
           <span className="is-uppercase">{answer.name} </span>
-          <span>was caught!</span>
+          <span>{t("winMessage")}</span>
         </>
       )}
       {lose && (
         <>
-          <span>You missed </span>
+          <span>{t("loseMessage")}</span>
           <span className="is-uppercase">{answer.name}</span>
         </>
       )}
