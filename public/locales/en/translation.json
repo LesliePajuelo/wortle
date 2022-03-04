@@ -44,13 +44,13 @@
     "line4": "Ready for a challenge? Try 'Gym Leader' or 'Elite Four' mode, available in settings.",
     "exampleTitle": {
       "a": "Examples",
-      "b": " (mystery Pokémon is Pikachu)"
+      "b": " (mystery Pokémon is Horsea)"
     },
-    "example1": "You guessed <1>Magnemite</1>. The mystery Pokémon is <3>electric</3> Type like Magnemite, but is not <5>steel</5> Type. The mystery Pokémon has the same number of Pokémon in its Evolution Tree (EvT) as Magnemite (<7>2</7>, i.e., Magnemite & Magneton). The mystery Pokémon has higher Attack, lower Defense, and greater Height than Magnemite, but has the same Weight.",
-    "example2": "You guessed <1>Raichu</1>. Raichu is <3>yellow</3> to indicate that the mystery Pokémon is in Raichu's Evolution Tree.",
+    "example1": "You guessed <1>Omanyte</1>. The mystery Pokémon is <3>water</3> Type like Horsea, but is not <5>rock</5> Type. The mystery Pokémon has the same number of Pokémon in its Evolution Tree (EvT) as Horsea (<7>2</7>, i.e., Horsea & Seadra). The mystery Pokémon has lower defense and is heavier than Horsea, but has the same Attack and Height.",
+    "example2": "You guessed <1>Seadra</1>. Seadra is <3>yellow</3> to indicate that the mystery Pokémon is in Seadra's Evolution Tree.",
     "example3": {
       "line1": "After each guess the Pokédex will filter based on what you know about <1>Type</1> and <3>Evolution Tree (EvT)</3>, and the mystery Pokémon will attack you.",
-      "line2": "In the above example, all <1>water</1> Type Pokémon and Pokémon with an Evolution Tree (EvT) of <3>3</3> are greyed out. The mystery Pokémon attacked you with <5>THUNDER</5>, giving you a clue to who the mystery Pokémon is!"
+      "line2": "In the above example, all <1>grass</1> and <3>poison</3> Type Pokémon and Pokémon with an Evolution Tree (EvT) of <5>3</5> are greyed out. The mystery Pokémon attacked you with <7>hydro pump</7>, giving you a clue to who the mystery Pokémon is!"
     }
   },
   "statsModal": {

@@ -1,7 +1,7 @@
 import profOak from "../img/prof-oak-3.png";
-import gameExamplePikachuMagnemite from "../img/game-example-pikachu-magnemite.jpg";
-import gameExamplePikachuRaichu from "../img/game-example-pikachu-raichu.jpg";
-import gameExamplePokedex from "../img/game-example-pokedex-cropped.jpg";
+import gameExampleHorseaOmanyte from "../img/game-example-horsea-omanyte.png";
+import gameExampleHorseaSeadra from "../img/game-example-horsea-seadra.png";
+import gameExamplePokedexHorsea from "../img/game-example-pokedex-horsea.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
@@ -97,33 +97,33 @@ const InstructionsModal = (props) => {
               </p>
 
               <figure className="image custom-game-example mb-2">
-                <img src={gameExamplePikachuMagnemite} />
+                <img src={gameExampleHorseaOmanyte} />
               </figure>
               <p>
                 <Trans i18nKey="instructions.example1">
                   You guessed
-                  <span className="has-text-weight-bold"> Magnemite</span>. The mystery Pokémon is
-                  <span className="has-text-success"> electric </span>Type like Magnemite, but is not
-                  <span className="has-text-danger"> steel </span>Type. The mystery Pokémon has the same number of
-                  Pokémon in its Evolution Tree (EvT) as Magnemite (<span className="has-text-success">2</span>, i.e.,
-                  Magnemite & Magneton). The mystery Pokémon has higher Attack, lower Defense, and greater Height than
-                  Magnemite, but has the same Weight.
+                  <span className="has-text-weight-bold"> Omanyte</span>. The mystery Pokémon is
+                  <span className="has-text-success"> water </span>Type like Horsea, but is not
+                  <span className="has-text-danger"> rock </span>Type. The mystery Pokémon has the same number of
+                  Pokémon in its Evolution Tree (EvT) as Horsea (<span className="has-text-success">2</span>, i.e.,
+                  Horsea & Seadra). The mystery Pokémon has lower defense and is heavier than Horsea, but has the same
+                  Attack and Height.
                 </Trans>
               </p>
 
               <figure className="image custom-game-example mb-2">
-                <img src={gameExamplePikachuRaichu} />
+                <img src={gameExampleHorseaSeadra} />
               </figure>
               <p>
                 <Trans i18nKey="instructions.example2">
-                  You guessed<span className="has-text-weight-bold">Raichu</span>. Raichu is
+                  You guessed<span className="has-text-weight-bold">Seadra</span>. Seadra is
                   <span className="has-text-warning-dark">yellow</span>to indicate that the mystery Pokémon is in
-                  Raichu's Evolution Tree.
+                  Seadra's Evolution Tree.
                 </Trans>
               </p>
 
               <figure className="image custom-game-example mb-2">
-                <img src={gameExamplePokedex} />
+                <img src={gameExamplePokedexHorsea} />
               </figure>
               <p>
                 <Trans i18nKey="instructions.example3.line1">
@@ -135,10 +135,11 @@ const InstructionsModal = (props) => {
               </p>
               <p>
                 <Trans i18nKey="instructions.example3.line2">
-                  In the above example, all<span className="has-text-weight-bold">water</span>Type Pokémon and Pokémon
-                  with an Evolution Tree (EvT) of<span className="has-text-weight-bold">3</span> are greyed out. The
-                  mystery Pokémon attacked you with<span className="has-text-weight-bold is-uppercase">thunder</span>,
-                  giving you a clue to who the mystery Pokémon is!
+                  In the above example, all<span className="has-text-weight-bold">grass</span> and
+                  <span className="has-text-weight-bold">poison</span> Type Pokémon and Pokémon with an Evolution Tree
+                  (EvT) of<span className="has-text-weight-bold">3</span> are greyed out. The mystery Pokémon attacked
+                  you with<span className="has-text-weight-bold is-uppercase">hydro pump</span>, giving you a clue to
+                  who the mystery Pokémon is!
                 </Trans>
               </p>
             </div>
