@@ -4,7 +4,7 @@ const Pokedex = require("../pokedex.json");
 const pokedex = Pokedex;
 const POKEMON_ID_START = 1;
 const POKEMON_ID_END = 151;
-const UNIQUE_MOVE_CUTOFF = 5;
+const UNIQUE_MOVE_CUTOFF = 1;
 
 // MAIN FUNCTION
 (async () => {

@@ -1,12 +1,19 @@
-/* IMPORTANT: the following changes need to be made for a Gen 1 only game
+/* IMPORTANT: the following changes need to be made for a Gen 1 only game:
 - Clefairy/Clefable & Jigglypuff/Wigglytuff changed to Normal from Fairy
 - Mr. Mime changed from Psychic/Fairy to only Psychic
 - Magnemite/Magneton changed from electric/steel to only electric
+- Eevee evolution issue
 */
 
 // TODO: add try catches to all fetch calls
 const fetch = require("node-fetch");
 const fs = require("fs");
+const XLSX = require("xlsx");
+
+const Workbook = XLSX.readFile("pokemon-move-translations.xlsx");
+const movesWorksheet = XLSX.utils.sheet_to_json(Workbook.Sheets["gen1Moves"]);
+const genOneMoveArray = movesWorksheet.map((move) => move.Name.toLowerCase());
+// console.log(genOneMoveArray);
 
 // main function
 (async () => {
@@ -32,13 +39,17 @@ async function fetchPokedex() {
   for await (const pokemon of allPokemonJson.results) {
     console.log(pokemon.name);
     const attributes = await fetchAttributes(pokemon.name);
+    // TODO: soft-code clefairy/clefable/mr-mime/jiggly/wiggly/magnemite/magneton to gen 1 type
     const evolutions = await fetchEvolutions(attributes.species.url);
     const spriteUrl = await fetchSprite(pokemon.name);
     const allMoves = attributes.moves;
     const selectedMoves = [];
-    selectedMoves.forEach((move) => {
+    allMoves.forEach((move) => {
       if (move.version_group_details[0].level_learned_at > 0) {
-        selectedMoves.push({ move: move.move.name, level: move.version_group_details[0].level_learned_at });
+        const dashesRemovedMove = move.move.name.replace(/-/g, " ");
+        if (genOneMoveArray.includes(dashesRemovedMove)) {
+          selectedMoves.push({ move: move.move.name, level: move.version_group_details[0].level_learned_at });
+        }
       }
     });
 
@@ -48,7 +59,7 @@ async function fetchPokedex() {
       weight: attributes.weight,
       stats: attributes.stats,
       types: attributes.types,
-      moves: allMoves,
+      moves: selectedMoves,
       evolutions,
       spriteUrl,
       filtered: false,
@@ -63,6 +74,7 @@ async function fetchAttributes(pokemonName) {
   return attributesJson;
 }
 
+// TODO - fix eevee issue
 async function fetchEvolutions(speciesUrl) {
   const speciesResponse = await fetch(speciesUrl);
   const speciesJson = await speciesResponse.json();
