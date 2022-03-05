@@ -20,6 +20,24 @@ const DataSources = ({ isSourcesModalOpen, setIsSourcesModalOpen }) => {
             <div className="custom-source-div">
               <img className="custom-pokeball-bullet" src={pokeball} />
               <p className="has-text-white is-size-7-mobile">
+                <span>Inspired by </span>
+                <a
+                  className="has-text-white is-underlined"
+                  href="https://www.nytimes.com/games/wordle/index.html"
+                  target="_blank"
+                >
+                  Wordle
+                </a>
+                <span> (created by </span>
+                <a className="has-text-white is-underlined" href="https://twitter.com/powerlanguish" target="_blank">
+                  Josh Wardle
+                </a>
+                <span>)</span>
+              </p>
+            </div>
+            <div className="custom-source-div">
+              <img className="custom-pokeball-bullet" src={pokeball} />
+              <p className="has-text-white is-size-7-mobile">
                 <span>Pokémon data and sprite images from </span>
                 <a className="has-text-white is-underlined" href="https://pokeapi.co/" target="_blank">
                   PokéApi

@@ -4,7 +4,7 @@ const Footer = ({ setIsSourcesModalOpen }) => {
   const { t } = useTranslation();
   return (
     <div className="is-flex is-flex-direction-column is-align-items-center is-justify-content-center mt-3 pb-5">
-      <p className="has-text-white pb-3">
+      <p className="has-text-white">
         <Trans i18nKey="footer.createdBy">
           <span>Created by </span>
           <a className="has-text-white is-underlined" href="https://www.nathanfretz.me/" target="_blank">
@@ -12,7 +12,8 @@ const Footer = ({ setIsSourcesModalOpen }) => {
           </a>
         </Trans>
       </p>
-      <p className="has-text-white is-size-7">
+      {/* <p>contact me on Twitter</p> */}
+      {/* <p className="has-text-white is-size-7">
         <Trans i18nKey="footer.inspiredBy">
           <span>Inspired by </span>
           <a
@@ -28,13 +29,13 @@ const Footer = ({ setIsSourcesModalOpen }) => {
           </a>
           <span>)</span>
         </Trans>
-      </p>
+      </p> */}
       <p className="has-text-white is-size-7">
         <a className="has-text-white is-underlined" onClick={() => setIsSourcesModalOpen(true)}>
           {t("footer.sources")}
         </a>
       </p>
-      <p className="has-text-white is-size-7 has-text-centered pt-3 pl-3 pr-3">
+      {/* <p className="has-text-white is-size-7 has-text-centered pt-3 pl-3 pr-3">
         <Trans i18nKey="footer.suggestions">
           <span>Suggestions for improvements/changes are very welcome at this </span>
           <a
@@ -51,6 +52,14 @@ const Footer = ({ setIsSourcesModalOpen }) => {
             target="_blank"
           >
             Twitter Thread
+          </a>
+        </Trans>
+      </p> */}
+      <p className="has-text-white is-size-7 has-text-centered pt-3 pl-3 pr-3">
+        <Trans i18nKey={"footer.ko-fi"}>
+          <span>❤️SQWORDLE? - </span>
+          <a className="has-text-white is-underlined" href="https://ko-fi.com/nmfretz" target="_blank">
+            Buy me a ☕!
           </a>
         </Trans>
       </p>
