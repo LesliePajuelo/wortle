@@ -32,7 +32,7 @@
     "ice": "ice",
     "normal": "normal",
     "poison": "poison",
-    "pyschic": "psychic",
+    "psychic": "psychic",
     "rock": "rock",
     "water": "water"
   },
@@ -129,6 +129,11 @@
   "modalFooter": {
     "newSqwordle": "New SQWORDLE available every day!",
     "safariZone": "Or visit the <1>SAFARI ZONE</1> for unlimited practice."
+  },
+  "safariZone": {
+    "welcome": "Welcome to the SAFARI ZONE! This is a place to play unlimited SQWORDLE. Safari Zone activity isn't captured in your SQWORDLE statistics.",
+    "modalFooter": "You are in the SAFARI ZONE. Return to <1>DAILY SQWORDLE?</1>",
+    "dailySqwordle": "back to daily sqwordle"
   },
   "moves": {
     "vine-whip": "vine whip",

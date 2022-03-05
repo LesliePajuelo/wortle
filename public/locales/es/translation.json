@@ -32,7 +32,7 @@
     "ice": "hielo",
     "normal": "normal",
     "poison": "veneno",
-    "pyschic": "psíquico",
+    "psychic": "psíquico",
     "rock": "roca",
     "water": "agua"
   },
@@ -129,6 +129,11 @@
   "modalFooter": {
     "newSqwordle": "¡Nuevo SQWORDLE disponible todos los días!",
     "safariZone": "O visita la <1>ZONA SAFARI</1> para una práctica sin límites."
+  },
+  "safariZone": {
+    "welcome": "¡Bienvenido a la ZONA SAFARI! Este es un lugar donde puedes jugar SQWORDLE de manera ilimitada. Tu actividad en esta área no será guardada en tus estadísticas de SQWORDLE.",
+    "modalFooter": "Estás en la ZONA SAFARI. ¿Quieres volver al <1>SQWORDLE diario</1>?",
+    "dailySqwordle": "Vuelve diariamente a Sqwordle"
   },
   "moves": {
     "vine-whip": "látigo cepa",
