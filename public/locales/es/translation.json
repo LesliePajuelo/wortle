@@ -86,22 +86,22 @@
       "soulBadge": {
         "name": "Medalla Alma",
         "gym": "Gimnasio de Ciudad Fucsia",
-        "description": ""
+        "description": "Captura un Pokémon en 1 intento."
       },
       "marshBadge": {
         "name": "Medalla Pantano",
         "gym": "Gimnasio de Ciudad Azafrán",
-        "description": ""
+        "description": "Capturar a Mew."
       },
       "volcanoBadge": {
         "name": "Medalla Volcán",
         "gym": "Gimnasio de Isla Canela",
-        "description": ""
+        "description": "Captura las 3 aves legendarias (Moltres, Zapdos, Articuno)."
       },
       "earthBadge": {
         "name": "Medalla Tierra",
         "gym": "Gimnasio de Ciudad Verde",
-        "description": "Captura las 3 aves legendarias (Moltres, Zapdos, Articuno)."
+        "description": "Completa tu Pokédex (próximamente) capturando los 151 Pokémon."
       }
     },
     "guessDistribution": "Distribución de Intentos",

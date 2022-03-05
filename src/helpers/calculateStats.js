@@ -45,15 +45,27 @@ export default function calculateStats(stats, pokemon, guessFeedback, winBoolean
       statistics.badges["Rainbow Badge"] = true;
     }
 
-    // Soul Badge
-    // Marsh Badge
-    // Volcano Badge
+    // Soul Badge - catch a pokemon in 1 guess
+    if (statistics.guesses["1"] > 0) {
+      statistics.badges["Soul Badge"] = true;
+    }
 
-    // Earth Badge
+    // Marsh Badge - catch mew
+    const mew = statistics.pokemonCaught.includes("mew");
+    if (mew) {
+      statistics.badges["Marsh Badge"] = true;
+    }
+
+    // Volcano Badge
     const moltres = statistics.pokemonCaught.includes("moltres");
     const zapdos = statistics.pokemonCaught.includes("zapdos");
     const articuno = statistics.pokemonCaught.includes("articuno");
     if (moltres && zapdos && articuno) {
+      statistics.badges["Volcano Badge"] = true;
+    }
+
+    // Earth Badge - catch all 151 pokemon
+    if (statistics.pokemonCaught.length === 151) {
       statistics.badges["Earth Badge"] = true;
     }
   } else {

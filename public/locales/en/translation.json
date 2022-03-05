@@ -86,22 +86,22 @@
       "soulBadge": {
         "name": "Soul Badge",
         "gym": "Fuchsia City Gym",
-        "description": ""
+        "description": "Catch a Pokémon in 1 guess."
       },
       "marshBadge": {
         "name": "Marsh Badge",
         "gym": "Saffron City Gym",
-        "description": ""
+        "description": "Catch Mew."
       },
       "volcanoBadge": {
         "name": "Volcano Badge",
         "gym": "Cinnabar Island City Gym",
-        "description": ""
+        "description": "Catch the 3 Legendary birds (Moltres, Zapdos, Articuno)."
       },
       "earthBadge": {
         "name": "Earth Badge",
         "gym": "Viridian City Gym",
-        "description": "Capture the 3 Legendary birds (Moltres, Zapdos, Articuno)."
+        "description": "Complete your Pokedex (coming soon) by catching all 151 Pokémon."
       }
     },
     "guessDistribution": "Guess Distribution",

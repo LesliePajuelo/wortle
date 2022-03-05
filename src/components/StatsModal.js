@@ -186,7 +186,6 @@ const StatsModal = (props) => {
                 badgeName={t("statsModal.gymBadges.soulBadge.name")}
                 location={t("statsModal.gymBadges.soulBadge.gym")}
                 description={t("statsModal.gymBadges.soulBadge.description")}
-                comingSoon={true}
                 stats={stats}
               />
               <GymBadge
@@ -194,7 +193,6 @@ const StatsModal = (props) => {
                 badgeName={t("statsModal.gymBadges.marshBadge.name")}
                 location={t("statsModal.gymBadges.marshBadge.gym")}
                 description={t("statsModal.gymBadges.marshBadge.description")}
-                comingSoon={true}
                 stats={stats}
               />
               <GymBadge
@@ -202,7 +200,6 @@ const StatsModal = (props) => {
                 badgeName={t("statsModal.gymBadges.volcanoBadge.name")}
                 location={t("statsModal.gymBadges.volcanoBadge.gym")}
                 description={t("statsModal.gymBadges.volcanoBadge.description")}
-                comingSoon={true}
                 stats={stats}
               />
               <GymBadge
