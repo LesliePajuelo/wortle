@@ -14,7 +14,7 @@ import { generateRandomAnswer, generateRandomAttacks } from "./helpers/generateR
 import filterPokemonInput from "./helpers/filterPokemonInput";
 import generateFeedback from "./helpers/generateFeedback";
 import filterPokedex from "./helpers/filterPokedex";
-import DataSources from "./components/DataSources";
+import DataSourcesModal from "./components/DataSourcesModal";
 
 import { useTranslation } from "react-i18next";
 
@@ -72,14 +72,14 @@ function App() {
   const [isAnimation, setIsAnimation] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const [showLanguage, setShowLanguage] = useState(false);
+  const [showLanguageSelector, setShowLanguageSelector] = useState(false);
   const [currentLanguageCode, setCurrentLanguageCode] = useState(localStorage.getItem("i18nextLng") || "en");
 
-  const changeLanguage = (language) => {
+  function handleChangeLanguage(language) {
     i18n.changeLanguage(language);
-    setShowLanguage(!showLanguage);
+    setShowLanguageSelector(!showLanguageSelector);
     setCurrentLanguageCode(language);
-  };
+  }
 
   function renderGameWin() {
     setSpriteUrl(answer.spriteUrl);
@@ -397,46 +397,11 @@ function App() {
 
   return (
     <>
-      <InstructionsModal
-        isOpen={isInfoModalOpen}
-        handleClose={() => setIsInfoModalOpen(false)}
-        showLanguage={showLanguage}
-        setShowLanguage={setShowLanguage}
-        changeLanguage={changeLanguage}
-        currentLanguageCode={currentLanguageCode}
-      />
-      {stats && (
-        <StatsModal
-          isStatsModalOpen={isStatsModalOpen}
-          setIsStatsModalOpen={setIsStatsModalOpen}
-          guessFeedback={guessFeedback}
-          win={win}
-          lose={lose}
-          stats={stats}
-          nextWordleDate={nextWordleDate}
-          isGymLeaderMode={isGymLeaderMode}
-          isEliteFourMode={isEliteFourMode}
-          answerIndex={answerIndex}
-        />
-      )}
-
-      <SettingsModal
-        isSettingsModalOpen={isSettingsModalOpen}
-        setIsSettingsModalOpen={setIsSettingsModalOpen}
-        isPokemonTrainerMode={isPokemonTrainerMode}
-        setIsPokemonTrainerMode={setIsPokemonTrainerMode}
-        isGymLeaderMode={isGymLeaderMode}
-        setIsGymLeaderMode={setIsGymLeaderMode}
-        isEliteFourMode={isEliteFourMode}
-        setIsEliteFourMode={setIsEliteFourMode}
-        guessFeedback={guessFeedback}
-      />
-      <DataSources isSourcesModalOpen={isSourcesModalOpen} setIsSourcesModalOpen={setIsSourcesModalOpen} />
       <Title gameOn={gameOn} win={win} lose={lose} />
       <GameContainer
-        showLanguage={showLanguage}
-        setShowLanguage={setShowLanguage}
-        changeLanguage={changeLanguage}
+        showLanguageSelector={showLanguageSelector}
+        setShowLanguageSelector={setShowLanguageSelector}
+        handleChangeLanguage={handleChangeLanguage}
         currentLanguageCode={currentLanguageCode}
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsStatsModalOpen={setIsStatsModalOpen}
@@ -464,6 +429,41 @@ function App() {
         isEliteFourMode={isEliteFourMode}
       />
       <Footer setIsSourcesModalOpen={setIsSourcesModalOpen} />
+
+      <InstructionsModal
+        isOpen={isInfoModalOpen}
+        handleClose={() => setIsInfoModalOpen(false)}
+        showLanguageSelector={showLanguageSelector}
+        setShowLanguageSelector={setShowLanguageSelector}
+        handleChangeLanguage={handleChangeLanguage}
+        currentLanguageCode={currentLanguageCode}
+      />
+      {stats && (
+        <StatsModal
+          isOpen={isStatsModalOpen}
+          handleClose={() => setIsStatsModalOpen(false)}
+          guessFeedback={guessFeedback}
+          win={win}
+          lose={lose}
+          stats={stats}
+          nextWordleDate={nextWordleDate}
+          isGymLeaderMode={isGymLeaderMode}
+          isEliteFourMode={isEliteFourMode}
+          answerIndex={answerIndex}
+        />
+      )}
+      <SettingsModal
+        isOpen={isSettingsModalOpen}
+        handleClose={() => setIsSettingsModalOpen(false)}
+        isPokemonTrainerMode={isPokemonTrainerMode}
+        setIsPokemonTrainerMode={setIsPokemonTrainerMode}
+        isGymLeaderMode={isGymLeaderMode}
+        setIsGymLeaderMode={setIsGymLeaderMode}
+        isEliteFourMode={isEliteFourMode}
+        setIsEliteFourMode={setIsEliteFourMode}
+        guessFeedback={guessFeedback}
+      />
+      <DataSourcesModal isOpen={isSourcesModalOpen} handleClose={() => setIsSourcesModalOpen(false)} />
     </>
   );
 }

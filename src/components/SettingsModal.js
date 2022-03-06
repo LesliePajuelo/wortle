@@ -2,8 +2,8 @@ import { Trans, useTranslation } from "react-i18next";
 
 const SettingsModal = (props) => {
   const {
-    isSettingsModalOpen,
-    setIsSettingsModalOpen,
+    isOpen,
+    handleClose,
     isPokemonTrainerMode,
     setIsPokemonTrainerMode,
     isGymLeaderMode,
@@ -41,17 +41,13 @@ const SettingsModal = (props) => {
     setIsPokemonTrainerMode(false);
   }
 
-  function handleCloseSettings() {
-    setIsSettingsModalOpen(false);
-  }
-
   return (
-    <div className={`modal ${isSettingsModalOpen ? "is-active" : ""}`}>
+    <div className={`modal ${isOpen ? "is-active" : ""}`}>
       <div className="modal-background"></div>
       <div className="modal-card">
         <header className="modal-card-head">
           <p className="modal-card-title">{t("settingsModal.header")}</p>
-          <button className="delete" aria-label="close" onClick={handleCloseSettings}></button>
+          <button className="delete" aria-label="close" onClick={handleClose}></button>
         </header>
         <section className="modal-card-body has-background-dark has-text-white">
           <div className="content">

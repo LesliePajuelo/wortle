@@ -8,9 +8,9 @@ const Navbar = ({
   setIsInfoModalOpen,
   setIsStatsModalOpen,
   setIsSettingsModalOpen,
-  showLanguage,
-  setShowLanguage,
-  changeLanguage,
+  showLanguageSelector,
+  setShowLanguageSelector,
+  handleChangeLanguage,
   currentLanguageCode,
 }) => {
   const { t } = useTranslation();
@@ -49,13 +49,13 @@ const Navbar = ({
           </span>
         </span>
 
-        <div className={`dropdown is-right ${showLanguage ? "is-active" : ""}`}>
+        <div className={`dropdown is-right ${showLanguageSelector ? "is-active" : ""}`}>
           <div className="dropdown-trigger">
             <button
               className="button custom-language-button"
               aria-haspopup="true"
               aria-controls="dropdown-menu6"
-              onClick={() => setShowLanguage(!showLanguage)}
+              onClick={() => setShowLanguageSelector(!showLanguageSelector)}
             >
               <span className="icon custom-navbar-icon is-medium">
                 <FontAwesomeIcon className="fas fa-lg fa-solid" icon={faGlobe} />
@@ -69,7 +69,7 @@ const Navbar = ({
                   className={`mb-0 custom-filter-suggestion-item-button ${
                     currentLanguageCode === "en" ? "has-text-weight-bold" : ""
                   }`}
-                  onClick={() => changeLanguage("en")}
+                  onClick={() => handleChangeLanguage("en")}
                 >
                   English
                 </button>
@@ -77,7 +77,7 @@ const Navbar = ({
                   className={`mb-0 custom-filter-suggestion-item-button ${
                     currentLanguageCode === "es" ? "has-text-weight-bold" : ""
                   }`}
-                  onClick={() => changeLanguage("es")}
+                  onClick={() => handleChangeLanguage("es")}
                 >
                   Español
                 </button>

@@ -11,7 +11,14 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { Trans, useTranslation } from "react-i18next";
 
 const InstructionsModal = (props) => {
-  const { isOpen, handleClose, showLanguage, setShowLanguage, changeLanguage, currentLanguageCode } = props;
+  const {
+    isOpen,
+    handleClose,
+    showLanguageSelector,
+    setShowLanguageSelector,
+    handleChangeLanguage,
+    currentLanguageCode,
+  } = props;
 
   const { t } = useTranslation();
 
@@ -28,13 +35,17 @@ const InstructionsModal = (props) => {
         </header>
         <section className="modal-card-body has-background-dark has-text-white">
           <div className="content custom-intruction-text">
-            <div className={`dropdown is-right is-flex is-justify-content-flex-end ${showLanguage ? "is-active" : ""}`}>
+            <div
+              className={`dropdown is-right is-flex is-justify-content-flex-end ${
+                showLanguageSelector ? "is-active" : ""
+              }`}
+            >
               <div className="dropdown-trigger">
                 <button
                   className="button custom-language-button custom-language-button-instr"
                   aria-haspopup="true"
                   aria-controls="dropdown-menu6"
-                  onClick={() => setShowLanguage(!showLanguage)}
+                  onClick={() => setShowLanguageSelector(!showLanguageSelector)}
                 >
                   <span className="has-text-white pl-1 is-capitalized">{t("language.name")}</span>
                   <span className="icon custom-navbar-icon is-medium">
@@ -53,7 +64,7 @@ const InstructionsModal = (props) => {
                       className={`mb-0 custom-filter-suggestion-item-button ${
                         currentLanguageCode === "en" ? "has-text-weight-bold" : ""
                       }`}
-                      onClick={() => changeLanguage("en")}
+                      onClick={() => handleChangeLanguage("en")}
                     >
                       English
                     </button>
@@ -61,7 +72,7 @@ const InstructionsModal = (props) => {
                       className={`mb-0 custom-filter-suggestion-item-button ${
                         currentLanguageCode === "es" ? "has-text-weight-bold" : ""
                       }`}
-                      onClick={() => changeLanguage("es")}
+                      onClick={() => handleChangeLanguage("es")}
                     >
                       Español
                     </button>

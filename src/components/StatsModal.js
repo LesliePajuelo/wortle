@@ -20,8 +20,8 @@ import { Trans, useTranslation } from "react-i18next";
 
 const StatsModal = (props) => {
   const {
-    isStatsModalOpen,
-    setIsStatsModalOpen,
+    isOpen,
+    handleClose,
     guessFeedback,
     win,
     lose,
@@ -49,10 +49,6 @@ const StatsModal = (props) => {
       </span>
     );
   };
-
-  function handleCloseStats() {
-    setIsStatsModalOpen(false);
-  }
 
   function handleCopyStats() {
     const stats = [...guessFeedback];
@@ -123,12 +119,12 @@ const StatsModal = (props) => {
   }
 
   return (
-    <div className={`modal ${isStatsModalOpen ? "is-active" : ""}`}>
+    <div className={`modal ${isOpen ? "is-active" : ""}`}>
       <div className="modal-background"></div>
       <div className="modal-card">
         <header className="modal-card-head">
           <p className="modal-card-title">{t("statsModal.header")}</p>
-          <button className="delete" aria-label="close" onClick={handleCloseStats}></button>
+          <button className="delete" aria-label="close" onClick={handleClose}></button>
         </header>
         <section className="modal-card-body has-background-dark has-text-white">
           <div className="content">

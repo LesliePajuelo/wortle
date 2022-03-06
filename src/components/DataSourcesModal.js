@@ -1,19 +1,14 @@
 import { useState } from "react";
 import pokeball from "../img/logo.png";
 
-const DataSources = ({ isSourcesModalOpen, setIsSourcesModalOpen }) => {
-  // TODO - change to useCallback
-  function handleCloseSources() {
-    setIsSourcesModalOpen(false);
-  }
-
+const DataSourcesModal = ({ isOpen, handleClose }) => {
   return (
-    <div className={`modal ${isSourcesModalOpen ? "is-active" : ""}`}>
+    <div className={`modal ${isOpen ? "is-active" : ""}`}>
       <div className="modal-background"></div>
       <div className="modal-card">
         <header className="modal-card-head">
           <p className="modal-card-title">Data Sources</p>
-          <button className="delete" aria-label="close" onClick={handleCloseSources}></button>
+          <button className="delete" aria-label="close" onClick={handleClose}></button>
         </header>
         <section className="modal-card-body has-background-dark has-text-white">
           <div className="content">
@@ -107,4 +102,4 @@ const DataSources = ({ isSourcesModalOpen, setIsSourcesModalOpen }) => {
   );
 };
 
-export default DataSources;
+export default DataSourcesModal;

@@ -16,9 +16,9 @@ import { useTranslation } from "react-i18next";
 
 function GameContainer(props) {
   const {
-    showLanguage,
-    setShowLanguage,
-    changeLanguage,
+    showLanguageSelector,
+    setShowLanguageSelector,
+    handleChangeLanguage,
     currentLanguageCode,
     setIsInfoModalOpen,
     setIsStatsModalOpen,
@@ -86,9 +86,9 @@ function GameContainer(props) {
           setIsInfoModalOpen={setIsInfoModalOpen}
           setIsStatsModalOpen={setIsStatsModalOpen}
           setIsSettingsModalOpen={setIsSettingsModalOpen}
-          showLanguage={showLanguage}
-          setShowLanguage={setShowLanguage}
-          changeLanguage={changeLanguage}
+          showLanguageSelector={showLanguageSelector}
+          setShowLanguageSelector={setShowLanguageSelector}
+          handleChangeLanguage={handleChangeLanguage}
           currentLanguageCode={currentLanguageCode}
         />
         <div className="game mt-3">
