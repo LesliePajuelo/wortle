@@ -1,13 +1,10 @@
 import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-const GymBadge = ({ badge, badgeName, location, description, stats, comingSoon }) => {
+const GymBadge = ({ badgeImg, badgeName, badgeLocalStorage, location, description, stats, comingSoon }) => {
   const { t } = useTranslation();
 
   const [isOpen, setIsOpen] = useState(false);
-
-  // const unlocked = stats.badges[badgeName];
-  // console.log(unlocked);
 
   function handleInfoOpen() {
     setIsOpen(true);
@@ -20,8 +17,8 @@ const GymBadge = ({ badge, badgeName, location, description, stats, comingSoon }
   return (
     <>
       <img
-        className={`custom-gym-badge custom-badge-${stats.badges[badgeName] ? "unlocked" : "locked"}`}
-        src={badge}
+        className={`custom-gym-badge custom-badge-${stats.badges[badgeLocalStorage] ? "unlocked" : "locked"}`}
+        src={badgeImg}
         onClick={handleInfoOpen}
       />
       {isOpen && (
@@ -31,9 +28,9 @@ const GymBadge = ({ badge, badgeName, location, description, stats, comingSoon }
               <div className="custom-badge-title">
                 <img
                   className={`custom-badge-info-img custom-badge-modal-${
-                    stats.badges[badgeName] ? "unlocked" : "locked"
+                    stats.badges[badgeLocalStorage] ? "unlocked" : "locked"
                   }`}
-                  src={badge}
+                  src={badgeImg}
                 />
                 <div className="">
                   <p className="title is-4 is-size-5-mobile">{badgeName}</p>
@@ -42,22 +39,7 @@ const GymBadge = ({ badge, badgeName, location, description, stats, comingSoon }
               </div>
               <button className="delete" aria-label="delete" onClick={handleInfoClose}></button>
             </div>
-            <div className="content pt-3">
-              {description}
-              {comingSoon && (
-                <>
-                  <Trans i18nKey="statsModal.gymBadges.comingSoon">
-                    Coming soon... Suggestions welcome at this
-                    <a
-                      href="https://www.reddit.com/r/pokemon/comments/t1htd3/sqwordle_wordle_for_pokémon/?utm_source=share&utm_medium=web2x&context=3"
-                      target="blank"
-                    >
-                      Reddit Post
-                    </a>
-                  </Trans>
-                </>
-              )}
-            </div>
+            <div className="content pt-3">{description}</div>
           </div>
         </div>
       )}
