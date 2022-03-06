@@ -47,7 +47,7 @@
       "a": "Examples",
       "b": " (mystery Pokémon is Horsea)"
     },
-    "example1": "You guessed <1>Omanyte</1>. The mystery Pokémon is <3>water</3> Type like Horsea, but is not <5>rock</5> Type. The mystery Pokémon has the same number of Pokémon in its Evolution Tree (EvT) as Horsea (<7>2</7>, i.e., Horsea & Seadra). The mystery Pokémon has lower defense and is heavier than Horsea, but has the same Attack and Height.",
+    "example1": "You guessed <1>Omanyte</1>. The mystery Pokémon is <3>water</3> Type like Omanyte, but is not <5>rock</5> Type. The mystery Pokémon has the same number of Pokémon in its Evolution Tree (EvT) as Omanyte (<7>2</7>, i.e., Omanyte & Omastar). The mystery Pokémon has lower defense and is heavier than Omanyte, but has the same Attack and Height.",
     "example2": "You guessed <1>Seadra</1>. Seadra is <3>yellow</3> to indicate that the mystery Pokémon is in Seadra's Evolution Tree.",
     "example3": {
       "line1": "After each guess the Pokédex will filter based on what you know about <1>Type</1> and <3>Evolution Tree (EvT)</3>, and the mystery Pokémon will attack you.",

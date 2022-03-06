@@ -11,16 +11,12 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { Trans, useTranslation } from "react-i18next";
 
 const InstructionsModal = (props) => {
-  const { isInfoModalOpen, setIsInfoModalOpen, showLanguage, setShowLanguage, changeLanguage, currentLanguageCode } =
-    props;
+  const { isOpen, handleClose, showLanguage, setShowLanguage, changeLanguage, currentLanguageCode } = props;
 
   const { t } = useTranslation();
 
-  function handleCloseInfo() {
-    setIsInfoModalOpen(false);
-  }
   return (
-    <div className={`modal ${isInfoModalOpen ? "is-active" : ""} custom-info-modal`}>
+    <div className={`modal ${isOpen ? "is-active" : ""} custom-info-modal`}>
       <div className="modal-background"></div>
       <div className="modal-card">
         <header className="modal-card-head custom-info-modal-header">
@@ -28,7 +24,7 @@ const InstructionsModal = (props) => {
           <div>
             <p className="modal-card-title custom-info-title">{t("instructions.title")}</p>
           </div>
-          <button className="delete custom-delete-button" aria-label="close" onClick={handleCloseInfo}></button>
+          <button className="delete custom-delete-button" aria-label="close" onClick={handleClose}></button>
         </header>
         <section className="modal-card-body has-background-dark has-text-white">
           <div className="content custom-intruction-text">

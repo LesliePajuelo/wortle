@@ -398,8 +398,8 @@ function App() {
   return (
     <>
       <InstructionsModal
-        isInfoModalOpen={isInfoModalOpen}
-        setIsInfoModalOpen={setIsInfoModalOpen}
+        isOpen={isInfoModalOpen}
+        handleClose={() => setIsInfoModalOpen(false)}
         showLanguage={showLanguage}
         setShowLanguage={setShowLanguage}
         changeLanguage={changeLanguage}
