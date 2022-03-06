@@ -1,3 +1,5 @@
+import coffee from "../img/hot-beverage_2615.png";
+import heart from "../img/yellow-heart_1f49b.png";
 import { Trans, useTranslation } from "react-i18next";
 
 const Footer = ({ setIsSourcesModalOpen }) => {
@@ -7,61 +9,22 @@ const Footer = ({ setIsSourcesModalOpen }) => {
       <p className="has-text-white">
         <Trans i18nKey="footer.createdBy">
           <span>Created by </span>
-          <a className="has-text-white is-underlined" href="https://www.nathanfretz.me/" target="_blank">
+          <a className="has-text-white is-underlined" href="https://twitter.com/nmfretz" target="_blank">
             Nathan Fretz
           </a>
         </Trans>
       </p>
-      {/* <p>contact me on Twitter</p> */}
-      {/* <p className="has-text-white is-size-7">
-        <Trans i18nKey="footer.inspiredBy">
-          <span>Inspired by </span>
-          <a
-            className="has-text-white is-underlined"
-            href="https://www.nytimes.com/games/wordle/index.html"
-            target="_blank"
-          >
-            Wordle
-          </a>
-          <span> (created by </span>
-          <a className="has-text-white is-underlined" href="https://twitter.com/powerlanguish" target="_blank">
-            Josh Wardle
-          </a>
-          <span>)</span>
-        </Trans>
-      </p> */}
       <p className="has-text-white is-size-7">
         <a className="has-text-white is-underlined" onClick={() => setIsSourcesModalOpen(true)}>
           {t("footer.sources")}
         </a>
       </p>
-      {/* <p className="has-text-white is-size-7 has-text-centered pt-3 pl-3 pr-3">
-        <Trans i18nKey="footer.suggestions">
-          <span>Suggestions for improvements/changes are very welcome at this </span>
-          <a
-            className="has-text-white is-underlined"
-            href="https://www.reddit.com/r/pokemon/comments/t1htd3/sqwordle_wordle_for_pokémon/?utm_source=share&utm_medium=web2x&context=3"
-            target="_blank"
-          >
-            Reddit Post
-          </a>
-          <span> or </span>
-          <a
-            className="has-text-white is-underlined"
-            href="https://twitter.com/nmfretz/status/1497327845298737152?s=20&t=45kgJ03lkPjIBP77t_qLfg"
-            target="_blank"
-          >
-            Twitter Thread
-          </a>
-        </Trans>
-      </p> */}
       <p className="has-text-white is-size-7 has-text-centered pt-3 pl-3 pr-3">
-        <Trans i18nKey={"footer.ko-fi"}>
-          <span>❤️SQWORDLE? - </span>
-          <a className="has-text-white is-underlined" href="https://ko-fi.com/nmfretz" target="_blank">
-            Buy me a ☕!
-          </a>
-        </Trans>
+        <img className="custom-heart" src={heart} />
+        <span>SQWORDLE? - </span>
+        <a className="has-text-white custom-buy-coffee-link" href="https://ko-fi.com/nmfretz" target="_blank">
+          {t("footer.ko-fi")} <img className="custom-coffee is-underlined" src={coffee}></img>!
+        </a>
       </p>
     </div>
   );

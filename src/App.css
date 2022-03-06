@@ -539,6 +539,22 @@ body {
   color: #ccc;
 }
 
+.custom-heart {
+  position: relative;
+  top: 0.25em;
+  margin-right: 0.25em;
+  width: 0.9rem;
+}
+
+.custom-coffee {
+  position: relative;
+  width: 0.8rem;
+}
+
+.custom-buy-coffee-link {
+  border-bottom: 1px solid white;
+}
+
 @media screen and (max-width: 500px) {
   .custom-type-text {
     text-transform: capitalize;
