@@ -1,6 +1,7 @@
+import { Trans, useTranslation } from "react-i18next";
+
 import coffee from "../img/hot-beverage_2615.png";
 import heart from "../img/yellow-heart_1f49b.png";
-import { Trans, useTranslation } from "react-i18next";
 
 const Footer = ({ setIsSourcesModalOpen }) => {
   const { t } = useTranslation();

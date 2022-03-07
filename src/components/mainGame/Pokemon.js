@@ -1,4 +1,4 @@
-function Pokemon({ index, pokeman, setGuessInput, setSuggestionClicked }) {
+function Pokemon({ pokeman, setGuessInput, setSuggestionClicked }) {
   function handleSuggestionClick(e) {
     setGuessInput(e.target.innerText);
 

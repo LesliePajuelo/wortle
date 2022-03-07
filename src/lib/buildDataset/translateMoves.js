@@ -1,14 +1,14 @@
 const fs = require("fs");
 const XLSX = require("xlsx");
-const Pokedex = require("../pokedex.json");
+const Pokedex = require("../../constants/pokedex.json");
 
 const pokedex = Pokedex;
 const FROM_LANGUAGE = "English";
-const TO_LANGUAGE = "Spanish";
+const TO_LANGUAGE = "English";
 
 // move translations from https://bulbapedia.bulbagarden.net/wiki/List_of_moves_in_other_languages
 // "Vice Grip" is mistakenly shown as "Vise Grip" at above website. Manually changed in .xlsx
-const Workbook = XLSX.readFile("pokemon-move-translations.xlsx");
+const Workbook = XLSX.readFile("./src/lib/buildDataset/pokemon-move-translations.xlsx");
 const translationWorksheet = XLSX.utils.sheet_to_json(Workbook.Sheets["translations"]);
 const movesWorksheet = XLSX.utils.sheet_to_json(Workbook.Sheets["gen1Moves"]);
 const genOneMoveArray = movesWorksheet.map((move) => move.Name.toLowerCase());
@@ -40,7 +40,7 @@ console.log(`# of moves: ${Object.keys(allMovesObj).length}`);
 
 const allMovesStringified = JSON.stringify(allMovesObj);
 
-fs.writeFile("moveListTranslation.json", allMovesStringified, "utf8", function (error) {
+fs.writeFile(`moveListTranslation-${TO_LANGUAGE.toLowerCase()}.json`, allMovesStringified, "utf8", function (error) {
   if (error) {
     console.log("An error occured while writing JSON Object to file.");
     return console.log(error);

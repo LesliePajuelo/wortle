@@ -1,10 +1,9 @@
 TODO.md
-/screenshots
-trial.json
 ARTICLES.md
-pokemon-move-translations.xlsx
-moveList.json
-moveListTranslation.json
+movesTrial.js
+/screenshots
+
+
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 

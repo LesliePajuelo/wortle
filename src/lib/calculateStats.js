@@ -1,3 +1,41 @@
+import { loadStatsFromLocalStorage } from "./localStorage";
+
+export const newUserStats = {
+  averageGuesses: 0,
+  currentStreak: 0,
+  gamesPlayed: 0,
+  gamesWon: 0,
+  guesses: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, fail: 0 },
+  maxStreak: 0,
+  winPercentage: 0,
+  pokemonCaught: [],
+  badges: {
+    "Boulder Badge": false,
+    "Cascade Badge": false,
+    "Thunder Badge": false,
+    "Rainbow Badge": false,
+    "Soul Badge": false,
+    "Marsh Badge": false,
+    "Volcano Badge": false,
+    "Earth Badge": false,
+  },
+};
+
+export const badgesForLegacyUsers = {
+  "Boulder Badge": false,
+  "Cascade Badge": false,
+  "Thunder Badge": false,
+  "Rainbow Badge": false,
+  "Soul Badge": false,
+  "Marsh Badge": false,
+  "Volcano Badge": false,
+  "Earth Badge": false,
+};
+
+export function loadStats() {
+  return loadStatsFromLocalStorage() || newUserStats;
+}
+
 export default function calculateStats(stats, pokemon, guessFeedback, winBoolean) {
   const statistics = { ...stats };
   if (winBoolean) {

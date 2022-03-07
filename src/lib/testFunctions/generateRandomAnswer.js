@@ -1,3 +1,5 @@
+// CURRENTLY USING THESE FUNCTIONS IN THE SAFARI ZONE
+// TODO: filter unique moves in generateRandomAttacks()
 const POKEMON_ID_START = 1;
 const POKEMON_ID_END = 151;
 

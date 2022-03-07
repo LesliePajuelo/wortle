@@ -1,5 +1,4 @@
-import { useState } from "react";
-import pokeball from "../img/logo.png";
+import pokeball from "../../img/logo.png";
 
 const DataSourcesModal = ({ isOpen, handleClose }) => {
   return (

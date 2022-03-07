@@ -1,6 +1,34 @@
-// NO LONGER USED. These were used when user's browser would request data from API. Now pokedex.json is generated before deployment using downloadPokedexJson.js
+/* IMPORTANT: the following changes need to be made for a Gen 1 only game:
+- [ ] Clefairy/Clefable & Jigglypuff/Wigglytuff changed to Normal from Fairy
+- [ ] Mr. Mime changed from Psychic/Fairy to only Psychic
+- [ ] Magnemite/Magneton changed from electric/steel to only electric
+-  [ ] Eevee evolution issue
+*/
 
-export async function fetchPokedex() {
+// TODO: add try catches to all fetch calls
+const fetch = require("node-fetch");
+const fs = require("fs");
+const XLSX = require("xlsx");
+
+const Workbook = XLSX.readFile("./src/lib/buildDataset/pokemon-move-translations.xlsx");
+const movesWorksheet = XLSX.utils.sheet_to_json(Workbook.Sheets["gen1Moves"]);
+const genOneMoveArray = movesWorksheet.map((move) => move.Name.toLowerCase());
+// console.log(genOneMoveArray);
+
+// main function
+(async () => {
+  const pokedex = await fetchPokedex();
+  const pokedexStringified = JSON.stringify(pokedex);
+  fs.writeFile("pokedex.json", pokedexStringified, "utf8", function (error) {
+    if (error) {
+      console.log("An error occured while writing JSON Object to file.");
+      return console.log(error);
+    }
+    console.log("JSON file has been saved.");
+  });
+})();
+
+async function fetchPokedex() {
   console.log("fetching initial pokemon information...");
   const allPokemonResponse = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
   console.log("initial information fetched!");
@@ -11,13 +39,17 @@ export async function fetchPokedex() {
   for await (const pokemon of allPokemonJson.results) {
     console.log(pokemon.name);
     const attributes = await fetchAttributes(pokemon.name);
+    // TODO: soft-code clefairy/clefable/mr-mime/jiggly/wiggly/magnemite/magneton to gen 1 type
     const evolutions = await fetchEvolutions(attributes.species.url);
     const spriteUrl = await fetchSprite(pokemon.name);
     const allMoves = attributes.moves;
     const selectedMoves = [];
-    selectedMoves.forEach((move) => {
+    allMoves.forEach((move) => {
       if (move.version_group_details[0].level_learned_at > 0) {
-        selectedMoves.push({ move: move.move.name, level: move.version_group_details[0].level_learned_at });
+        const dashesRemovedMove = move.move.name.replace(/-/g, " ");
+        if (genOneMoveArray.includes(dashesRemovedMove)) {
+          selectedMoves.push({ move: move.move.name, level: move.version_group_details[0].level_learned_at });
+        }
       }
     });
 
@@ -27,7 +59,7 @@ export async function fetchPokedex() {
       weight: attributes.weight,
       stats: attributes.stats,
       types: attributes.types,
-      moves: allMoves,
+      moves: selectedMoves,
       evolutions,
       spriteUrl,
       filtered: false,
@@ -42,6 +74,7 @@ async function fetchAttributes(pokemonName) {
   return attributesJson;
 }
 
+// TODO - fix eevee issue
 async function fetchEvolutions(speciesUrl) {
   const speciesResponse = await fetch(speciesUrl);
   const speciesJson = await speciesResponse.json();

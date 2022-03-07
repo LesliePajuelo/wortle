@@ -1,8 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle, faGear, faChartColumn, faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { safariZoneUrl } from "../helpers/links.js";
-import { useTranslation } from "react-i18next";
-import { useState } from "react";
+
+import { safariZoneUrl } from "../constants/strings";
 
 const Navbar = ({
   setIsInfoModalOpen,

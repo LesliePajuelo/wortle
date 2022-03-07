@@ -1,5 +1,5 @@
 const fs = require("fs");
-const Pokedex = require("../pokedex.json");
+const Pokedex = require("../../constants/pokedex.json");
 
 const pokedex = Pokedex;
 const POKEMON_ID_START = 1;

@@ -1,35 +1,36 @@
-import "./App.css";
-import "bulma/css/bulma.css";
-import Pokedex from "./pokedex.json";
-import AnswerKey from "./answerKey.json";
 import { useEffect, useRef, useState } from "react";
-import GameContainer from "./components/GameContainer";
-import Title from "./components/Title";
-import InstructionsModal from "./components/InstructionsModal";
-import StatsModal from "./components/StatsModal";
-import SettingsModal from "./components/SettingsModal";
-import Footer from "./components/Footer";
-import calculateStats from "./helpers/calculateStats";
-import { generateRandomAnswer, generateRandomAttacks } from "./helpers/generateRandomAnswer";
-import filterPokemonInput from "./helpers/filterPokemonInput";
-import generateFeedback from "./helpers/generateFeedback";
-import filterPokedex from "./helpers/filterPokedex";
-import DataSourcesModal from "./components/DataSourcesModal";
-
 import { useTranslation } from "react-i18next";
 
-const START_DATE = new Date("February 21, 2022 00:00:00");
-// console.log(`Start Date: ${START_DATE}`);
-const MILLISECONDS_TO_DAYS = 1000 * 60 * 60 * 24;
-
-const FLIP_DURATION = 300;
-const STATS_MODAL_DELAY = 4000;
-const ATTACK_DELAY = 7000;
-const INFO_MODAL_DELAY = 1000;
-
-const LOCAL_STORAGE_PREFIX = "SQWORDL";
-const LOCAL_STORAGE_GAMESTATE = `${LOCAL_STORAGE_PREFIX}.gameState`;
-const LOCAL_STORAGE_STATS = `${LOCAL_STORAGE_PREFIX}.stats`;
+import "./App.css";
+import "bulma/css/bulma.css";
+import Pokedex from "./constants/pokedex.json";
+import AnswerKey from "./constants/answerKey.json";
+import Title from "./components/Title";
+import GameContainer from "./components/mainGame/GameContainer";
+import Footer from "./components/Footer";
+import InstructionsModal from "./components/modals/InstructionsModal";
+import StatsModal from "./components/modals/statsModal/StatsModal";
+import SettingsModal from "./components/modals/SettingsModal";
+import DataSourcesModal from "./components/modals/DataSourcesModal";
+import { generateRandomAnswer, generateRandomAttacks } from "./lib/testFunctions/generateRandomAnswer"; // for testing
+import filterPokemonInput from "./lib/filterPokemonInput";
+import generateFeedback from "./lib/generateFeedback";
+import filterPokedex from "./lib/filterPokedex";
+import calculateStats, { loadStats, badgesForLegacyUsers } from "./lib/calculateStats";
+import { answer, index } from "./lib/generateAnswer";
+import {
+  LOCAL_STORAGE_GAMESTATE,
+  loadLanguagePreferenceFromLocalStorage,
+  saveStatsToLocalStorage,
+  loadGameStateFromLocalStorage,
+} from "./lib/localStorage";
+import {
+  FLIP_DURATION_GAME_OVER,
+  STATS_MODAL_DELAY,
+  ATTACK_DELAY,
+  INFO_MODAL_DELAY,
+  DAILY_SQWORDLE,
+} from "./constants/settings";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -40,12 +41,6 @@ function App() {
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false);
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
   const [isSourcesModalOpen, setIsSourcesModalOpen] = useState(false);
-
-  const [pokedex, setPokedex] = useState(null);
-  const [answerIndex, setAnswerIndex] = useState(null);
-  const [answer, setAnswer] = useState(null);
-  const [todaysDate, setTodaysDate] = useState(null);
-  const [nextWordleDate, setNextWordleDate] = useState(null);
 
   const [isPokemonTrainerMode, setIsPokemonTrainerMode] = useState(true);
   const [isGymLeaderMode, setIsGymLeaderMode] = useState(false);
@@ -59,21 +54,22 @@ function App() {
   const [guessToCheck, setGuessToCheck] = useState(null);
   const [guessFeedback, setGuessFeedback] = useState([]);
 
-  const [filteredList, setFilteredList] = useState(null);
-  const [showFilteredList, setShowFilteredList] = useState(false);
+  const [filteredPokedex, setFilteredPokedex] = useState([...Pokedex]);
+  const [filteredInputList, setFilteredInputList] = useState([...Pokedex]);
+  const [showFilteredInputList, setShowFilteredInputList] = useState(false);
 
   const [answerAttack, setAnswerAttack] = useState(null);
   const [showAnswerAttack, setShowAnswerAttack] = useState(false);
 
   const [win, setWin] = useState(false);
   const [lose, setLose] = useState(false);
-  const [stats, setStats] = useState(null);
+  const [stats, setStats] = useState(loadStats()); // user's existing stats or new stats
   const [spriteUrl, setSpriteUrl] = useState(null);
   const [isAnimation, setIsAnimation] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
 
   const [showLanguageSelector, setShowLanguageSelector] = useState(false);
-  const [currentLanguageCode, setCurrentLanguageCode] = useState(localStorage.getItem("i18nextLng") || "en");
+  const [currentLanguageCode, setCurrentLanguageCode] = useState(loadLanguagePreferenceFromLocalStorage());
 
   function handleChangeLanguage(language) {
     i18n.changeLanguage(language);
@@ -94,8 +90,8 @@ function App() {
         setTimeout(() => {
           setIsStatsModalOpen(true);
         }, STATS_MODAL_DELAY);
-      }, FLIP_DURATION);
-    }, FLIP_DURATION);
+      }, FLIP_DURATION_GAME_OVER);
+    }, FLIP_DURATION_GAME_OVER);
   }
 
   function renderGameLoss() {
@@ -111,16 +107,18 @@ function App() {
         setTimeout(() => {
           setIsStatsModalOpen(true);
         }, STATS_MODAL_DELAY);
-      }, FLIP_DURATION);
-    }, FLIP_DURATION);
+      }, FLIP_DURATION_GAME_OVER);
+    }, FLIP_DURATION_GAME_OVER);
   }
 
   function renderAttack() {
-    // for deployment
-    const attack = AnswerKey[answerIndex].randomAttacks[guessFeedback.length - 1];
-
-    // for testing
-    // const attack = generateRandomAttacks(answer);
+    let attack;
+    if (DAILY_SQWORDLE) {
+      attack = AnswerKey[index].randomAttacks[guessFeedback.length - 1];
+    } else {
+      // for safari zone and testing
+      attack = generateRandomAttacks(answer); // todo: filter unique moves
+    }
 
     setAnswerAttack(attack);
     setShowAnswerAttack(true);
@@ -133,190 +131,92 @@ function App() {
     setErrorMessage(null);
   }
 
-  // LOAD PAGE AND CALCULATE ANSWER INDEX
+  function resetGameState() {
+    // TODO: refactor
+    console.log("resetting game state");
+  }
+
+  function restoreUserState(gameState) {
+    setGuessFeedback(gameState.guessFeedback);
+
+    let filteredPokemon = [...Pokedex];
+    for (const feedback of gameState.guessFeedback) {
+      filteredPokemon = filterPokedex(feedback, filteredPokemon);
+    }
+    setFilteredPokedex(filteredPokemon);
+    setFilteredInputList(filteredPokemon);
+
+    setWin(gameState.winStatus);
+    setLose(gameState.loseStatus);
+    setSpriteUrl(gameState.spriteUrl);
+    setGameOn(gameState.gameOn);
+  }
+
+  // LOAD PAGE
   useEffect(async () => {
-    const todaysDate = new Date(new Date().setHours(0, 0, 0, 0));
-    // console.log(`Local Date: ${todaysDate}`);
-    setTodaysDate(todaysDate);
-
-    const nextWordleDate = new Date(new Date().setHours(24, 0, 0, 0));
-    // console.log(`Next Wordle Date: ${nextWordleDate}`);
-    setNextWordleDate(nextWordleDate);
-
-    const tempAnswerIndex = (todaysDate - START_DATE) / MILLISECONDS_TO_DAYS;
-    setAnswerIndex(tempAnswerIndex);
-    // console.log(`Answer index: ${tempAnswerIndex}`);
-
-    setPokedex([...Pokedex]);
-    setFilteredList([...Pokedex]);
-    // console.log("Pokedex loaded");
-
-    // check for user's existing stats
-    const jsonStats = localStorage.getItem(LOCAL_STORAGE_STATS);
-    if (jsonStats != null) {
-      // console.log("Returning user. Loading user stats from local storage.");
-
-      let newStats = JSON.parse(jsonStats);
-
-      // check if badges exist in local storage
-      if (newStats.badges === undefined) {
-        console.log("no badges found");
-        newStats.badges = {
-          "Boulder Badge": false,
-          "Cascade Badge": false,
-          "Thunder Badge": false,
-          "Rainbow Badge": false,
-          "Soul Badge": false,
-          "Marsh Badge": false,
-          "Volcano Badge": false,
-          "Earth Badge": false,
-        };
-      }
-
-      setStats(newStats);
-    } else {
-      // console.log("New user. Saving new stats to local storage and displaying instructions modal in 1 second.");
-      const newUserStats = {
-        averageGuesses: 0,
-        currentStreak: 0,
-        gamesPlayed: 0,
-        gamesWon: 0,
-        guesses: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, fail: 0 },
-        maxStreak: 0,
-        winPercentage: 0,
-        pokemonCaught: [],
-        badges: {
-          "Boulder Badge": false,
-          "Cascade Badge": false,
-          "Thunder Badge": false,
-          "Rainbow Badge": false,
-          "Soul Badge": false,
-          "Marsh Badge": false,
-          "Volcano Badge": false,
-          "Earth Badge": false,
-        },
-      };
-      setStats(newUserStats);
+    // show instructions if no game state in local storage
+    if (!loadGameStateFromLocalStorage()) {
+      console.log("No previous game state.");
       setTimeout(() => {
         setIsInfoModalOpen(true);
       }, INFO_MODAL_DELAY);
-    }
-  }, []);
+    } else {
+      console.log("previous game state found in local storage");
+      const gameState = loadGameStateFromLocalStorage();
+      setIsPokemonTrainerMode(gameState.pokemonTrainerMode);
+      setIsGymLeaderMode(gameState.gymLeaderMode);
+      setIsEliteFourMode(gameState.eliteFourMode);
 
-  // SET DAILY ANSWER
-  useEffect(() => {
-    if (!answerIndex) return;
-
-    // For testing:
-    // const todaysAnswerName = generateRandomAnswer(Pokedex).name;
-
-    // For deployment
-    const todaysAnswerName = AnswerKey[answerIndex].answer;
-
-    const todaysAnswer = Pokedex.find((pokemon) => pokemon.name === todaysAnswerName);
-    setAnswer(todaysAnswer);
-    // console.log(`Answer: ${todaysAnswer.name}`);
-
-    setGameLoading(false);
-  }, [answerIndex]);
-
-  // LOAD USER'S GAME STATE FROM CURRENT DAY
-  useEffect(() => {
-    if (!answerIndex) return;
-
-    const jsonGameState = localStorage.getItem(LOCAL_STORAGE_GAMESTATE);
-    if (jsonGameState != null) {
-      const parsedGameState = JSON.parse(jsonGameState);
-      const lastPlayed = parsedGameState.lastPlayed;
-      // console.log(lastPlayed);
-
-      // for testing:
-      // const testDateCheck = new Date(new Date(lastPlayed));
-      // testDateCheck.setSeconds(testDateCheck.getSeconds() + 20);
-      // console.log(testDateCheck);
-      // const currentTime = new Date(Date.now());
-      // console.log(currentTime);
-
-      // for deployement
-      const dateLastPlayed = new Date(new Date(lastPlayed).setHours(0, 0, 0, 0));
-      // console.log(`Today's date: ${todaysDate}`);
-      // console.log(`Date last played: ${dateLastPlayed}`);
-      // console.log(todaysDate - dateLastPlayed);
+      // TODO: consider refactoring... store solution in localStorage and check whether today's solution is the same as localStorageSolution... would be cleaner
+      const todaysDate = new Date(new Date().setHours(0, 0, 0, 0));
+      // const lastPlayed = gameState.lastPlayed;
+      const dateLastPlayed = new Date(new Date(gameState.lastPlayed).setHours(0, 0, 0, 0));
 
       if (todaysDate > dateLastPlayed) {
-        // for testing:
-        // if (currentTime > testDateCheck) {
-        // console.log("New sqwordle available. Deleting previous game state.");
+        // TODO: refactor to not remove the state but to reset the state... do this once this version is deployed without issue
+        resetGameState();
         localStorage.removeItem(LOCAL_STORAGE_GAMESTATE);
       } else {
-        // console.log("Loading user's game state for current game.");
-        // render all components of the game properly: feedback, filtered pokedex, difficulty settings, win/lose state, gameOn
-        setIsPokemonTrainerMode(parsedGameState.pokemonTrainerMode);
-        setIsGymLeaderMode(parsedGameState.gymLeaderMode);
-        setIsEliteFourMode(parsedGameState.eliteFourMode);
-        setGuessFeedback(parsedGameState.guessFeedback);
-
-        let filteredPokedex = [...Pokedex];
-        for (const feedback of parsedGameState.guessFeedback) {
-          filteredPokedex = filterPokedex(feedback, filteredPokedex);
-        }
-        setPokedex(filteredPokedex);
-
-        setWin(parsedGameState.winStatus);
-        setLose(parsedGameState.loseStatus);
-        setSpriteUrl(parsedGameState.spriteUrl);
-        setGameOn(parsedGameState.gameOn);
+        console.log("restoring user state");
+        restoreUserState(gameState);
       }
-    } else {
-      // console.log("No previous game state.");
     }
-  }, [answer]);
+
+    // Check to see if badges are in user's localStorage... legacy users may not have badges.
+    // could consider removing gameModes and etc here
+    if (stats.badges === undefined) {
+      setStats({ ...stats, badges: badgesForLegacyUsers });
+    }
+    setGameLoading(false);
+  }, []);
 
   // STORE STATS TO LOCAL STORAGE
   useEffect(() => {
-    if (!stats) return;
-    // check for missing badges here
-    // console.log(stats);
-    // let newStats = { ...stats };
-    // if (stats.badges === undefined) {
-    //   console.log("no badges found");
-    //   newStats.badges = {
-    //     "Boulder Badge": false,
-    //     "Cascade Badge": false,
-    //     "Thunder Badge": false,
-    //     "Rainbow Badge": false,
-    //     "Soul Badge": false,
-    //     "Marsh Badge": false,
-    //     "Volcano Badge": false,
-    //     "Earth Badge": false,
-    //   };
-    // }
-    // localStorage.setItem(LOCAL_STORAGE_STATS, JSON.stringify(stats));
-    localStorage.setItem(LOCAL_STORAGE_STATS, JSON.stringify(stats));
+    saveStatsToLocalStorage(stats);
   }, [stats]);
 
   // FILTER INPUT SUGGESTIONS WHEN TYPING IN GUESS INPUT FIELD
   useEffect(() => {
     if (!guessInput) return;
-    const tempFilteredList = filterPokemonInput([...pokedex], guessInput);
-    setFilteredList(tempFilteredList);
+    const tempFilteredList = filterPokemonInput([...Pokedex], guessInput);
+    setFilteredInputList(tempFilteredList);
   }, [guessInput]);
 
   // SHOW OR HIDE FILTERED LIST
   useEffect(() => {
-    if (!filteredList) return;
+    if (!filteredInputList) return;
     if (suggestionClicked) return;
-    if (filteredList.length > 0) {
-      setShowFilteredList(true);
+    if (filteredInputList.length > 0) {
+      setShowFilteredInputList(true);
     } else {
-      setShowFilteredList(false);
+      setShowFilteredInputList(false);
     }
-  }, [filteredList]);
+  }, [filteredInputList]);
 
   // HIDE FILTERED LIST WHEN SUGGESTION CLICKED
   useEffect(() => {
     if (!suggestionClicked) return;
-    setShowFilteredList(false);
+    setShowFilteredInputList(false);
   }, [suggestionClicked]);
 
   // GENERATE FEEDBACK FOR A GUESS
@@ -324,7 +224,7 @@ function App() {
     if (!guessToCheck) return;
     clearErrorMessages();
 
-    const guessedPokemon = pokedex.filter((pokemon) => pokemon.name === guessToCheck)[0];
+    const guessedPokemon = Pokedex.filter((pokemon) => pokemon.name === guessToCheck)[0];
     if (!guessedPokemon) {
       setErrorMessage(t("inputErrorMessage"));
       setTimeout(() => {
@@ -348,14 +248,12 @@ function App() {
         gameOn: gameOn,
       })
     );
-    // console.log(feedback);
 
-    const tempPokedex = [...pokedex];
-    const filteredPokedex = filterPokedex(feedback[feedback.length - 1], tempPokedex);
+    const filteredData = filterPokedex(feedback[feedback.length - 1], Pokedex);
+    setFilteredPokedex(filteredData);
+    setFilteredInputList(filteredData);
 
-    setPokedex(filteredPokedex);
     window.scrollTo(0, 0); // for mobile users
-
     setGuessInput("");
   }, [guessToCheck]);
 
@@ -409,13 +307,12 @@ function App() {
         gameLoading={gameLoading}
         gameOn={gameOn}
         setGameOn={setGameOn}
-        pokedex={pokedex}
-        filteredList={filteredList}
-        showFilteredList={showFilteredList}
+        filteredPokedex={filteredPokedex}
+        filteredInputList={filteredInputList}
+        showFilteredInputList={showFilteredInputList}
         setSuggestionClicked={setSuggestionClicked}
         guessInput={guessInput}
         setGuessInput={setGuessInput}
-        answer={answer}
         setGuessToCheck={setGuessToCheck}
         guessFeedback={guessFeedback}
         win={win}
@@ -429,7 +326,6 @@ function App() {
         isEliteFourMode={isEliteFourMode}
       />
       <Footer setIsSourcesModalOpen={setIsSourcesModalOpen} />
-
       <InstructionsModal
         isOpen={isInfoModalOpen}
         handleClose={() => setIsInfoModalOpen(false)}
@@ -438,20 +334,16 @@ function App() {
         handleChangeLanguage={handleChangeLanguage}
         currentLanguageCode={currentLanguageCode}
       />
-      {stats && (
-        <StatsModal
-          isOpen={isStatsModalOpen}
-          handleClose={() => setIsStatsModalOpen(false)}
-          guessFeedback={guessFeedback}
-          win={win}
-          lose={lose}
-          stats={stats}
-          nextWordleDate={nextWordleDate}
-          isGymLeaderMode={isGymLeaderMode}
-          isEliteFourMode={isEliteFourMode}
-          answerIndex={answerIndex}
-        />
-      )}
+      <StatsModal
+        isOpen={isStatsModalOpen}
+        handleClose={() => setIsStatsModalOpen(false)}
+        guessFeedback={guessFeedback}
+        win={win}
+        lose={lose}
+        stats={stats}
+        isGymLeaderMode={isGymLeaderMode}
+        isEliteFourMode={isEliteFourMode}
+      />
       <SettingsModal
         isOpen={isSettingsModalOpen}
         handleClose={() => setIsSettingsModalOpen(false)}

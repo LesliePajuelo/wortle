@@ -1,5 +1,6 @@
-import pokeball from "../img/pokeball.png";
 import { useTranslation } from "react-i18next";
+
+import pokeball from "../../img/pokeball-2.png";
 
 const RemainingGuesses = ({ num }) => {
   const { t } = useTranslation();

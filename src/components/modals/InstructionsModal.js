@@ -1,14 +1,14 @@
-import profOak from "../img/prof-oak-3.png";
-import gameExampleHorseaOmanyteEn from "../img/game-example-horsea-omanyte.png";
-import gameExampleHorseaOmanyteEs from "../img/game-example-horsea-omanyte-es.png";
-import gameExampleHorseaSeadraEn from "../img/game-example-horsea-seadra.png";
-import gameExampleHorseaSeadraEs from "../img/game-example-horsea-seadra-es.png";
-import gameExamplePokedexHorseaEn from "../img/game-example-pokedex-horsea.png";
-import gameExamplePokedexHorseaEs from "../img/game-example-pokedex-horsea-es.png";
+import { Trans, useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
-import { Trans, useTranslation } from "react-i18next";
+import profOak from "../../img/prof-oak-3.png";
+import gameExampleHorseaOmanyteEn from "../../img/game-example-horsea-omanyte.png";
+import gameExampleHorseaOmanyteEs from "../../img/game-example-horsea-omanyte-es.png";
+import gameExampleHorseaSeadraEn from "../../img/game-example-horsea-seadra.png";
+import gameExampleHorseaSeadraEs from "../../img/game-example-horsea-seadra-es.png";
+import gameExamplePokedexHorseaEn from "../../img/game-example-pokedex-horsea.png";
+import gameExamplePokedexHorseaEs from "../../img/game-example-pokedex-horsea-es.png";
 
 const InstructionsModal = (props) => {
   const {

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-const GymBadge = ({ badgeImg, badgeName, badgeLocalStorage, location, description, stats, comingSoon }) => {
+const GymBadge = ({ badgeImg, badgeName, badgeLocalStorage, location, description, stats }) => {
   const { t } = useTranslation();
 
   const [isOpen, setIsOpen] = useState(false);

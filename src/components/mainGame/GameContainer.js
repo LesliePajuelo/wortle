@@ -1,18 +1,18 @@
-import Pic from "../img/mystery.jpg";
-import pokeball from "../img/pokeball-2.png";
+import { useTranslation } from "react-i18next";
+import { answer } from "../../lib/generateAnswer";
 
+import Pic from "../../img/mystery.jpg";
+import pokeball from "../../img/pokeball-2.png";
+import pokedexTitle from "../../img/pokedex-title.png";
 import GuessHeaders from "./GuessHeaders";
-import ErrorMessage from "./ErrorMessage";
+import ErrorMessage from "../alerts/ErrorMessage";
 import Sprite from "./Sprite";
-import Navbar from "./Navbar";
-import Pokemon from "../components/Pokemon";
+import Navbar from "../Navbar";
+import Pokemon from "./Pokemon";
 import GuessFeedback from "./GuessFeedback";
 import RemainingGuesses from "./RemainingGuesses";
-import GameOver from "./GameOver";
-import pokedexTitle from "../img/pokedex-title.png";
-import AnswerAttack from "./AnswerAttack";
-
-import { useTranslation } from "react-i18next";
+import GameOver from "../alerts/GameOver";
+import AnswerAttack from "../alerts/AnswerAttack";
 
 function GameContainer(props) {
   const {
@@ -26,13 +26,12 @@ function GameContainer(props) {
     gameLoading,
     gameOn,
     setGameOn,
-    pokedex,
-    filteredList,
-    showFilteredList,
+    filteredPokedex,
+    filteredInputList,
+    showFilteredInputList,
     setSuggestionClicked,
     guessInput,
     setGuessInput,
-    answer,
     setGuessToCheck,
     guessFeedback,
     win,
@@ -110,17 +109,16 @@ function GameContainer(props) {
                     <img className="custom-pokedex-title-img" src={pokedexTitle} />
                   </div>
                   <div className="custom-sprite-gallery-images">
-                    {pokedex &&
-                      pokedex.map((pokemon, index) => {
-                        return (
-                          <Sprite
-                            key={index}
-                            pokemon={pokemon}
-                            setGuessInput={setGuessInput}
-                            setSuggestionClicked={setSuggestionClicked}
-                          />
-                        );
-                      })}
+                    {filteredPokedex.map((pokemon, index) => {
+                      return (
+                        <Sprite
+                          key={index}
+                          pokemon={pokemon}
+                          setGuessInput={setGuessInput}
+                          setSuggestionClicked={setSuggestionClicked}
+                        />
+                      );
+                    })}
                   </div>
                 </div>
               ) : (
@@ -143,15 +141,14 @@ function GameContainer(props) {
                   {/* button */}
                   {gameOn && (
                     <div className="custom-input-container mb-1">
-                      {guessInput && guessInput.length > 0 && showFilteredList && (
+                      {guessInput && guessInput.length > 0 && showFilteredInputList && (
                         <div className="card custom-search-filter">
                           <div className="card-content pt-1 pb-1">
                             <div className="content" data-filter-list>
-                              {filteredList.map((pokeman, index) => {
+                              {filteredInputList.map((pokeman, index) => {
                                 return (
                                   <Pokemon
                                     key={index}
-                                    index={index}
                                     pokeman={pokeman}
                                     setGuessInput={setGuessInput}
                                     setSuggestionClicked={setSuggestionClicked}
@@ -192,7 +189,7 @@ function GameContainer(props) {
                     <AnswerAttack answerAttack={answerAttack} />
                   )}
                   {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
-                  {(win || lose) && <GameOver answer={answer} win={win} lose={lose} isAnimation={isAnimation} />}
+                  {(win || lose) && <GameOver win={win} lose={lose} isAnimation={isAnimation} />}
                 </div>
               </div>
             )}

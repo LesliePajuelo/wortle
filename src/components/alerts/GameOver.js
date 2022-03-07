@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
+import { answer } from "../../lib/generateAnswer";
 
-const GameOver = ({ answer, win, lose, isAnimation }) => {
+const GameOver = ({ win, lose, isAnimation }) => {
   const { t } = useTranslation();
 
   return (
