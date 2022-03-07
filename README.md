@@ -5,9 +5,7 @@ A daily Pokémon guessing game, inspired by the popular game [Wordle](https://ww
 
 <!-- ![smiley](https://user-images.githubusercontent.com/85373263/155868537-6cd25c35-3364-41fc-81d3-30384f2a3d3e.png) -->
 
-<kbd>
 <img src="https://user-images.githubusercontent.com/85373263/155868537-6cd25c35-3364-41fc-81d3-30384f2a3d3e.png" width="50%"/>
-</kbd>
 
 ### Features & Design
 
@@ -64,26 +62,16 @@ Build for production with `npm run build`. Deploy the `build` folder.
 
 # Screenshots
 
-<kbd>
-<img src="https://user-images.githubusercontent.com/85373263/155868537-6cd25c35-3364-41fc-81d3-30384f2a3d3e.png"/>
-</kbd>
+<img src="https://user-images.githubusercontent.com/85373263/155868537-6cd25c35-3364-41fc-81d3-30384f2a3d3e.png" width="50%"/>
 <br />
 <br />
-<kbd>
-<img src="https://user-images.githubusercontent.com/85373263/155868672-827a551b-dd62-404a-821f-2baf930ea1db.png"/>
-</kbd>
+<img src="https://user-images.githubusercontent.com/85373263/155868672-827a551b-dd62-404a-821f-2baf930ea1db.png" width="50%"/>
 <br />
 <br />
-<kbd>
-<img src="https://user-images.githubusercontent.com/85373263/155868697-e89d2bd6-1ad4-48fe-af62-b3d6e8740e7e.png"/>
-</kbd>
+<img src="https://user-images.githubusercontent.com/85373263/155868697-e89d2bd6-1ad4-48fe-af62-b3d6e8740e7e.png" width="50%"/>
 <br />
 <br />
-<kbd>
-<img src="https://user-images.githubusercontent.com/85373263/156083562-8ec68a38-daf6-467a-8fbe-b6f6ad2976e2.png"/>
-</kbd>
+<img src="https://user-images.githubusercontent.com/85373263/156083562-8ec68a38-daf6-467a-8fbe-b6f6ad2976e2.png" width="50%"/>
 <br />
 <br />
-<kbd>
-<img src="https://user-images.githubusercontent.com/85373263/155868979-ab65218f-3af7-4c7c-ada7-d80b57f30de2.png"/>
-</kbd>
+<img src="https://user-images.githubusercontent.com/85373263/155868979-ab65218f-3af7-4c7c-ada7-d80b57f30de2.png" width="50%"/>
