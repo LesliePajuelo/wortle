@@ -1,11 +1,9 @@
 # Sqwordle - Wordle for Pokémon!
 
-https://www.sqwordle.io/.
+https://www.sqwordle.io
 A daily Pokémon guessing game, inspired by the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html) by [Josh Wardle](https://twitter.com/powerlanguish).
 
-<!-- ![smiley](https://user-images.githubusercontent.com/85373263/155868537-6cd25c35-3364-41fc-81d3-30384f2a3d3e.png) -->
-
-<img src="https://user-images.githubusercontent.com/85373263/155868537-6cd25c35-3364-41fc-81d3-30384f2a3d3e.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/157137604-0b153d73-a46f-4a78-9d97-defc37c9ac2a.png" width="50%"/>
 
 ### Features & Design
 
@@ -62,7 +60,7 @@ Build for production with `npm run build`. Deploy the `build` folder.
 
 # Screenshots
 
-<img src="https://user-images.githubusercontent.com/85373263/155868537-6cd25c35-3364-41fc-81d3-30384f2a3d3e.png" width="50%"/>
+<!-- <img src="https://user-images.githubusercontent.com/85373263/155868537-6cd25c35-3364-41fc-81d3-30384f2a3d3e.png" width="50%"/>
 <br />
 <br />
 <img src="https://user-images.githubusercontent.com/85373263/155868672-827a551b-dd62-404a-821f-2baf930ea1db.png" width="50%"/>
@@ -74,4 +72,17 @@ Build for production with `npm run build`. Deploy the `build` folder.
 <img src="https://user-images.githubusercontent.com/85373263/156083562-8ec68a38-daf6-467a-8fbe-b6f6ad2976e2.png" width="50%"/>
 <br />
 <br />
-<img src="https://user-images.githubusercontent.com/85373263/155868979-ab65218f-3af7-4c7c-ada7-d80b57f30de2.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/155868979-ab65218f-3af7-4c7c-ada7-d80b57f30de2.png" width="50%"/> -->
+
+<img src="https://user-images.githubusercontent.com/85373263/157137601-9f6cc5ae-cb89-4c3c-8f78-005f08c92278.png" width="50%"/>
+<br />
+<img src="https://user-images.githubusercontent.com/85373263/157137603-38d0e91a-a2a5-4c9e-b92a-ab7d1ce7ae51.png" width="50%"/>
+<br />
+<br />
+<img src="https://user-images.githubusercontent.com/85373263/157137604-0b153d73-a46f-4a78-9d97-defc37c9ac2a.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/157137607-ac437498-22d3-47a5-a5f5-2a0830e7ea16.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/157137609-4d08735e-c67b-4a93-bf22-187080d0243b.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/157137611-97279782-74d7-4cc4-89d7-9ff9e60c4eae.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/157137612-5605e5e5-44ac-455a-8149-76c7b1a4310d.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/157137613-4c17ef64-67ec-4849-bc62-0ef33a3bed34.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/157137614-69d6c5ff-8c15-41b9-a06a-8186b3219857.png" width="50%"/>
