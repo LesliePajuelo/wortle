@@ -8,12 +8,12 @@ A daily Pokémon guessing game, inspired by the popular game [Wordle](https://ww
 ### Features & Design
 
 - React Framework for frontend build.
-- Bulma.io CSS framework + custom CSS
-- Responsive design
-- [react-countdown](https://www.npmjs.com/package/react-countdown) for countdown clock
+- User statistics, badge achievements, and daily game state persist in local storage.
+- Bulma.io CSS framework + custom CSS (responsive design).
 - [PokéApi](https://pokeapi.co/) for Pokémon data
+- [react-i18next](https://react.i18next.com/) internationalization framework used to manage multiple language translations.
 
-  <br />
+#### Gameplay
 
 - Guess the mystery Pokémon in 6 tries.
 - Each guess must be a valid Gen 1 Pokémon.
@@ -26,7 +26,9 @@ A daily Pokémon guessing game, inspired by the popular game [Wordle](https://ww
 
 ### TODOS
 
-- [ ] make default difficulty mode harder. Consider filtering attacks unique to one Pokémon and/or only attacking on certain guesses.
+- [x] make default difficulty mode harder. Consider filtering attacks unique to one Pokémon and/or only attacking on certain guesses.
+- [x] refactor code for react-18next and add Spanish.
+- [ ] clean up mobile response issues for Spanish (share button too large on spanish mobile).
 - [ ] error handling for case where user inputs the same guess twice.
 - [ ] implement better user experience for input field focus on mobile.
 
@@ -54,35 +56,26 @@ Start with react-app by running `npm run start`
 
 # Deployment
 
-Currently deployed to https://www.sqwordle.io/
+Currently deployed to https://www.sqwordle.io
 
 Build for production with `npm run build`. Deploy the `build` folder.
 
 # Screenshots
 
-<!-- <img src="https://user-images.githubusercontent.com/85373263/155868537-6cd25c35-3364-41fc-81d3-30384f2a3d3e.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/157137613-4c17ef64-67ec-4849-bc62-0ef33a3bed34.png" width="40%"/>
 <br />
+<img src="https://user-images.githubusercontent.com/85373263/157137612-5605e5e5-44ac-455a-8149-76c7b1a4310d.png" width="40%"/>
 <br />
-<img src="https://user-images.githubusercontent.com/85373263/155868672-827a551b-dd62-404a-821f-2baf930ea1db.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/157137614-69d6c5ff-8c15-41b9-a06a-8186b3219857.png" width="40%"/>
 <br />
+<img src="https://user-images.githubusercontent.com/85373263/157137603-38d0e91a-a2a5-4c9e-b92a-ab7d1ce7ae51.png" width="40%"/>
 <br />
-<img src="https://user-images.githubusercontent.com/85373263/155868697-e89d2bd6-1ad4-48fe-af62-b3d6e8740e7e.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/157137604-0b153d73-a46f-4a78-9d97-defc37c9ac2a.png" width="40%"/>
 <br />
+<img src="https://user-images.githubusercontent.com/85373263/157137607-ac437498-22d3-47a5-a5f5-2a0830e7ea16.png" width="40%"/>
 <br />
-<img src="https://user-images.githubusercontent.com/85373263/156083562-8ec68a38-daf6-467a-8fbe-b6f6ad2976e2.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/157137609-4d08735e-c67b-4a93-bf22-187080d0243b.png" width="40%"/>
 <br />
+<img src="https://user-images.githubusercontent.com/85373263/157137611-97279782-74d7-4cc4-89d7-9ff9e60c4eae.png" width="40%"/>
 <br />
-<img src="https://user-images.githubusercontent.com/85373263/155868979-ab65218f-3af7-4c7c-ada7-d80b57f30de2.png" width="50%"/> -->
-
-<img src="https://user-images.githubusercontent.com/85373263/157137601-9f6cc5ae-cb89-4c3c-8f78-005f08c92278.png" width="50%"/>
-<br />
-<img src="https://user-images.githubusercontent.com/85373263/157137603-38d0e91a-a2a5-4c9e-b92a-ab7d1ce7ae51.png" width="50%"/>
-<br />
-<br />
-<img src="https://user-images.githubusercontent.com/85373263/157137604-0b153d73-a46f-4a78-9d97-defc37c9ac2a.png" width="50%"/>
-<img src="https://user-images.githubusercontent.com/85373263/157137607-ac437498-22d3-47a5-a5f5-2a0830e7ea16.png" width="50%"/>
-<img src="https://user-images.githubusercontent.com/85373263/157137609-4d08735e-c67b-4a93-bf22-187080d0243b.png" width="50%"/>
-<img src="https://user-images.githubusercontent.com/85373263/157137611-97279782-74d7-4cc4-89d7-9ff9e60c4eae.png" width="50%"/>
-<img src="https://user-images.githubusercontent.com/85373263/157137612-5605e5e5-44ac-455a-8149-76c7b1a4310d.png" width="50%"/>
-<img src="https://user-images.githubusercontent.com/85373263/157137613-4c17ef64-67ec-4849-bc62-0ef33a3bed34.png" width="50%"/>
-<img src="https://user-images.githubusercontent.com/85373263/157137614-69d6c5ff-8c15-41b9-a06a-8186b3219857.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/85373263/157137601-9f6cc5ae-cb89-4c3c-8f78-005f08c92278.png" width="40%"/>
