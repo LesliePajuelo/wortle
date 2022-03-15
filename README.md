@@ -1,6 +1,6 @@
 # Sqwordle - Wordle for Pokémon!
 
-https://www.sqwordle.io
+https://www.sqwordle.io<br />
 A daily Pokémon guessing game, inspired by the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html) by [Josh Wardle](https://twitter.com/powerlanguish).
 
 <img src="https://user-images.githubusercontent.com/85373263/157137604-0b153d73-a46f-4a78-9d97-defc37c9ac2a.png" width="50%"/>
