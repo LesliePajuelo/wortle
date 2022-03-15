@@ -43,7 +43,7 @@ const SettingsModal = (props) => {
 
   return (
     <div className={`modal ${isOpen ? "is-active" : ""}`}>
-      <div className="modal-background"></div>
+      <div className="modal-background" onClick={handleClose}></div>
       <div className="modal-card">
         <header className="modal-card-head">
           <p className="modal-card-title">{t("settingsModal.header")}</p>
