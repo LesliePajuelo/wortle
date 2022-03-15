@@ -102,7 +102,7 @@
       "earthBadge": {
         "name": "Earth Badge",
         "gym": "Viridian City Gym",
-        "description": "Complete your Pokedex (coming soon) by catching all 151 Pokémon."
+        "description": "Complete your Pokedex by catching all 151 Pokémon."
       }
     },
     "guessDistribution": "Guess Distribution",
@@ -129,7 +129,7 @@
   },
   "modalFooter": {
     "newSqwordle": "New SQWORDLE available every day!",
-    "safariZone": "Or visit the <1>SAFARI ZONE</1> for unlimited practice."
+    "safariZone": "Visit <1>SAFARI ZONE</1> for unlimited practice."
   },
   "safariZone": {
     "welcome": "Welcome to the SAFARI ZONE! This is a place to play unlimited SQWORDLE. Safari Zone activity isn't captured in your SQWORDLE statistics.",

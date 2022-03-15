@@ -19,7 +19,17 @@ import { trainerQuotes, dailyGameUrl, safariZoneUrl } from "../../../constants/s
 import { index, tomorrow as nextWordleDate } from "../../../lib/generateAnswer";
 
 const StatsModal = (props) => {
-  const { isOpen, handleClose, guessFeedback, win, lose, stats, isGymLeaderMode, isEliteFourMode } = props;
+  const {
+    isOpen,
+    handleClose,
+    setIsStatsPokedexModalOpen,
+    guessFeedback,
+    win,
+    lose,
+    stats,
+    isGymLeaderMode,
+    isEliteFourMode,
+  } = props;
 
   const { t } = useTranslation();
 
@@ -38,6 +48,18 @@ const StatsModal = (props) => {
       </span>
     );
   };
+
+  // const renderer = ({ hours, minutes, seconds, completed }) => {
+  //   if (completed) {
+  //     return window.location.reload();
+  //   } else {
+  //     return (
+  //       <span>
+  //         {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
+  //       </span>
+  //     );
+  //   }
+  // };
 
   function handleCopyStats() {
     const stats = [...guessFeedback];
@@ -109,9 +131,9 @@ const StatsModal = (props) => {
 
   return (
     <div className={`modal ${isOpen ? "is-active" : ""}`}>
-      <div className="modal-background"></div>
+      <div className="modal-background" onClick={handleClose}></div>
       <div className="modal-card">
-        <header className="modal-card-head">
+        <header className="modal-card-head pt-3 pb-3">
           <p className="modal-card-title">{t("statsModal.header")}</p>
           <button className="delete" aria-label="close" onClick={handleClose}></button>
         </header>
@@ -225,6 +247,10 @@ const StatsModal = (props) => {
                   );
                 })}
             </div>
+
+            <button className="button custom-pokedex-open-btn" onClick={() => setIsStatsPokedexModalOpen(true)}>
+              pokédex
+            </button>
             {(win || lose) && (
               <div className="custom-share-div">
                 <div className="custom-countdown">
@@ -249,10 +275,10 @@ const StatsModal = (props) => {
           </div>
         </section>
         <footer className="modal-card-foot is-flex is-flex-direction-column custom-stats-footer">
-          <p className="has-text-weight-bold">{t("modalFooter.newSqwordle")}</p>
-          <p className="has-text-weight-bold pt-2 has-text-centered">
+          {/* <p className="has-text-weight-bold">{t("modalFooter.newSqwordle")}</p> */}
+          <p className="has-text-weight-bold has-text-centered">
             <Trans i18nKey="modalFooter.safariZone">
-              <span>Or visit the </span>
+              <span>Visit the </span>
               <a className="has-text-grey-dark is-underlined" href={safariZoneUrl}>
                 SAFARI ZONE
               </a>

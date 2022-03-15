@@ -102,7 +102,7 @@
       "earthBadge": {
         "name": "Medalla Tierra",
         "gym": "Gimnasio de Ciudad Verde",
-        "description": "Completa tu Pokédex (próximamente) capturando los 151 Pokémon."
+        "description": "Completa tu Pokédex capturando los 151 Pokémon."
       }
     },
     "guessDistribution": "Distribución de Intentos",
@@ -129,7 +129,7 @@
   },
   "modalFooter": {
     "newSqwordle": "¡Nuevo SQWORDLE disponible todos los días!",
-    "safariZone": "O visita la <1>ZONA SAFARI</1> para una práctica sin límites."
+    "safariZone": "Visita la <1>ZONA SAFARI</1> para una práctica sin límites."
   },
   "safariZone": {
     "welcome": "¡Bienvenido a la ZONA SAFARI! Este es un lugar donde puedes jugar SQWORDLE de manera ilimitada. Tu actividad en esta área no será guardada en tus estadísticas de SQWORDLE.",

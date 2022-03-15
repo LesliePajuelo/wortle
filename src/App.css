@@ -1,3 +1,5 @@
+/* Bulma.io CSS framework used for the majority of the CSS. !important rules are used to override bulma styling*/
+
 :root {
   --game-width: 600px;
 }
@@ -181,6 +183,10 @@ body {
   opacity: 0.1;
 }
 
+.custom-sprite-filtered:hover {
+  opacity: 0.2;
+}
+
 .custom-sprite-unfiltered {
   opacity: 0.7;
 }
@@ -246,7 +252,8 @@ body {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem !important;
+  font-size: 0.9rem;
 }
 
 .custom-quick-stats {
@@ -264,6 +271,7 @@ body {
 
 .custom-quick-stats div p:first-child {
   font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 0;
 }
 
@@ -332,8 +340,9 @@ body {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 0;
-  margin-top: 2rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem !important;
+  font-size: 0.9rem;
 }
 
 .custom-distribution-container {
@@ -342,6 +351,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  font-size: 0.9rem;
 }
 
 .custom-dist-guess-container {
@@ -367,7 +377,7 @@ body {
   align-items: center;
   margin: auto;
   justify-content: space-between;
-  margin-top: 3rem;
+  margin-top: 1em !important;
 }
 
 .custom-countdown {
@@ -375,18 +385,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  font-size: 1.5rem;
 }
 
 .custom-countdown p {
-  font-size: 1rem;
-  margin-bottom: 0.5em !important;
+  /* font-size: 1rem; */
+  font-size: 0.9rem;
+
+  margin-bottom: 0em !important;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .custom-share-div-border {
-  height: 64px;
+  height: 50px;
   border-right: 1px solid white;
 }
 
@@ -401,6 +414,7 @@ body {
   padding-right: 24px !important;
 
   text-align: center !important;
+  /* font-size: 0.9rem !important; */
 }
 
 .custom-flip-animation {
@@ -539,6 +553,90 @@ body {
   color: #ccc;
 }
 
+.custom-pokedex-open-btn {
+  background-color: #dc1613 !important;
+  color: white !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.75rem !important;
+  /* padding: 0 !import; */
+  font-size: 0.9rem !important;
+}
+
+.custom-pokedex-open-btn:hover {
+  background-color: hsl(1, 84%, 37%) !important;
+}
+
+.custom-pokedex-stats-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--game-width);
+  display: flex;
+  justify-content: center;
+  /* width: 200px; */
+  z-index: 100000;
+  margin: auto !important;
+}
+
+.custom-stats-pokedex-gallery {
+  display: inline-block;
+  --gallery-width: 50%;
+  position: absolute !important;
+  left: 40%;
+  transform: translateX(-40%);
+  top: 27.5%;
+  width: var(--gallery-width);
+  height: calc(var(--gallery-width) / 1.84);
+  border-radius: 0.8em;
+  /* background-color: #c0d9ad; */
+  /* border: 2px solid black; */
+  /* background-color: transparent; */
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.custom-stats-pokedex-gallery::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.custom-pokedex-stats-info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 22%;
+  bottom: 12%;
+  font-size: 0.8rem;
+  /* border: 1px solid black; */
+  --info-width: 30%;
+  width: var(--info-width);
+  height: calc(var(--info-width) / 2.5);
+}
+
+.custom-stats-pokedex-types {
+  display: flex;
+  gap: 0.5em;
+}
+
+.custom-stats-pokedex-counter {
+  position: absolute;
+  top: 23.5%;
+  left: 60%;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.custom-pokedex-close {
+  z-index: 1000000;
+}
+
 .custom-heart {
   position: relative;
   top: 0.25em;
@@ -588,14 +686,6 @@ body {
     display: none !important;
   }
 
-  /* .custom-squirtle-image-left {
-    margin-right: -10px;
-  }
-
-  .custom-squirtle-image-right {
-    margin-left: -10px;
-  } */
-
   .custom-card-size {
     width: 95vw;
   }
@@ -642,13 +732,27 @@ body {
   }
 
   .custom-stats-footer {
-    /* background-color: red !important; */
     font-size: 0.8rem;
-    padding-top: 0.25em !important;
-    padding-bottom: 0.25em !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
   }
 
   .custom-share-div {
     margin-top: 1em !important;
   }
+
+  .custom-pokedex-stats-div {
+    width: 115vw;
+  }
+
+  /* .custom-stats-pokedex-gallery {
+    display: inline-block;
+    --gallery-width: 50%;
+    width: var(--gallery-width);
+    height: calc(var(--gallery-width) / 1.88);
+  } */
+
+  /* .custom-stats-pokedex-gallery .image {
+    width: 48px !important;
+  } */
 }

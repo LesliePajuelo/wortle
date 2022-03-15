@@ -3,7 +3,7 @@ import pokeball from "../../img/logo.png";
 const DataSourcesModal = ({ isOpen, handleClose }) => {
   return (
     <div className={`modal ${isOpen ? "is-active" : ""}`}>
-      <div className="modal-background"></div>
+      <div className="modal-background" onClick={handleClose}></div>
       <div className="modal-card">
         <header className="modal-card-head">
           <p className="modal-card-title">Data Sources</p>
@@ -89,6 +89,27 @@ const DataSourcesModal = ({ isOpen, handleClose }) => {
                   Maria Thompson
                 </a>
                 <span> at KindPNG.</span>
+              </p>
+            </div>
+            <div className="custom-source-div">
+              <img className="custom-pokeball-bullet" src={pokeball} />
+              <p className="has-text-white is-size-7-mobile">
+                <span>Pokédex image from </span>
+                <a
+                  className="has-text-white is-underlined"
+                  href="https://www.deviantart.com/bendustkas"
+                  target="_blank"
+                >
+                  BendustKas
+                </a>
+                <span> at </span>
+                <a
+                  className="has-text-white is-underlined"
+                  href="https://www.deviantart.com/bendustkas/art/Pkmn-Pokedex-Blank-630947419"
+                  target="_blank"
+                >
+                  DeviantArt
+                </a>
               </p>
             </div>
           </div>

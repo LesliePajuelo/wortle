@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import PokedexModal from "./components/modals/PokedexModal";
 import "./App.css";
 import "bulma/css/bulma.css";
 import Pokedex from "./constants/pokedex.json";
@@ -39,6 +40,7 @@ function App() {
 
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false);
+  const [isStatsPokedexModalOpen, setIsStatsPokedexModalOpen] = useState(false);
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
   const [isSourcesModalOpen, setIsSourcesModalOpen] = useState(false);
 
@@ -133,7 +135,7 @@ function App() {
 
   function resetGameState() {
     // TODO: refactor
-    console.log("resetting game state");
+    console.log("New Sqwordle available. Resetting game state");
   }
 
   function restoreUserState(gameState) {
@@ -156,12 +158,12 @@ function App() {
   useEffect(async () => {
     // show instructions if no game state in local storage
     if (!loadGameStateFromLocalStorage()) {
-      console.log("No previous game state.");
+      console.log("No previous game state. Showing instructions modal");
       setTimeout(() => {
         setIsInfoModalOpen(true);
       }, INFO_MODAL_DELAY);
     } else {
-      console.log("previous game state found in local storage");
+      console.log("Previous game state found in local storage");
       const gameState = loadGameStateFromLocalStorage();
       setIsPokemonTrainerMode(gameState.pokemonTrainerMode);
       setIsGymLeaderMode(gameState.gymLeaderMode);
@@ -177,7 +179,7 @@ function App() {
         resetGameState();
         localStorage.removeItem(LOCAL_STORAGE_GAMESTATE);
       } else {
-        console.log("restoring user state");
+        console.log("Restoring user state");
         restoreUserState(gameState);
       }
     }
@@ -337,6 +339,7 @@ function App() {
       <StatsModal
         isOpen={isStatsModalOpen}
         handleClose={() => setIsStatsModalOpen(false)}
+        setIsStatsPokedexModalOpen={setIsStatsPokedexModalOpen}
         guessFeedback={guessFeedback}
         win={win}
         lose={lose}
@@ -356,6 +359,12 @@ function App() {
         guessFeedback={guessFeedback}
       />
       <DataSourcesModal isOpen={isSourcesModalOpen} handleClose={() => setIsSourcesModalOpen(false)} />
+      <PokedexModal
+        isOpen={isStatsPokedexModalOpen}
+        handleClose={() => setIsStatsPokedexModalOpen(false)}
+        filteredPokedex={filteredPokedex}
+        stats={stats}
+      />
     </>
   );
 }
