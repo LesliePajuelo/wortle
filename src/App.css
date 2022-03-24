@@ -653,6 +653,20 @@ body {
   border-bottom: 1px solid white;
 }
 
+.custom-bug-report {
+  position: relative;
+  width: 4rem;
+  top: 1rem;
+}
+
+.custom-submit-bug-btn {
+  background-color: #dc1613 !important;
+}
+
+.custom-cancel-bug-btn {
+  color: #dc1613 !important;
+}
+
 @media screen and (max-width: 500px) {
   .custom-type-text {
     text-transform: capitalize;

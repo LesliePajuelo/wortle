@@ -32,6 +32,7 @@ import {
   INFO_MODAL_DELAY,
   DAILY_SQWORDLE,
 } from "./constants/settings";
+import BugReportModal from "./components/modals/BugReportModal";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -43,6 +44,7 @@ function App() {
   const [isStatsPokedexModalOpen, setIsStatsPokedexModalOpen] = useState(false);
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
   const [isSourcesModalOpen, setIsSourcesModalOpen] = useState(false);
+  const [isBugReportModalOpen, setIsBugReportModalOpen] = useState(false);
 
   const [isPokemonTrainerMode, setIsPokemonTrainerMode] = useState(true);
   const [isGymLeaderMode, setIsGymLeaderMode] = useState(false);
@@ -179,7 +181,7 @@ function App() {
         resetGameState();
         localStorage.removeItem(LOCAL_STORAGE_GAMESTATE);
       } else {
-        console.log("Restoring user state");
+        // console.log("Restoring user state");
         restoreUserState(gameState);
       }
     }
@@ -327,7 +329,7 @@ function App() {
         isGymLeaderMode={isGymLeaderMode}
         isEliteFourMode={isEliteFourMode}
       />
-      <Footer setIsSourcesModalOpen={setIsSourcesModalOpen} />
+      <Footer setIsSourcesModalOpen={setIsSourcesModalOpen} setIsBugReportModalOpen={setIsBugReportModalOpen} />
       <InstructionsModal
         isOpen={isInfoModalOpen}
         handleClose={() => setIsInfoModalOpen(false)}
@@ -365,6 +367,7 @@ function App() {
         filteredPokedex={filteredPokedex}
         stats={stats}
       />
+      <BugReportModal isOpen={isBugReportModalOpen} handleClose={() => setIsBugReportModalOpen(false)} />
     </>
   );
 }
