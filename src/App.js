@@ -13,6 +13,7 @@ import InstructionsModal from "./components/modals/InstructionsModal";
 import StatsModal from "./components/modals/statsModal/StatsModal";
 import SettingsModal from "./components/modals/SettingsModal";
 import DataSourcesModal from "./components/modals/DataSourcesModal";
+import BugReportModal from "./components/modals/bugReportModal/BugReportModal";
 import { generateRandomAnswer, generateRandomAttacks } from "./lib/testFunctions/generateRandomAnswer"; // for testing
 import filterPokemonInput from "./lib/filterPokemonInput";
 import generateFeedback from "./lib/generateFeedback";
@@ -32,7 +33,7 @@ import {
   INFO_MODAL_DELAY,
   DAILY_SQWORDLE,
 } from "./constants/settings";
-import BugReportModal from "./components/modals/BugReportModal";
+import BugReportSuccessMessage from "./components/modals/bugReportModal/BugReportSuccessMessage";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -45,6 +46,7 @@ function App() {
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
   const [isSourcesModalOpen, setIsSourcesModalOpen] = useState(false);
   const [isBugReportModalOpen, setIsBugReportModalOpen] = useState(false);
+  const [isBugReportSuccess, setIsBugReportSuccess] = useState(false);
 
   const [isPokemonTrainerMode, setIsPokemonTrainerMode] = useState(true);
   const [isGymLeaderMode, setIsGymLeaderMode] = useState(false);
@@ -367,7 +369,13 @@ function App() {
         filteredPokedex={filteredPokedex}
         stats={stats}
       />
-      <BugReportModal isOpen={isBugReportModalOpen} handleClose={() => setIsBugReportModalOpen(false)} />
+      <BugReportModal
+        isOpen={isBugReportModalOpen}
+        handleClose={() => setIsBugReportModalOpen(false)}
+        setIsBugReportSuccess={setIsBugReportSuccess}
+      />
+      {isBugReportSuccess && <BugReportSuccessMessage handleClose={() => setIsBugReportSuccess(false)} />}
+      {/* {isBugReportSuccess && <h1>success!!!!!</h1>} */}
     </>
   );
 }
