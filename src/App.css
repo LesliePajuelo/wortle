@@ -329,11 +329,9 @@ body {
   width: 4em;
 }
 
-.custom-badge-info {
-  position: absolute !important;
-  width: 70%;
-  z-index: 1000;
-  /* top: 300px; */
+.custom-badge-content {
+  max-width: 80vw;
+  min-width: 300px;
 }
 
 .custom-distribution-title {
