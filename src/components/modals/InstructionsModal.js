@@ -25,7 +25,7 @@ const InstructionsModal = (props) => {
   return (
     <div className={`modal ${isOpen ? "is-active" : ""} custom-info-modal`}>
       <div className="modal-background" onClick={handleClose}></div>
-      <div className="modal-card">
+      <div className="modal-card custom-reveal-animation">
         <header className="modal-card-head custom-info-modal-header">
           <img className="custom-prof-oak" src={profOak} />
           <div>

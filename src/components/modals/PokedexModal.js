@@ -16,10 +16,10 @@ const PokedexModal = ({ isOpen, handleClose, filteredPokedex, stats }) => {
 
   return (
     <>
-      <div className={`modal ${isOpen ? "is-active" : ""}`}>
+      <div className={`modal custom-reveal-animation ${isOpen ? "is-active" : ""}`}>
         <div className="modal-background" onClick={handleClose}></div>
 
-        <div className="custom-pokedex-stats-div">
+        <div className="custom-pokedex-stats-div ">
           <img className="custom-pokedex-stats-img" src={pokedexImg} alt="" />
           <p className="custom-stats-pokedex-counter">{`${stats.pokemonCaught.length}`}/151</p>
           <div className="custom-stats-pokedex-gallery">

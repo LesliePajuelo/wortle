@@ -33,6 +33,21 @@ body {
   margin-left: -20px;
 }
 
+.custom-reveal-animation {
+  animation: info-reveal 100ms ease-in;
+}
+
+@keyframes info-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 .custom-navbar-icon {
   cursor: pointer;
   color: #ddd;
@@ -197,6 +212,7 @@ body {
 
 .custom-input-area {
   background-color: #ddd !important;
+  position: relative;
 }
 
 .custom-start-btn {
@@ -212,9 +228,9 @@ body {
   background-color: #dc1613 !important;
   color: white;
   position: absolute !important;
-  top: 20%;
+  top: 30%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -30%);
 }
 
 .custom-game-over {
@@ -235,17 +251,36 @@ body {
 }
 
 .custom-answer-attack {
+  position: absolute !important;
   background-color: hsl(0, 0%, 7%) !important;
   color: white;
-  position: absolute !important;
-  bottom: 50%;
+  top: 30%;
   left: 50%;
   width: 50% !important;
 
-  transform: translateX(-50%);
+  transform: translate(-50%, -30%);
   padding-right: 24px !important;
 
   text-align: center !important;
+  overflow: hidden;
+}
+
+.custom-answer-attack::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  width: 100%;
+  background-color: red !important;
+  animation: countdown 3s linear infinite;
+}
+
+@keyframes countdown {
+  100% {
+    width: 0;
+  }
 }
 
 .custom-statistics-title {

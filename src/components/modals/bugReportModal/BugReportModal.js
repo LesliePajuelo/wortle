@@ -77,7 +77,7 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
   return (
     <div className={`modal ${isOpen ? "is-active" : ""}`}>
       <div className="modal-background" onClick={handleClose}></div>
-      <div className="modal-card">
+      <div className="modal-card custom-reveal-animation">
         <header className="modal-card-head">
           <img className="pr-2" src={weedlePNG} />
           <p className="modal-card-title">Bug Report</p>

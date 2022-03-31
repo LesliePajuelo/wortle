@@ -132,7 +132,7 @@ const StatsModal = (props) => {
   return (
     <div className={`modal ${isOpen ? "is-active" : ""}`}>
       <div className="modal-background" onClick={handleClose}></div>
-      <div className="modal-card">
+      <div className="modal-card custom-reveal-animation">
         <header className="modal-card-head pt-3 pb-3">
           <p className="modal-card-title">{t("statsModal.header")}</p>
           <button className="delete" aria-label="close" onClick={handleClose}></button>

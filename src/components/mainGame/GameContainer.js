@@ -126,6 +126,7 @@ function GameContainer(props) {
                   <img src={Pic} alt="Placeholder image" />
                 </figure>
               )}
+              {(win || lose) && <GameOver win={win} lose={lose} isAnimation={isAnimation} />}
             </div>
             {(gameOn || win || lose) && (
               <div className="card-content custom-input-area">
@@ -169,10 +170,12 @@ function GameContainer(props) {
                           onKeyPress={handleEnterKey}
                           onKeyDown={handleUpKey}
                           data-guess-input
+                          disabled={showAnswerAttack}
                         />
                         <button
                           className={`button is-flex is-justify-content-center custom-start-btn`}
                           onClick={handleGuess}
+                          disabled={showAnswerAttack}
                         >
                           <img className="custom-pokeball" src={pokeball} />
                         </button>
@@ -189,7 +192,7 @@ function GameContainer(props) {
                     <AnswerAttack answerAttack={answerAttack} />
                   )}
                   {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
-                  {(win || lose) && <GameOver win={win} lose={lose} isAnimation={isAnimation} />}
+                  {/* {(win || lose) && <GameOver win={win} lose={lose} isAnimation={isAnimation} />} */}
                 </div>
               </div>
             )}

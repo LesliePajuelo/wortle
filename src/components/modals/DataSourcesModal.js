@@ -4,7 +4,7 @@ const DataSourcesModal = ({ isOpen, handleClose }) => {
   return (
     <div className={`modal ${isOpen ? "is-active" : ""}`}>
       <div className="modal-background" onClick={handleClose}></div>
-      <div className="modal-card">
+      <div className="modal-card custom-reveal-animation">
         <header className="modal-card-head">
           <p className="modal-card-title">Data Sources</p>
           <button className="delete" aria-label="close" onClick={handleClose}></button>

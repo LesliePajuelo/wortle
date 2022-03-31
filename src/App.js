@@ -64,7 +64,7 @@ function App() {
   const [gameLoading, setGameLoading] = useState(true);
   const [gameOn, setGameOn] = useState(false);
 
-  const [guessInput, setGuessInput] = useState(null);
+  const [guessInput, setGuessInput] = useState("");
   const [suggestionClicked, setSuggestionClicked] = useState(false);
   const [guessToCheck, setGuessToCheck] = useState(null);
 
@@ -192,7 +192,7 @@ function App() {
 
   // FILTER INPUT SUGGESTIONS WHEN TYPING IN GUESS INPUT FIELD
   useEffect(() => {
-    if (!guessInput) return;
+    if (guessInput === "") return;
     const tempFilteredList = filterPokemonInput([...Pokedex], guessInput);
     setFilteredInputList(tempFilteredList);
   }, [guessInput]);
