@@ -375,7 +375,6 @@ function App() {
         setIsBugReportSuccess={setIsBugReportSuccess}
       />
       {isBugReportSuccess && <BugReportSuccessMessage handleClose={() => setIsBugReportSuccess(false)} />}
-      {/* {isBugReportSuccess && <h1>success!!!!!</h1>} */}
     </>
   );
 }

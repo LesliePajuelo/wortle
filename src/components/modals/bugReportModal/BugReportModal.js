@@ -4,6 +4,7 @@ import weedlePNG from "../../../img/weedle.png";
 const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
   const [emailInput, setEmailInput] = useState("");
   const [deviceInput, setDeviceInput] = useState("");
+  const [browserInput, setBrowserInput] = useState("");
   const [descriptionInput, setDescriptionInput] = useState("");
 
   const [isDeviceError, setIsDeviceError] = useState(false);
@@ -23,6 +24,10 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
     setDeviceInput(e.target.value);
   }
 
+  function handleBrowserInput(e) {
+    setBrowserInput(e.target.value);
+  }
+
   function handleDescriptionInput(e) {
     setDescriptionInput(e.target.value);
   }
@@ -30,6 +35,7 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
   function clearForm() {
     setEmailInput("");
     setDeviceInput("");
+    setBrowserInput("");
     setDescriptionInput("");
     clearErrors();
   }
@@ -54,6 +60,10 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
     // no email check needed
     let isValid = true;
     if (deviceInput === "") {
+      isValid = false;
+      setIsDeviceError(true);
+    }
+    if (browserInput === "") {
       isValid = false;
       setIsDeviceError(true);
     }
@@ -113,8 +123,26 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
               </div>
 
               <div className="field">
+                <label htmlFor="browser" className="label has-text-white">
+                  Browser
+                </label>
+                <div className="control">
+                  <input
+                    className="input"
+                    id="browser"
+                    type="text"
+                    name="browser"
+                    placeholder="e.g., Safari, Chrome, etc..."
+                    value={browserInput}
+                    onChange={handleBrowserInput}
+                  />
+                </div>
+                {isDeviceError && <p className="help is-danger">Please fill in this field</p>}
+              </div>
+
+              <div className="field">
                 <label htmlFor="description" className="label has-text-white">
-                  Decription of the issue
+                  Description of the issue
                 </label>
                 <div className="control">
                   <textarea
