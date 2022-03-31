@@ -300,6 +300,7 @@ function App() {
         filteredPokedex={filteredPokedex}
         filteredInputList={filteredInputList}
         showFilteredInputList={showFilteredInputList}
+        suggestionClicked={suggestionClicked}
         setSuggestionClicked={setSuggestionClicked}
         guessInput={guessInput}
         setGuessInput={setGuessInput}

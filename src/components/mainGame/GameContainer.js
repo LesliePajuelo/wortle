@@ -29,6 +29,7 @@ function GameContainer(props) {
     filteredPokedex,
     filteredInputList,
     showFilteredInputList,
+    suggestionClicked,
     setSuggestionClicked,
     guessInput,
     setGuessInput,
@@ -142,7 +143,7 @@ function GameContainer(props) {
                   {/* button */}
                   {gameOn && (
                     <div className="custom-input-container mb-1">
-                      {guessInput && guessInput.length > 0 && showFilteredInputList && (
+                      {guessInput && guessInput.length > 0 && showFilteredInputList && !suggestionClicked && (
                         <div className="card custom-search-filter">
                           <div className="card-content pt-1 pb-1">
                             <div className="content" data-filter-list>
