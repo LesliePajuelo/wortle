@@ -1,7 +1,7 @@
 import bugCatcherPNG from "../../../img/bug-catcher.png";
 import weedlePNG from "../../../img/weedle.png";
 
-const BugReportSuccessMessage = ({ handleClose }) => {
+const BugReportSuccessMessage = () => {
   return (
     <div className={`modal is-active`}>
       <div className="modal-background"></div>
@@ -9,7 +9,6 @@ const BugReportSuccessMessage = ({ handleClose }) => {
         <header className="modal-card-head">
           <img className="pr-2" src={weedlePNG} />
           <p className="modal-card-title">Bug Report</p>
-          {/* <button className="delete" aria-label="close" onClick={handleClose}></button> */}
         </header>
         <section className="modal-card-body has-background-dark has-text-white">
           <div className="content">
