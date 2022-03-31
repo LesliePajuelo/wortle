@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import PokedexModal from "./components/modals/PokedexModal";
@@ -21,10 +21,10 @@ import filterPokedex from "./lib/filterPokedex";
 import calculateStats, { loadStats, badgesForLegacyUsers } from "./lib/calculateStats";
 import { answer, index } from "./lib/generateAnswer";
 import {
-  LOCAL_STORAGE_GAMESTATE,
   loadLanguagePreferenceFromLocalStorage,
   saveStatsToLocalStorage,
   loadGameStateFromLocalStorage,
+  saveGameStateToLocalStorage,
 } from "./lib/localStorage";
 import {
   FLIP_DURATION_GAME_OVER,
@@ -38,8 +38,6 @@ import BugReportSuccessMessage from "./components/modals/bugReportModal/BugRepor
 function App() {
   const { t, i18n } = useTranslation();
 
-  const isPageRefreshed = useRef(true);
-
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false);
   const [isStatsPokedexModalOpen, setIsStatsPokedexModalOpen] = useState(false);
@@ -48,17 +46,27 @@ function App() {
   const [isBugReportModalOpen, setIsBugReportModalOpen] = useState(false);
   const [isBugReportSuccess, setIsBugReportSuccess] = useState(false);
 
-  const [isPokemonTrainerMode, setIsPokemonTrainerMode] = useState(true);
-  const [isGymLeaderMode, setIsGymLeaderMode] = useState(false);
-  const [isEliteFourMode, setIsEliteFourMode] = useState(false);
+  const [isPokemonTrainerMode, setIsPokemonTrainerMode] = useState(() => {
+    const gameState = loadGameStateFromLocalStorage();
+    return gameState ? gameState.pokemonTrainerMode : true;
+  });
+
+  const [isGymLeaderMode, setIsGymLeaderMode] = useState(() => {
+    const gameState = loadGameStateFromLocalStorage();
+    return gameState ? gameState.gymLeaderMode : false;
+  });
+
+  const [isEliteFourMode, setIsEliteFourMode] = useState(() => {
+    const gameState = loadGameStateFromLocalStorage();
+    return gameState ? gameState.eliteFourMode : false;
+  });
 
   const [gameLoading, setGameLoading] = useState(true);
   const [gameOn, setGameOn] = useState(false);
 
-  const [guessInput, setGuessInput] = useState("");
+  const [guessInput, setGuessInput] = useState(null);
   const [suggestionClicked, setSuggestionClicked] = useState(false);
   const [guessToCheck, setGuessToCheck] = useState(null);
-  const [guessFeedback, setGuessFeedback] = useState([]);
 
   const [filteredPokedex, setFilteredPokedex] = useState([...Pokedex]);
   const [filteredInputList, setFilteredInputList] = useState([...Pokedex]);
@@ -76,6 +84,29 @@ function App() {
 
   const [showLanguageSelector, setShowLanguageSelector] = useState(false);
   const [currentLanguageCode, setCurrentLanguageCode] = useState(loadLanguagePreferenceFromLocalStorage());
+
+  const [guessFeedback, setGuessFeedback] = useState(() => {
+    const gameState = loadGameStateFromLocalStorage();
+    if (gameState) {
+      if (gameState?.solutionIndex !== index) {
+        return []; // new game
+      }
+      // restore game state
+      let filteredPokemon = [...Pokedex];
+      for (const feedback of gameState.guessFeedback) {
+        filteredPokemon = filterPokedex(feedback, filteredPokemon);
+      }
+      setFilteredPokedex(filteredPokemon);
+      setFilteredInputList(filteredPokemon);
+
+      setWin(gameState.winStatus);
+      setLose(gameState.loseStatus);
+      setSpriteUrl(gameState.spriteUrl);
+      setGameOn(gameState.gameOn);
+      return gameState.guessFeedback;
+    }
+    return []; // first time playing
+  });
 
   function handleChangeLanguage(language) {
     i18n.changeLanguage(language);
@@ -117,6 +148,7 @@ function App() {
     }, FLIP_DURATION_GAME_OVER);
   }
 
+  // TODO - move attack down, show timer for dissappearing, render multiple attacks if user selects another pokemon before first attack has dissappeared
   function renderAttack() {
     let attack;
     if (DAILY_SQWORDLE) {
@@ -137,66 +169,23 @@ function App() {
     setErrorMessage(null);
   }
 
-  function resetGameState() {
-    // TODO: refactor
-    console.log("New Sqwordle available. Resetting game state");
-  }
-
-  function restoreUserState(gameState) {
-    setGuessFeedback(gameState.guessFeedback);
-
-    let filteredPokemon = [...Pokedex];
-    for (const feedback of gameState.guessFeedback) {
-      filteredPokemon = filterPokedex(feedback, filteredPokemon);
-    }
-    setFilteredPokedex(filteredPokemon);
-    setFilteredInputList(filteredPokemon);
-
-    setWin(gameState.winStatus);
-    setLose(gameState.loseStatus);
-    setSpriteUrl(gameState.spriteUrl);
-    setGameOn(gameState.gameOn);
-  }
-
   // LOAD PAGE
-  useEffect(async () => {
+  useEffect(() => {
     // show instructions if no game state in local storage
     if (!loadGameStateFromLocalStorage()) {
       console.log("No previous game state. Showing instructions modal");
       setTimeout(() => {
         setIsInfoModalOpen(true);
       }, INFO_MODAL_DELAY);
-    } else {
-      console.log("Previous game state found in local storage");
-      const gameState = loadGameStateFromLocalStorage();
-      setIsPokemonTrainerMode(gameState.pokemonTrainerMode);
-      setIsGymLeaderMode(gameState.gymLeaderMode);
-      setIsEliteFourMode(gameState.eliteFourMode);
-
-      // TODO: consider refactoring... store solution in localStorage and check whether today's solution is the same as localStorageSolution... would be cleaner
-      const todaysDate = new Date(new Date().setHours(0, 0, 0, 0));
-      // const lastPlayed = gameState.lastPlayed;
-      const dateLastPlayed = new Date(new Date(gameState.lastPlayed).setHours(0, 0, 0, 0));
-
-      if (todaysDate > dateLastPlayed) {
-        // TODO: refactor to not remove the state but to reset the state... do this once this version is deployed without issue
-        resetGameState();
-        localStorage.removeItem(LOCAL_STORAGE_GAMESTATE);
-      } else {
-        // console.log("Restoring user state");
-        restoreUserState(gameState);
-      }
     }
-
     // Check to see if badges are in user's localStorage... legacy users may not have badges.
-    // could consider removing gameModes and etc here
     if (stats.badges === undefined) {
       setStats({ ...stats, badges: badgesForLegacyUsers });
     }
     setGameLoading(false);
   }, []);
 
-  // STORE STATS TO LOCAL STORAGE
+  // STORE STATS TO LOCAL STORAGE (separate useEffect hook due to legacy badge issue)
   useEffect(() => {
     saveStatsToLocalStorage(stats);
   }, [stats]);
@@ -226,7 +215,7 @@ function App() {
   }, [suggestionClicked]);
 
   // GENERATE FEEDBACK FOR A GUESS
-  useEffect(async () => {
+  useEffect(() => {
     if (!guessToCheck) return;
     clearErrorMessages();
 
@@ -241,19 +230,6 @@ function App() {
 
     const feedback = generateFeedback(guessedPokemon, answer, guessFeedback);
     setGuessFeedback(feedback);
-    localStorage.setItem(
-      LOCAL_STORAGE_GAMESTATE,
-      JSON.stringify({
-        guessFeedback: feedback,
-        pokemonTrainerMode: isPokemonTrainerMode,
-        gymLeaderMode: isGymLeaderMode,
-        eliteFourMode: isEliteFourMode,
-        lastPlayed: Date.now(),
-        winStatus: win,
-        loseStatus: lose,
-        gameOn: gameOn,
-      })
-    );
 
     const filteredData = filterPokedex(feedback[feedback.length - 1], Pokedex);
     setFilteredPokedex(filteredData);
@@ -264,40 +240,48 @@ function App() {
   }, [guessToCheck]);
 
   // CHECK FOR WIN, LOSS, OR ATTACK
-  useEffect(async () => {
+  useEffect(() => {
     if (!guessToCheck) return;
 
     if (answer.name === guessToCheck) {
       renderGameWin();
+      // gameState saved in below useEffect hook
     } else if (guessFeedback.length === 6) {
       renderGameLoss();
+      // gameState saved in below useEffect hook
     } else if (guessFeedback.length > 0 && guessFeedback.length < 6) {
       renderAttack();
+      saveGameStateToLocalStorage({
+        guessFeedback: guessFeedback,
+        pokemonTrainerMode: isPokemonTrainerMode,
+        gymLeaderMode: isGymLeaderMode,
+        eliteFourMode: isEliteFourMode,
+        lastPlayed: Date.now(),
+        winStatus: win,
+        loseStatus: lose,
+        gameOn: gameOn,
+        spriteUrl: spriteUrl,
+        solutionIndex: index,
+      });
     }
   }, [guessFeedback]);
 
   // STORE GAMESTATE AFTER WIN OR LOSS
   useEffect(() => {
-    //try useRef guard clause here
-    if (!isPageRefreshed.current) {
-      localStorage.setItem(
-        LOCAL_STORAGE_GAMESTATE,
-        JSON.stringify({
-          guessFeedback: guessFeedback,
-          pokemonTrainerMode: isPokemonTrainerMode,
-          gymLeaderMode: isGymLeaderMode,
-          eliteFourMode: isEliteFourMode,
-          lastPlayed: Date.now(),
-          winStatus: win,
-          loseStatus: lose,
-          gameOn: gameOn,
-          spriteUrl: spriteUrl,
-        })
-      );
-    } else {
-      isPageRefreshed.current = false;
-    }
-  }, [win, lose]);
+    if (!guessToCheck) return;
+    saveGameStateToLocalStorage({
+      guessFeedback: guessFeedback,
+      pokemonTrainerMode: isPokemonTrainerMode,
+      gymLeaderMode: isGymLeaderMode,
+      eliteFourMode: isEliteFourMode,
+      lastPlayed: Date.now(),
+      winStatus: win,
+      loseStatus: lose,
+      gameOn: gameOn,
+      spriteUrl: spriteUrl,
+      solutionIndex: index,
+    });
+  }, [renderGameWin, renderGameLoss]);
 
   return (
     <>
@@ -374,7 +358,7 @@ function App() {
         handleClose={() => setIsBugReportModalOpen(false)}
         setIsBugReportSuccess={setIsBugReportSuccess}
       />
-      {isBugReportSuccess && <BugReportSuccessMessage handleClose={() => setIsBugReportSuccess(false)} />}
+      {isBugReportSuccess && <BugReportSuccessMessage />}
     </>
   );
 }

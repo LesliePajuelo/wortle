@@ -1,6 +1,6 @@
 const LOCAL_STORAGE_PREFIX = "SQWORDL";
-export const LOCAL_STORAGE_GAMESTATE = `${LOCAL_STORAGE_PREFIX}.gameState`;
-export const LOCAL_STORAGE_STATS = `${LOCAL_STORAGE_PREFIX}.stats`;
+const LOCAL_STORAGE_GAMESTATE = `${LOCAL_STORAGE_PREFIX}.gameState`;
+const LOCAL_STORAGE_STATS = `${LOCAL_STORAGE_PREFIX}.stats`;
 
 export function loadLanguagePreferenceFromLocalStorage() {
   return localStorage.getItem("i18nextLng") || "en";
@@ -20,5 +20,6 @@ export function loadGameStateFromLocalStorage() {
   return gameState ? JSON.parse(gameState) : null;
 }
 
-// saveGameStateToLocalStorage
-// removeGameState... should it reset instead?
+export function saveGameStateToLocalStorage(gameState) {
+  localStorage.setItem(LOCAL_STORAGE_GAMESTATE, JSON.stringify(gameState));
+}
