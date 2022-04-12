@@ -14,25 +14,18 @@ import StatsModal from "./components/modals/statsModal/StatsModal";
 import SettingsModal from "./components/modals/SettingsModal";
 import DataSourcesModal from "./components/modals/DataSourcesModal";
 import BugReportModal from "./components/modals/bugReportModal/BugReportModal";
-import { generateRandomAnswer, generateRandomAttacks } from "./lib/testFunctions/generateRandomAnswer"; // for testing
 import filterPokemonInput from "./lib/filterPokemonInput";
 import generateFeedback from "./lib/generateFeedback";
 import filterPokedex from "./lib/filterPokedex";
 import calculateStats, { loadStats, badgesForLegacyUsers } from "./lib/calculateStats";
-import { answer, index } from "./lib/generateAnswer";
+import { answer, index } from "./lib/generateDailyAnswer";
 import {
   loadLanguagePreferenceFromLocalStorage,
   saveStatsToLocalStorage,
   loadGameStateFromLocalStorage,
   saveGameStateToLocalStorage,
 } from "./lib/localStorage";
-import {
-  FLIP_DURATION_GAME_OVER,
-  STATS_MODAL_DELAY,
-  ATTACK_DELAY,
-  INFO_MODAL_DELAY,
-  DAILY_SQWORDLE,
-} from "./constants/settings";
+import { FLIP_DURATION_GAME_OVER, STATS_MODAL_DELAY, ATTACK_DELAY, INFO_MODAL_DELAY } from "./constants/settings";
 import BugReportSuccessMessage from "./components/modals/bugReportModal/BugReportSuccessMessage";
 
 function App() {
@@ -148,16 +141,8 @@ function App() {
     }, FLIP_DURATION_GAME_OVER);
   }
 
-  // TODO - move attack down, show timer for dissappearing, render multiple attacks if user selects another pokemon before first attack has dissappeared
   function renderAttack() {
-    let attack;
-    if (DAILY_SQWORDLE) {
-      attack = AnswerKey[index].randomAttacks[guessFeedback.length - 1];
-    } else {
-      // for safari zone and testing
-      attack = generateRandomAttacks(answer); // todo: filter unique moves
-    }
-
+    const attack = AnswerKey[index].randomAttacks[guessFeedback.length - 1];
     setAnswerAttack(attack);
     setShowAnswerAttack(true);
     setTimeout(() => {

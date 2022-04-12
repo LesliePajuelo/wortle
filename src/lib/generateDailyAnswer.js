@@ -2,7 +2,7 @@ import AnswerKey from "../constants/answerKey.json";
 import Pokedex from "../constants/pokedex.json";
 import { MILLISECONDS_TO_DAYS } from "../constants/settings";
 
-function generateAnswer() {
+function generateDailyAnswer() {
   const sqwordleStartDate = new Date(2022, 1, 21);
   const msOffset = Date.now() - sqwordleStartDate;
   const dayOffset = msOffset / MILLISECONDS_TO_DAYS;
@@ -13,4 +13,4 @@ function generateAnswer() {
   return { answer, index, tomorrow };
 }
 
-export const { answer, index, tomorrow } = generateAnswer();
+export const { answer, index, tomorrow } = generateDailyAnswer();

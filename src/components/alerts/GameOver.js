@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { answer } from "../../lib/generateAnswer";
+import { answer } from "../../lib/generateDailyAnswer";
 
 const GameOver = ({ win, lose, isAnimation }) => {
   const { t } = useTranslation();

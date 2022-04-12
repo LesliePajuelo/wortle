@@ -16,7 +16,7 @@ import earthBadge from "../../../img/badges/earth-badge-210.png";
 import GuessDistribution from "./GuessDistribution";
 import GymBadge from "./GymBadge";
 import { trainerQuotes, dailyGameUrl, safariZoneUrl } from "../../../constants/strings";
-import { index, tomorrow as nextWordleDate } from "../../../lib/generateAnswer";
+import { index, tomorrow as nextWordleDate } from "../../../lib/generateDailyAnswer";
 
 const StatsModal = (props) => {
   const {

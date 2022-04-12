@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { answer } from "../../lib/generateAnswer";
 
 import Pic from "../../img/mystery.jpg";
 import pokeball from "../../img/pokeball-2.png";
