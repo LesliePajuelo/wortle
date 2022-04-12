@@ -69,7 +69,7 @@ export const trainerQuotes = [
     quote: "#POKEMON take on the appearance of their trainers. Your #POKEMON must be tough, then!",
     trainer: "Channeler",
   },
-  { quote: "ou and I, our #POKEMON shall fight!", trainer: "Channeler" },
+  { quote: "You and I, our #POKEMON shall fight!", trainer: "Channeler" },
   { quote: "I just became a trainer! But, I think I can win!", trainer: "Youngster" },
   { quote: "Fwahaha! I have never lost!", trainer: "Gambler" },
   { quote: "Be patient! Fishing is a waiting game!", trainer: "Fisherman" },
