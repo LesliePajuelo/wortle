@@ -28,8 +28,9 @@ A daily Pokémon guessing game, inspired by the popular game [Wordle](https://ww
 
 - [x] make default difficulty mode harder. Consider filtering attacks unique to one Pokémon and/or only attacking on certain guesses.
 - [x] refactor code for react-18next and add Spanish.
-- [ ] clean up mobile response issues for Spanish (share button too large on spanish mobile).
-- [ ] error handling for case where user inputs the same guess twice.
+- [x] clean up mobile response issues for Spanish (share button too large on spanish mobile).
+- [ ] refactor some useEffects into functions
+- [ ] add error message for case where user inputs the same guess twice in a row.
 - [ ] implement better user experience for input field focus on mobile.
 
 # Setup
