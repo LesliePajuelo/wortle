@@ -2,8 +2,9 @@ import { Trans, useTranslation } from "react-i18next";
 
 import coffee from "../img/hot-beverage_2615.png";
 import heart from "../img/yellow-heart_1f49b.png";
+import btcImg from "../img/btc.png";
 
-const Footer = ({ setIsSourcesModalOpen, setIsBugReportModalOpen }) => {
+const Footer = ({ setIsSourcesModalOpen, setIsBugReportModalOpen, setIsDonateModalOpen }) => {
   const { t } = useTranslation();
   return (
     <div className="is-flex is-flex-direction-column is-align-items-center is-justify-content-center mt-3 pb-5">
@@ -30,7 +31,11 @@ const Footer = ({ setIsSourcesModalOpen, setIsBugReportModalOpen }) => {
         <img className="custom-heart" src={heart} />
         <span>SQWORDLE? - </span>
         <a className="has-text-white custom-buy-coffee-link" href="https://ko-fi.com/nmfretz" target="_blank">
-          {t("footer.ko-fi")} <img className="custom-coffee is-underlined" src={coffee}></img>!
+          {t("footer.ko-fi")} <img className="custom-coffee is-underlined" src={coffee}></img>
+        </a>
+        <span> or </span>
+        <a className="has-text-white custom-buy-coffee-link" onClick={() => setIsDonateModalOpen(true)}>
+          donate <img className="custom-btc-img-footer" src={btcImg} />
         </a>
       </p>
     </div>

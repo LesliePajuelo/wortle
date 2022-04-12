@@ -100,6 +100,23 @@ body {
   width: 5%;
 }
 
+.custom-btc-img {
+  width: 50px;
+  padding-right: 0.5em;
+}
+
+.custom-btc-img-footer {
+  width: 14px;
+}
+
+.custom-text-orange {
+  color: hsl(32, 93%, 53%);
+}
+
+.custom-btc-qr {
+  width: 150px;
+}
+
 .custom-info-modal {
   z-index: 1000;
 }

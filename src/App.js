@@ -27,6 +27,7 @@ import {
 } from "./lib/localStorage";
 import { FLIP_DURATION_GAME_OVER, STATS_MODAL_DELAY, ATTACK_DELAY, INFO_MODAL_DELAY } from "./constants/settings";
 import BugReportSuccessMessage from "./components/modals/bugReportModal/BugReportSuccessMessage";
+import DonateModal from "./components/modals/DonateModal";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -38,6 +39,7 @@ function App() {
   const [isSourcesModalOpen, setIsSourcesModalOpen] = useState(false);
   const [isBugReportModalOpen, setIsBugReportModalOpen] = useState(false);
   const [isBugReportSuccess, setIsBugReportSuccess] = useState(false);
+  const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
 
   const [isPokemonTrainerMode, setIsPokemonTrainerMode] = useState(() => {
     const gameState = loadGameStateFromLocalStorage();
@@ -301,7 +303,11 @@ function App() {
         isGymLeaderMode={isGymLeaderMode}
         isEliteFourMode={isEliteFourMode}
       />
-      <Footer setIsSourcesModalOpen={setIsSourcesModalOpen} setIsBugReportModalOpen={setIsBugReportModalOpen} />
+      <Footer
+        setIsSourcesModalOpen={setIsSourcesModalOpen}
+        setIsBugReportModalOpen={setIsBugReportModalOpen}
+        setIsDonateModalOpen={setIsDonateModalOpen}
+      />
       <InstructionsModal
         isOpen={isInfoModalOpen}
         handleClose={() => setIsInfoModalOpen(false)}
@@ -332,19 +338,20 @@ function App() {
         setIsEliteFourMode={setIsEliteFourMode}
         guessFeedback={guessFeedback}
       />
-      <DataSourcesModal isOpen={isSourcesModalOpen} handleClose={() => setIsSourcesModalOpen(false)} />
       <PokedexModal
         isOpen={isStatsPokedexModalOpen}
         handleClose={() => setIsStatsPokedexModalOpen(false)}
         filteredPokedex={filteredPokedex}
         stats={stats}
       />
+      <DataSourcesModal isOpen={isSourcesModalOpen} handleClose={() => setIsSourcesModalOpen(false)} />
       <BugReportModal
         isOpen={isBugReportModalOpen}
         handleClose={() => setIsBugReportModalOpen(false)}
         setIsBugReportSuccess={setIsBugReportSuccess}
       />
       {isBugReportSuccess && <BugReportSuccessMessage />}
+      <DonateModal isOpen={isDonateModalOpen} handleClose={() => setIsDonateModalOpen(false)} />
     </>
   );
 }
