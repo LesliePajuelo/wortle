@@ -5,6 +5,8 @@ const pokedex = Pokedex;
 const POKEMON_ID_START = 1;
 const POKEMON_ID_END = 151;
 const UNIQUE_MOVE_CUTOFF = 1;
+const MIN_POKEMON_REPEAT = 20;
+const NUM_ANSWERS = 1000;
 
 // MAIN FUNCTION
 (async () => {
@@ -48,11 +50,23 @@ const UNIQUE_MOVE_CUTOFF = 1;
 
   // GENERATE ANSWER KEY
   let answerKey = [];
-  for (let i = 0; i < 1000; i++) {
-    const randomNumber = Math.floor(Math.random() * (POKEMON_ID_END - POKEMON_ID_START) + POKEMON_ID_START);
-    const pokemon = pokedex[randomNumber];
-    const answer = pokemon.name;
-    console.log(`answer ${i}: ${answer}`);
+  for (let i = 0; i < NUM_ANSWERS; i++) {
+    // while loop that only breaks out if answer is not in most recent 20 answerKey array...
+    let includeAnswer = false;
+    let randomNumber, pokemon, answer;
+    while (!includeAnswer) {
+      randomNumber = Math.floor(Math.random() * (POKEMON_ID_END - POKEMON_ID_START) + POKEMON_ID_START);
+      pokemon = pokedex[randomNumber];
+      answer = pokemon.name;
+      console.log(`answer ${i}: ${answer}`);
+
+      const prevTwentyAnswers = answerKey.map((item) => item.answer).slice(-20);
+      if (!prevTwentyAnswers.includes(answer)) {
+        includeAnswer = true;
+      } else {
+        console.log("pokemon within last 20 answers");
+      }
+    }
 
     // generate 5 attacks per answer
     const numMoves = pokemon.moves.length;
