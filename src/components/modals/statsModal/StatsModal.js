@@ -49,18 +49,6 @@ const StatsModal = (props) => {
     );
   };
 
-  // const renderer = ({ hours, minutes, seconds, completed }) => {
-  //   if (completed) {
-  //     return window.location.reload();
-  //   } else {
-  //     return (
-  //       <span>
-  //         {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
-  //       </span>
-  //     );
-  //   }
-  // };
-
   function handleCopyStats() {
     const stats = [...guessFeedback];
     let statArray = [];
@@ -158,77 +146,73 @@ const StatsModal = (props) => {
                 <p className="">{t("statsModal.maxStreak")}</p>
               </div>
             </div>
+
             <p className="custom-distribution-title">{t("statsModal.gymBadges.header")}</p>
             <div className="custom-gym-badge-div">
-              {/* short-circuit logic here to account for early users that may not have badges in localStorage yet. Need to wait for useEffect[] to add badges before rendering the below */}
-              {stats.badges && (
-                <>
-                  <GymBadge
-                    badgeImg={boulderBadge}
-                    badgeName={t("statsModal.gymBadges.boulderBadge.name")}
-                    badgeLocalStorage={"Boulder Badge"}
-                    location={t("statsModal.gymBadges.boulderBadge.gym")}
-                    description={t("statsModal.gymBadges.boulderBadge.description")}
-                    stats={stats}
-                  />
-                  <GymBadge
-                    badgeImg={cascadeBadge}
-                    badgeName={t("statsModal.gymBadges.cascadeBadge.name")}
-                    badgeLocalStorage={"Cascade Badge"}
-                    location={t("statsModal.gymBadges.cascadeBadge.gym")}
-                    description={t("statsModal.gymBadges.cascadeBadge.description")}
-                    stats={stats}
-                  />
-                  <GymBadge
-                    badgeImg={thunderBadge}
-                    badgeName={t("statsModal.gymBadges.thunderBadge.name")}
-                    badgeLocalStorage={"Thunder Badge"}
-                    location={t("statsModal.gymBadges.thunderBadge.gym")}
-                    description={t("statsModal.gymBadges.thunderBadge.description")}
-                    stats={stats}
-                  />
-                  <GymBadge
-                    badgeImg={rainbowBadge}
-                    badgeName={t("statsModal.gymBadges.rainbowBadge.name")}
-                    badgeLocalStorage={"Rainbow Badge"}
-                    location={t("statsModal.gymBadges.rainbowBadge.gym")}
-                    description={t("statsModal.gymBadges.rainbowBadge.description")}
-                    stats={stats}
-                  />
-                  <GymBadge
-                    badgeImg={soulBadge}
-                    badgeName={t("statsModal.gymBadges.soulBadge.name")}
-                    badgeLocalStorage={"Soul Badge"}
-                    location={t("statsModal.gymBadges.soulBadge.gym")}
-                    description={t("statsModal.gymBadges.soulBadge.description")}
-                    stats={stats}
-                  />
-                  <GymBadge
-                    badgeImg={marshBadge}
-                    badgeName={t("statsModal.gymBadges.marshBadge.name")}
-                    badgeLocalStorage={"Marsh Badge"}
-                    location={t("statsModal.gymBadges.marshBadge.gym")}
-                    description={t("statsModal.gymBadges.marshBadge.description")}
-                    stats={stats}
-                  />
-                  <GymBadge
-                    badgeImg={volcanoBadge}
-                    badgeName={t("statsModal.gymBadges.volcanoBadge.name")}
-                    badgeLocalStorage={"Volcano Badge"}
-                    location={t("statsModal.gymBadges.volcanoBadge.gym")}
-                    description={t("statsModal.gymBadges.volcanoBadge.description")}
-                    stats={stats}
-                  />
-                  <GymBadge
-                    badgeImg={earthBadge}
-                    badgeName={t("statsModal.gymBadges.earthBadge.name")}
-                    badgeLocalStorage={"Earth Badge"}
-                    location={t("statsModal.gymBadges.earthBadge.gym")}
-                    description={t("statsModal.gymBadges.earthBadge.description")}
-                    stats={stats}
-                  />
-                </>
-              )}
+              <GymBadge
+                badgeImg={boulderBadge}
+                badgeName={t("statsModal.gymBadges.boulderBadge.name")}
+                badgeLocalStorage={"Boulder Badge"}
+                location={t("statsModal.gymBadges.boulderBadge.gym")}
+                description={t("statsModal.gymBadges.boulderBadge.description")}
+                stats={stats}
+              />
+              <GymBadge
+                badgeImg={cascadeBadge}
+                badgeName={t("statsModal.gymBadges.cascadeBadge.name")}
+                badgeLocalStorage={"Cascade Badge"}
+                location={t("statsModal.gymBadges.cascadeBadge.gym")}
+                description={t("statsModal.gymBadges.cascadeBadge.description")}
+                stats={stats}
+              />
+              <GymBadge
+                badgeImg={thunderBadge}
+                badgeName={t("statsModal.gymBadges.thunderBadge.name")}
+                badgeLocalStorage={"Thunder Badge"}
+                location={t("statsModal.gymBadges.thunderBadge.gym")}
+                description={t("statsModal.gymBadges.thunderBadge.description")}
+                stats={stats}
+              />
+              <GymBadge
+                badgeImg={rainbowBadge}
+                badgeName={t("statsModal.gymBadges.rainbowBadge.name")}
+                badgeLocalStorage={"Rainbow Badge"}
+                location={t("statsModal.gymBadges.rainbowBadge.gym")}
+                description={t("statsModal.gymBadges.rainbowBadge.description")}
+                stats={stats}
+              />
+              <GymBadge
+                badgeImg={soulBadge}
+                badgeName={t("statsModal.gymBadges.soulBadge.name")}
+                badgeLocalStorage={"Soul Badge"}
+                location={t("statsModal.gymBadges.soulBadge.gym")}
+                description={t("statsModal.gymBadges.soulBadge.description")}
+                stats={stats}
+              />
+              <GymBadge
+                badgeImg={marshBadge}
+                badgeName={t("statsModal.gymBadges.marshBadge.name")}
+                badgeLocalStorage={"Marsh Badge"}
+                location={t("statsModal.gymBadges.marshBadge.gym")}
+                description={t("statsModal.gymBadges.marshBadge.description")}
+                stats={stats}
+              />
+              <GymBadge
+                badgeImg={volcanoBadge}
+                badgeName={t("statsModal.gymBadges.volcanoBadge.name")}
+                badgeLocalStorage={"Volcano Badge"}
+                location={t("statsModal.gymBadges.volcanoBadge.gym")}
+                description={t("statsModal.gymBadges.volcanoBadge.description")}
+                stats={stats}
+              />
+              <GymBadge
+                badgeImg={earthBadge}
+                badgeName={t("statsModal.gymBadges.earthBadge.name")}
+                badgeLocalStorage={"Earth Badge"}
+                location={t("statsModal.gymBadges.earthBadge.gym")}
+                description={t("statsModal.gymBadges.earthBadge.description")}
+                stats={stats}
+              />
             </div>
 
             <p className="custom-distribution-title">{t("statsModal.guessDistribution")}</p>
@@ -247,7 +231,8 @@ const StatsModal = (props) => {
                   );
                 })}
             </div>
-
+            <p>my stats don't look right</p>
+            <p>Create an account / Log in... show if not logged in</p>
             <button className="button custom-pokedex-open-btn" onClick={() => setIsStatsPokedexModalOpen(true)}>
               pokédex
             </button>

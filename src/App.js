@@ -17,7 +17,7 @@ import BugReportModal from "./components/modals/bugReportModal/BugReportModal";
 import filterPokemonInput from "./lib/filterPokemonInput";
 import generateFeedback from "./lib/generateFeedback";
 import filterPokedex from "./lib/filterPokedex";
-import calculateStats, { loadStats, badgesForLegacyUsers } from "./lib/calculateStats";
+import calculateStats, { loadStats } from "./lib/calculateStats";
 import { answer, index } from "./lib/generateDailyAnswer";
 import {
   loadLanguagePreferenceFromLocalStorage,
@@ -158,21 +158,18 @@ function App() {
 
   // LOAD PAGE
   useEffect(() => {
-    // show instructions if no game state in local storage
+    // show instructions if no previous game state for user
     if (!loadGameStateFromLocalStorage()) {
       console.log("No previous game state. Showing instructions modal");
       setTimeout(() => {
         setIsInfoModalOpen(true);
       }, INFO_MODAL_DELAY);
     }
-    // Check to see if badges are in user's localStorage... legacy users may not have badges.
-    if (stats.badges === undefined) {
-      setStats({ ...stats, badges: badgesForLegacyUsers });
-    }
     setGameLoading(false);
   }, []);
 
-  // STORE STATS TO LOCAL STORAGE (separate useEffect hook due to legacy badge issue)
+  // STORE STATS WHEN UPDATED
+  // TODO - add firestore logic
   useEffect(() => {
     saveStatsToLocalStorage(stats);
   }, [stats]);

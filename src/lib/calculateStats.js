@@ -21,17 +21,6 @@ export const newUserStats = {
   },
 };
 
-export const badgesForLegacyUsers = {
-  "Boulder Badge": false,
-  "Cascade Badge": false,
-  "Thunder Badge": false,
-  "Rainbow Badge": false,
-  "Soul Badge": false,
-  "Marsh Badge": false,
-  "Volcano Badge": false,
-  "Earth Badge": false,
-};
-
 export function loadStats() {
   return loadStatsFromLocalStorage() || newUserStats;
 }
