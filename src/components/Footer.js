@@ -27,7 +27,7 @@ const Footer = ({ setIsSourcesModalOpen, setIsBugReportModalOpen, setIsDonateMod
         </a>
       </p>
 
-      <p className="has-text-white is-size-7 has-text-centered pt-3 pl-3 pr-3">
+      {/* <p className="has-text-white is-size-7 has-text-centered pt-3 pl-3 pr-3">
         <img className="custom-heart" src={heart} />
         <span>SQWORDLE? - </span>
         <a className="has-text-white custom-buy-coffee-link" href="https://ko-fi.com/nmfretz" target="_blank">
@@ -37,7 +37,7 @@ const Footer = ({ setIsSourcesModalOpen, setIsBugReportModalOpen, setIsDonateMod
         <a className="has-text-white custom-buy-coffee-link" onClick={() => setIsDonateModalOpen(true)}>
           donate <img className="custom-btc-img-footer" src={btcImg} />
         </a>
-      </p>
+      </p> */}
     </div>
   );
 };

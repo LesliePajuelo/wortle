@@ -351,7 +351,7 @@ function App() {
         setIsBugReportSuccess={setIsBugReportSuccess}
       />
       {isBugReportSuccess && <BugReportSuccessMessage />}
-      <DonateModal isOpen={isDonateModalOpen} handleClose={() => setIsDonateModalOpen(false)} />
+      {/* <DonateModal isOpen={isDonateModalOpen} handleClose={() => setIsDonateModalOpen(false)} /> */}
     </>
   );
 }
