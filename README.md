@@ -7,10 +7,11 @@ A daily Pokémon guessing game, inspired by the popular game [Wordle](https://ww
 
 ### Features & Design
 
-- React Framework for frontend build.
-- User statistics, badge achievements, and daily game state persist in local storage.
+- React for frontend build.
 - Bulma.io CSS framework + custom CSS (responsive design).
 - [PokéApi](https://pokeapi.co/) for Pokémon data
+- User statistics, badge achievements, and daily game state persist in either local storage or a database depending on whether a user signs up for an account.
+- Firebase for optional user authentication and database to prevent user data from being lost if/when browser memory is cleared.
 - [react-i18next](https://react.i18next.com/) internationalization framework used to manage multiple language translations.
 
 #### Gameplay
