@@ -26,6 +26,8 @@ A daily Pokémon guessing game, inspired by the popular game [Wordle](https://ww
 
 ### TODOS
 
+- [x] add firebase user authentication and cloud firestore option to prevent users from losing data when browser memory is cleared.
+- [x] add react router
 - [x] make default difficulty mode harder. Consider filtering attacks unique to one Pokémon and/or only attacking on certain guesses.
 - [x] refactor code for react-18next and add Spanish.
 - [x] clean up mobile response issues for Spanish (share button too large on spanish mobile).
