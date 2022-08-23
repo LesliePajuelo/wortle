@@ -15,7 +15,6 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
 
   // number of evolutions
   const numEvolutions = evolutions.length;
-  // console.log(numEvolutions);
   let numEvolutionCheck;
   if (numEvolutions === answer.evolutions.length) {
     numEvolutionCheck = "success";

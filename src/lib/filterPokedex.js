@@ -6,7 +6,6 @@ export default function filterPokedex(feedback, passedPokedex) {
 
   tempPokedex.forEach((pokemon, index) => {
     const pokemonTypes = pokemon.types.map((item) => item.type.name);
-    // console.log(pokemonTypes);
     if (pokemon.name === feedback.name) {
       tempPokedex[index].filtered = true;
     }

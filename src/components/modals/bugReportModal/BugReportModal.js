@@ -7,6 +7,7 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
   const [browserInput, setBrowserInput] = useState("");
   const [descriptionInput, setDescriptionInput] = useState("");
 
+  const [isEmailError, setIsEmailError] = useState(false);
   const [isDeviceError, setIsDeviceError] = useState(false);
   const [isDecriptionError, setIsDescriptionError] = useState(false);
 
@@ -57,8 +58,12 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
   }
 
   function validateForm() {
-    // no email check needed
+    clearErrors();
     let isValid = true;
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput) === false) {
+      isValid = false;
+      setIsEmailError(true);
+    }
     if (deviceInput === "") {
       isValid = false;
       setIsDeviceError(true);
@@ -89,7 +94,7 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
               <input type="hidden" name="form-name" value="submit-bug-report" />
               <div className="field">
                 <label htmlFor="email" className="label has-text-white">
-                  Email (optional)
+                  Email
                 </label>
                 <div className="control has-icons-right">
                   <input
@@ -102,6 +107,7 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
                     onChange={handleEmailInput}
                   />
                 </div>
+                {isEmailError && <p className="help is-danger">Please include a valid email address</p>}
               </div>
 
               <div className="field">

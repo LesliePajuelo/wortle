@@ -4,7 +4,9 @@ import Countdown, { zeroPad } from "react-countdown";
 import { UAParser } from "ua-parser-js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
+import { useAuth } from "../../../contexts/AuthContext";
 import boulderBadge from "../../../img/badges/boulder-badge-210.png";
 import cascadeBadge from "../../../img/badges/cascade-badge-210.png";
 import thunderBadge from "../../../img/badges/thunder-badge-210.png";
@@ -32,6 +34,7 @@ const StatsModal = (props) => {
   } = props;
 
   const { t } = useTranslation();
+  const { user } = useAuth();
 
   const [isCopyStats, setIsCopyStats] = useState(false);
 
@@ -103,7 +106,6 @@ const StatsModal = (props) => {
         setIsCopyStats(false);
       }, 1500);
     }
-    console.log(statsToCopy);
   }
 
   function attemptShare(statsToCopy) {
@@ -231,8 +233,14 @@ const StatsModal = (props) => {
                   );
                 })}
             </div>
-            <p>my stats don't look right</p>
-            <p>Create an account / Log in... show if not logged in</p>
+            {!user && (
+              <div className="has-text-centered mt-3 mb-2 is-size-7">
+                <Link className="has-text-white is-underlined" to="/signup">
+                  🌟NEW🌟 Create an account so you don't lose your stats if your browser memory is cleared manually or
+                  automatically.
+                </Link>
+              </div>
+            )}
             <button className="button custom-pokedex-open-btn" onClick={() => setIsStatsPokedexModalOpen(true)}>
               pokédex
             </button>

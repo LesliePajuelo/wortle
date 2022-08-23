@@ -1,5 +1,4 @@
 const GuessDistribution = ({ guess, maxGuesses, guessFeedback, win }) => {
-  // console.log(guess);
   const [key, value] = guess;
 
   return (

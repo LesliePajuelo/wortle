@@ -13,6 +13,92 @@ body {
   background-color: hsl(0, 0%, 7%);
 }
 
+.custom-login-sprite {
+  margin: -1rem -1rem;
+}
+
+.custom-signup-sprite {
+  margin: -1rem -1rem;
+  cursor: pointer;
+  opacity: 30%;
+}
+
+.custom-signup-sprite:hover {
+  opacity: 80%;
+}
+
+.custom-signup-sprite-starter {
+  opacity: 100%;
+}
+
+.custom-signup-sprite-container {
+  margin-bottom: -0.5rem;
+}
+
+.custom-forgot-password-sprite {
+  width: 30px;
+  margin-right: 1rem;
+}
+
+.custom-profile {
+  background-color: #ddd;
+  margin-left: 0.5em;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #dc1613;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  background-size: 75px;
+  background-position: center;
+}
+
+.custom-profile:hover {
+  opacity: 50%;
+}
+
+.custom-profile-modal-pic-container {
+  position: relative;
+}
+
+.custom-profile-modal-pic {
+  background-color: white;
+  background-color: #ddd;
+
+  margin-left: 0.5em;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #dc1613;
+  border-radius: 50%;
+  /* cursor: pointer; */
+  overflow: hidden;
+  background-size: 150px;
+  background-position: center;
+}
+
+.custom-change-profile-icon {
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: white;
+  color: black !important;
+  position: absolute;
+  bottom: -0.25em;
+  right: 0.25em;
+}
+
+.custom-change-profile-icon:hover {
+  cursor: pointer;
+  color: #dc1613 !important;
+}
+
+.custom-change-profile-pic-button {
+  font-size: 0.7rem !important;
+  background-color: transparent !important;
+  border: none !important;
+  text-decoration: underline;
+  color: #222 !important;
+}
+
 .custom-title {
   border-bottom: 1px solid white;
   height: 80px;
@@ -230,6 +316,19 @@ body {
 .custom-input-area {
   background-color: #ddd !important;
   position: relative;
+}
+
+.custom-evc-info-icon {
+  padding-left: 0.1rem;
+}
+
+.custom-evc-modal-content {
+  /* font: inherit; */
+  font-family: "Space Mono", monospace !important;
+
+  font-size: 0.8rem;
+  max-width: 80vw;
+  min-width: 300px;
 }
 
 .custom-start-btn {
@@ -735,6 +834,11 @@ body {
     width: 100%;
     left: -7.5%;
     /* left: -2.25em; */
+  }
+
+  .custom-input-area {
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
   }
 
   .custom-guess-text {

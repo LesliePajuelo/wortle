@@ -39,7 +39,7 @@
   },
   "instructions": {
     "title": "¡Hola! ¡Bienvenido al mundo de SQWORDLE!",
-    "line1": "Adivina el <1>Pokémon</1> misterioso en seis intentos.",
+    "line1": "Adivina el <2>Pokémon</2> misterioso de <1>primera generación</1> en seis intentos.",
     "line2": "Cada intento debe ser un Pokémon válido de <1>primera generación</1>.",
     "line3": "Luego de cada intento tendrás una pista para saber qué tan cerca estás de acertar al Pokémon misterioso.",
     "line4": "¿Preparado un desafío? Prueba los modos “Líder de Gimnasio” o “Elite Cuatro”, disponibles en los ajustes.",
@@ -47,11 +47,11 @@
       "a": "Por ejemplo",
       "b": " (El Pokémon misterioso es Horsea)"
     },
-    "example1": "Tu intento fue con <1>Omanyte</1>. El Pokémon misterioso es de tipo <3>agua</3> como Omanyte pero no es tipo <5>roca</5>. El pokémon misterioso tiene el mismo número de Pokémon en su árbol de evolución (EvT) que Omanyte (<7>2</7>, p.ej. Omanyte y Omastar). El Pokémon misterioso tiene menor defensa y mayor peso que Omanyte, pero tiene el mismo de ataque y altura.",
+    "example1": "Tu intento fue con <1>Omanyte</1>. El Pokémon misterioso es de tipo <3>agua</3> como Omanyte pero no es tipo <5>roca</5>. El pokémon misterioso tiene el mismo número de Pokémon en su cadena de evolución (EvC) que Omanyte (<7>2</7>, p.ej. Omanyte y Omastar). El Pokémon misterioso tiene menor defensa y mayor peso que Omanyte, pero tiene el mismo de ataque y altura.",
     "example2": "Intentaste con <1>Seadra</1>. Seadra está en <3>amarillo</3> para indicar que el Pokémon misterioso está en el arbol de evolución de Seadra.",
     "example3": {
-      "line1": "Luego de cada intento, la pokedex va a filtrar basándose en que sabes según el <1>tipo</1> y árbol de <3>evolución (EvT)</3>, ¡El Pokémon misterioso te va a atacar!",
-      "line2": "Siguiendo el mismo ejemplo, todos los Pokémon de tipo <1>planta</1> y <3>veneno</3>, y los que están en un árbol de evolución superior a <5>3</5> (EvT) están grises. El Pokémon misterioso te ha atacado con <7>hidrobomba</7>, ¡Usa esto como una pista para saber quien es!"
+      "line1": "Luego de cada intento, la pokedex va a filtrar basándose en que sabes según el <1>tipo</1> y árbol de <3>evolución (EvC)</3>, ¡El Pokémon misterioso te va a atacar!",
+      "line2": "Siguiendo el mismo ejemplo, todos los Pokémon de tipo <1>planta</1> y <3>veneno</3>, y los que están en un árbol de evolución superior a <5>3</5> (EvC) están grises. El Pokémon misterioso te ha atacado con <7>hidrobomba</7>, ¡Usa esto como una pista para saber quien es!"
     }
   },
   "statsModal": {

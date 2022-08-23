@@ -1,4 +1,5 @@
 import { Trans, useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
@@ -81,11 +82,26 @@ const InstructionsModal = (props) => {
               </div>
             </div>
             <p>
+              <Link className="has-text-white is-underlined" to="/signup">
+                🌟NEW🌟 Create an account so you don't lose your stats if your browser memory is cleared manually or
+                automatically.
+              </Link>
+            </p>
+
+            <p>
               <Trans i18nKey="instructions.line1">
-                Guess the mystery <strong className="has-text-white is-uppercase">Pokémon</strong> in six tries.
+                <span>Guess the mystery </span>
+                <a
+                  className="is-underlined has-text-white"
+                  href="https://en.wikipedia.org/wiki/List_of_generation_I_Pok%C3%A9mon"
+                  target="_blank"
+                >
+                  Gen 1
+                </a>
+                <strong className="has-text-white is-uppercase"> Pokémon</strong> in six tries.
               </Trans>
             </p>
-            <p>
+            {/* <p>
               <Trans i18nKey="instructions.line2">
                 <span>Each guess must be a valid </span>
                 <a
@@ -97,9 +113,9 @@ const InstructionsModal = (props) => {
                 </a>
                 <span> Pokémon.</span>
               </Trans>
-            </p>
+            </p> */}
             <p>{t("instructions.line3")}</p>
-            <p>{t("instructions.line4")}</p>
+            {/* <p>{t("instructions.line4")}</p> */}
             <div className="instructions-example-div">
               <p>
                 <span className="has-text-weight-bold">{t("instructions.exampleTitle.a")}</span>
@@ -153,6 +169,7 @@ const InstructionsModal = (props) => {
                 </Trans>
               </p>
             </div>
+            <p className="mt-2">{t("instructions.line4")}</p>
           </div>
         </section>
         <footer className="modal-card-foot pt-3 pb-3">

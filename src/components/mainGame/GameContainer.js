@@ -20,8 +20,10 @@ function GameContainer(props) {
     handleChangeLanguage,
     currentLanguageCode,
     setIsInfoModalOpen,
+    setIsEvcModalOpen,
     setIsStatsModalOpen,
     setIsSettingsModalOpen,
+    setIsProfileModalOpen,
     gameLoading,
     gameOn,
     setGameOn,
@@ -85,6 +87,7 @@ function GameContainer(props) {
           setIsInfoModalOpen={setIsInfoModalOpen}
           setIsStatsModalOpen={setIsStatsModalOpen}
           setIsSettingsModalOpen={setIsSettingsModalOpen}
+          setIsProfileModalOpen={setIsProfileModalOpen}
           showLanguageSelector={showLanguageSelector}
           setShowLanguageSelector={setShowLanguageSelector}
           handleChangeLanguage={handleChangeLanguage}
@@ -131,7 +134,7 @@ function GameContainer(props) {
             {(gameOn || win || lose) && (
               <div className="card-content custom-input-area">
                 <div className="content">
-                  <GuessHeaders guessFeedback={guessFeedback} />
+                  <GuessHeaders setIsEvcModalOpen={setIsEvcModalOpen} />
 
                   {/* Guess feeback */}
                   {guessFeedback &&

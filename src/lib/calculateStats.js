@@ -34,7 +34,6 @@ export default function calculateStats(stats, pokemon, guessFeedback, winBoolean
     statistics.guesses[guessFeedback.length] += 1;
     statistics.winPercentage = Math.round((statistics.gamesWon / statistics.gamesPlayed) * 100);
 
-    // TODO: could use reduce here instead
     let sumGuesses = 0;
     for (const [key, value] of Object.entries(statistics.guesses)) {
       if (key !== "fail") {
@@ -42,6 +41,8 @@ export default function calculateStats(stats, pokemon, guessFeedback, winBoolean
       }
     }
     statistics.averageGuesses = Math.round(sumGuesses / statistics.gamesWon);
+
+    // TODO - update to lose streak if more than a day has passed.
     if (statistics.currentStreak > statistics.maxStreak) {
       statistics.maxStreak += 1;
     }
@@ -67,7 +68,6 @@ export default function calculateStats(stats, pokemon, guessFeedback, winBoolean
 
     // Rainbow Badge
     const threeAndFewerGuesses = statistics.guesses["1"] + statistics.guesses["2"] + statistics.guesses["3"];
-    // console.log(threeAndFewerGuesses);
     if (threeAndFewerGuesses > 9) {
       statistics.badges["Rainbow Badge"] = true;
     }
