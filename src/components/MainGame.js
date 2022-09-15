@@ -163,6 +163,7 @@ function MainGame() {
   function renderAttack() {
     const attack = AnswerKey[index].randomAttacks[guessFeedback.length - 1];
     setAnswerAttack(attack);
+    if (!isPokemonTrainerMode) return; // guard clause to not render attack or wait time on harder modes
     setShowAnswerAttack(true);
     setTimeout(() => {
       setShowAnswerAttack(false);

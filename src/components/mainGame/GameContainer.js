@@ -96,6 +96,7 @@ function GameContainer(props) {
         <div className="game mt-3">
           <div className="card custom-card-size">
             <div className={`card-image ${gameOn && "custom-card-image"}`}>
+              {/* Pokeball start button */}
               {!gameOn && !win && !lose && (
                 <div className="custom-start-img">
                   <button className="custom-start-text is-loading" onClick={handleStartGame}>
@@ -105,8 +106,33 @@ function GameContainer(props) {
                 </div>
               )}
 
-              {(win || lose) && <img className="custom-sprite-img" src={spriteUrl} alt="Placeholder image" />}
-              {gameOn && !isEliteFourMode ? (
+              {/* Show pokedex or who's that pokemon image */}
+              {gameOn ? (
+                <div className="custom-sprite-gallery">
+                  <div className="custom-pokedex-title">
+                    <img className="custom-pokedex-title-img" src={pokedexTitle} />
+                  </div>
+                  <div className="custom-sprite-gallery-images">
+                    {filteredPokedex.map((pokemon, index) => {
+                      return (
+                        <Sprite
+                          key={index}
+                          pokemon={pokemon}
+                          setGuessInput={setGuessInput}
+                          setSuggestionClicked={setSuggestionClicked}
+                          isEliteFourMode={isEliteFourMode}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              ) : (
+                <figure className="image is-16by9">
+                  <img src={Pic} alt="Placeholder image" />
+                </figure>
+              )}
+
+              {/* {gameOn && !isEliteFourMode ? (
                 <div className="custom-sprite-gallery">
                   <div className="custom-pokedex-title">
                     <img className="custom-pokedex-title-img" src={pokedexTitle} />
@@ -128,9 +154,12 @@ function GameContainer(props) {
                 <figure className="image is-16by9">
                   <img src={Pic} alt="Placeholder image" />
                 </figure>
-              )}
+              )} */}
+              {(win || lose) && <img className="custom-sprite-img" src={spriteUrl} alt="Placeholder image" />}
               {(win || lose) && <GameOver win={win} lose={lose} isAnimation={isAnimation} />}
             </div>
+
+            {/* show guess input area */}
             {(gameOn || win || lose) && (
               <div className="card-content custom-input-area">
                 <div className="content">
@@ -156,6 +185,7 @@ function GameContainer(props) {
                                     pokeman={pokeman}
                                     setGuessInput={setGuessInput}
                                     setSuggestionClicked={setSuggestionClicked}
+                                    isEliteFourMode={isEliteFourMode}
                                   />
                                 );
                               })}

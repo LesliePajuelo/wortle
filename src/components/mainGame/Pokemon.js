@@ -1,4 +1,4 @@
-function Pokemon({ pokeman, setGuessInput, setSuggestionClicked }) {
+function Pokemon({ pokeman, setGuessInput, setSuggestionClicked, isEliteFourMode }) {
   function handleSuggestionClick(e) {
     setGuessInput(e.target.innerText);
 
@@ -31,7 +31,9 @@ function Pokemon({ pokeman, setGuessInput, setSuggestionClicked }) {
   return (
     <>
       <button
-        className={`mb-0 custom-filter-suggestion-item-button ${pokeman.filtered ? "custom-filtered-text" : ""}`}
+        className={`mb-0 custom-filter-suggestion-item-button ${
+          pokeman.filtered && !isEliteFourMode ? "custom-filtered-text" : ""
+        }`}
         onKeyDown={handleUpKeyList}
         onClick={handleSuggestionClick}
       >

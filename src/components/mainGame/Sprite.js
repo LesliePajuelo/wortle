@@ -1,4 +1,4 @@
-const Sprite = ({ pokemon, setGuessInput, setSuggestionClicked }) => {
+const Sprite = ({ pokemon, setGuessInput, setSuggestionClicked, isEliteFourMode }) => {
   function handleSpriteClick() {
     setGuessInput(pokemon.name);
     setSuggestionClicked(true);
@@ -7,7 +7,7 @@ const Sprite = ({ pokemon, setGuessInput, setSuggestionClicked }) => {
   return (
     <figure className="image is-64x64" onClick={handleSpriteClick}>
       <img
-        className={pokemon.filtered ? "custom-sprite-filtered" : "custom-sprite-unfiltered"}
+        className={pokemon.filtered && !isEliteFourMode ? "custom-sprite-filtered" : "custom-sprite-unfiltered"}
         src={pokemon.spriteUrl}
       />
     </figure>
