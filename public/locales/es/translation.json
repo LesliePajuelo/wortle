@@ -123,7 +123,7 @@
     },
     "eliteFourMode": {
       "name": "Elite Cuatro",
-      "description": "La Pokédex está oculta y el Pokémon misterioso no atacará."
+      "description": "El Pokémon misterioso no te atacó y la Pokédex no está filtrada."
     },
     "modeWarning": "Solo puedes cambiar el modo de juego al inicio del mismo."
   },

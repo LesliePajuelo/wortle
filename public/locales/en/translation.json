@@ -123,7 +123,7 @@
     },
     "eliteFourMode": {
       "name": "Elite Four",
-      "description": "Pokédex is hidden and mystery Pokémon does not attack."
+      "description": "Mystery Pokémon does not attack and Pokedex is not filtered."
     },
     "modeWarning": "Game mode can only be changed before the start of a round."
   },
