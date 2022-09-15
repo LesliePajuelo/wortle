@@ -1,6 +1,7 @@
 import { t } from "i18next";
 
 function GuessFeedback({ guess }) {
+  // styles and formatting here
   return (
     <>
       <div className="columns is-mobile is-centered is-vcentered custom-guess-text">

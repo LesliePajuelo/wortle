@@ -1,59 +1,61 @@
 export default function generateFeedback(guessedPokemon, answer, guessFeedback) {
   let tempFeedback = [...guessFeedback];
 
-  const name = guessedPokemon.name;
   // check if guess is in evolution-family
-  const evolutions = guessedPokemon.evolutions;
   let evolutionCheck;
-  if (name === answer.name) {
+  if (guessedPokemon.name === answer.name) {
     evolutionCheck = "success";
-  } else if (evolutions.includes(answer.name)) {
+  } else if (guessedPokemon.evolutions.pokemonInChain.includes(answer.name)) {
     evolutionCheck = "warning-dark";
   } else {
     evolutionCheck = "black";
   }
+  console.log(`evolution check = ${evolutionCheck}`);
 
   // number of evolutions
-  const numEvolutions = evolutions.length;
   let numEvolutionCheck;
-  if (numEvolutions === answer.evolutions.length) {
+  if (guessedPokemon.evolutions.numberOfPokemonInChain === answer.evolutions.numberOfPokemonInChain) {
     numEvolutionCheck = "success";
   } else {
     numEvolutionCheck = "danger";
   }
+  console.log(`num evolutions check = ${numEvolutionCheck}`);
 
   // types
-  const answerTypes = answer.types.map((item) => item.type.name);
-  const types = guessedPokemon.types.map((item) => {
-    const type = item.type.name;
+  const types = guessedPokemon.types.map((type) => {
     let colour;
-    if (answerTypes.includes(type)) {
+    if (answer.types.includes(type)) {
       colour = "success";
     } else {
       colour = "danger";
     }
     return { type, colour };
   });
+  console.log(types);
 
   // attack
   let attackCheck;
-  if (guessedPokemon.stats[1].base_stat > answer.stats[1].base_stat) {
+  if (guessedPokemon.stats.attack > answer.stats.attack) {
     attackCheck = "🔻";
-  } else if (guessedPokemon.stats[1].base_stat < answer.stats[1].base_stat) {
+  } else if (guessedPokemon.stats.attack < answer.stats.attack) {
     attackCheck = "🔺";
   } else {
     attackCheck = "✅";
   }
 
+  console.log(`attackCheck = ${attackCheck}`);
+
   // defense
   let defenseCheck;
-  if (guessedPokemon.stats[2].base_stat > answer.stats[2].base_stat) {
+  if (guessedPokemon.stats.defense > answer.stats.defense) {
     defenseCheck = "🔻";
-  } else if (guessedPokemon.stats[2].base_stat < answer.stats[2].base_stat) {
+  } else if (guessedPokemon.stats.defense < answer.stats.defense) {
     defenseCheck = "🔺";
   } else {
     defenseCheck = "✅";
   }
+
+  console.log(`defenseCheck = ${defenseCheck}`);
 
   // height
   let heightCheck;
@@ -65,6 +67,8 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
     heightCheck = "✅";
   }
 
+  console.log(`height check = ${heightCheck}`);
+
   // weight
   let weightCheck;
   if (guessedPokemon.weight > answer.weight) {
@@ -74,18 +78,21 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
   } else {
     weightCheck = "✅";
   }
+  console.log(`weight check = ${weightCheck}`);
 
   tempFeedback.push({
-    name,
+    name: guessedPokemon.name,
     evolutionCheck,
     types,
-    numEvolutions,
+    numEvolutions: guessedPokemon.evolutions.numberOfPokemonInChain,
     numEvolutionCheck,
     attackCheck,
     defenseCheck,
     heightCheck,
     weightCheck,
   });
+
+  console.log(tempFeedback);
 
   return tempFeedback;
 }

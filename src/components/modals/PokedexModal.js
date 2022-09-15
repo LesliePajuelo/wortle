@@ -53,8 +53,8 @@ const PokedexModal = ({ isOpen, handleClose, filteredPokedex, stats }) => {
             </p> */}
             <p className="has-text-weight-bold is-uppercase">{selectedPokemon && selectedPokemon.name}</p>
             <div className="custom-stats-pokedex-types">
-              <p>{selectedPokemon && t(`types.${selectedPokemon.types[0].type.name}`)}</p>
-              <p>{selectedPokemon?.types[1] && t(`types.${selectedPokemon.types[1].type.name}`)}</p>
+              <p>{selectedPokemon && t(`types.${selectedPokemon.types[0]}`)}</p>
+              <p>{selectedPokemon?.types[1] && t(`types.${selectedPokemon.types[1]}`)}</p>
             </div>
             {selectedPokemon && user && (
               <button
