@@ -10,7 +10,7 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
   } else {
     evolutionCheck = "black";
   }
-  console.log(`evolution check = ${evolutionCheck}`);
+  // console.log(`evolution check = ${evolutionCheck}`);
 
   // number of evolutions
   let numEvolutionCheck;
@@ -19,7 +19,7 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
   } else {
     numEvolutionCheck = "danger";
   }
-  console.log(`num evolutions check = ${numEvolutionCheck}`);
+  // console.log(`num evolutions check = ${numEvolutionCheck}`);
 
   // types
   const types = guessedPokemon.types.map((type) => {
@@ -31,7 +31,7 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
     }
     return { type, colour };
   });
-  console.log(types);
+  // console.log(types);
 
   // attack
   let attackCheck;
@@ -43,7 +43,7 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
     attackCheck = "✅";
   }
 
-  console.log(`attackCheck = ${attackCheck}`);
+  // console.log(`attackCheck = ${attackCheck}`);
 
   // defense
   let defenseCheck;
@@ -55,7 +55,7 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
     defenseCheck = "✅";
   }
 
-  console.log(`defenseCheck = ${defenseCheck}`);
+  // console.log(`defenseCheck = ${defenseCheck}`);
 
   // height
   let heightCheck;
@@ -67,7 +67,7 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
     heightCheck = "✅";
   }
 
-  console.log(`height check = ${heightCheck}`);
+  // console.log(`height check = ${heightCheck}`);
 
   // weight
   let weightCheck;
@@ -78,7 +78,7 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
   } else {
     weightCheck = "✅";
   }
-  console.log(`weight check = ${weightCheck}`);
+  // console.log(`weight check = ${weightCheck}`);
 
   tempFeedback.push({
     name: guessedPokemon.name,
@@ -92,7 +92,7 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
     weightCheck,
   });
 
-  console.log(tempFeedback);
+  // console.log(tempFeedback);
 
   return tempFeedback;
 }

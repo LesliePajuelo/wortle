@@ -35,8 +35,6 @@ import { updateLanguagePreference, updateUserGameState, updateUserStats } from "
 import ProfileModal from "./modals/ProfileModal";
 import EvcModal from "./modals/EvcModal";
 
-console.log(answer);
-
 function MainGame() {
   const { t, i18n } = useTranslation();
 
