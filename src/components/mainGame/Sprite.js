@@ -1,5 +1,6 @@
 const Sprite = ({ pokemon, setGuessInput, setSuggestionClicked, isEliteFourMode }) => {
   function handleSpriteClick() {
+    if (isEliteFourMode) return;
     setGuessInput(pokemon.name);
     setSuggestionClicked(true);
   }
