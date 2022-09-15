@@ -9,6 +9,7 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
 
   const [isEmailError, setIsEmailError] = useState(false);
   const [isDeviceError, setIsDeviceError] = useState(false);
+  const [isBrowserError, setIsBrowserError] = useState(false);
   const [isDecriptionError, setIsDescriptionError] = useState(false);
 
   useEffect(() => {
@@ -42,7 +43,9 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
   }
 
   function clearErrors() {
+    setIsEmailError(false);
     setIsDeviceError(false);
+    setIsBrowserError(false);
     setIsDescriptionError(false);
   }
 
@@ -60,7 +63,8 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
   function validateForm() {
     clearErrors();
     let isValid = true;
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput) === false) {
+    // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput) === false) {
+    if (/^\S+@\S+\.\S+$/.test(emailInput) === false) {
       isValid = false;
       setIsEmailError(true);
     }
@@ -70,7 +74,7 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
     }
     if (browserInput === "") {
       isValid = false;
-      setIsDeviceError(true);
+      setIsBrowserError(true);
     }
     if (descriptionInput === "") {
       isValid = false;
@@ -143,7 +147,7 @@ const BugReportModal = ({ isOpen, handleClose, setIsBugReportSuccess }) => {
                     onChange={handleBrowserInput}
                   />
                 </div>
-                {isDeviceError && <p className="help is-danger">Please fill in this field</p>}
+                {isBrowserError && <p className="help is-danger">Please fill in this field</p>}
               </div>
 
               <div className="field">
