@@ -99,9 +99,24 @@ body {
   color: #222 !important;
 }
 
+@keyframes drop-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
 .custom-title {
   border-bottom: 1px solid white;
   height: 80px;
+
+  /* animation */
+  animation-name: drop-down;
+  animation-duration: 300ms;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-in;
 }
 
 .custom-squirtle-image-left,
@@ -248,6 +263,28 @@ body {
   padding-bottom: 1em;
 }
 
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.custom-game-container {
+  /* animation */
+  animation: slide-up 200ms ease-in 500ms;
+  animation-fill-mode: backwards;
+}
+
+.custom-footer {
+  /* animation */
+  animation: slide-up 200ms ease-in 500ms;
+  animation-fill-mode: backwards;
+}
+
 .custom-card-size {
   width: var(--game-width);
 }
@@ -302,15 +339,15 @@ body {
 }
 
 .custom-sprite-filtered:hover {
-  opacity: 0.2;
+  opacity: 0.5;
 }
 
 .custom-sprite-unfiltered {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .custom-sprite-unfiltered:hover {
-  opacity: 1;
+  opacity: 0.7;
 }
 
 .custom-input-area {
@@ -623,6 +660,38 @@ body {
   left: 12%;
   top: 20%;
   z-index: 1;
+
+  animation: float infinite 3s ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  3% {
+    transform: rotate(10deg);
+  }
+  6% {
+    transform: rotate(0deg);
+  }
+  9% {
+    transform: rotate(10deg);
+  }
+  12% {
+    transform: rotate(0deg);
+  }
 }
 
 .custom-start-img {
@@ -632,7 +701,13 @@ body {
   top: 30%;
   font-size: 1.2em;
 
+  cursor: pointer;
+
   z-index: 1;
+
+  /* animation */
+  /* animation: float infinite 3s ease-in-out; */
+  animation: shake 5s infinite;
 }
 
 .custom-start-text {
@@ -658,13 +733,13 @@ body {
   font-weight: bold;
 }
 
-.custom-start-img:hover {
+/* .custom-start-img:hover {
   cursor: pointer;
   width: 30%;
   transform-origin: (50%);
   transform: rotate(20deg) translate(-10%, -8%);
-  /* font-size: 1.4rem; */
-}
+
+} */
 
 .custom-modes-div {
   display: flex;
@@ -923,4 +998,69 @@ body {
   /* .custom-stats-pokedex-gallery .image {
     width: 48px !important;
   } */
+}
+
+/* pokeball spin loader */
+.ball {
+  position: relative;
+  margin: auto;
+  top: calc(50vh - 100px);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: -20px 0 rgba(0, 0, 0, 0.1) inset;
+  animation: roll 1s ease-in-out infinite;
+  background: linear-gradient(to bottom, #e83e35 0%, #e83e35 50.5%, #ffffff 50.51%, #ffffff 100%);
+}
+
+.ball:after {
+  content: "";
+  position: absolute;
+  top: calc(100px - 3px);
+  left: 0;
+  width: 200px;
+  height: 6px;
+  background: #3f3f3f;
+}
+
+.ball:before {
+  content: "";
+  position: absolute;
+  /* top: 67px; */
+  /* left: 67px; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: solid 6px #3f3f3f;
+  border-radius: 50%;
+  background: white;
+  z-index: 1;
+  box-shadow: 0 0 15px -2px #c62828 inset;
+  animation: button 3s ease infinite;
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0);
+  }
+  90%,
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes button {
+  from,
+  50%,
+  to {
+    box-shadow: 0 0 15px -2px #c62828 inset;
+  }
+
+  25%,
+  75% {
+    box-shadow: 0 0 10px -2px #1300ea inset;
+  }
 }

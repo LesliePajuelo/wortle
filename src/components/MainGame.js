@@ -38,6 +38,8 @@ import EvcModal from "./modals/EvcModal";
 function MainGame() {
   const { t, i18n } = useTranslation();
 
+  const [showSpinner, setShowSpinner] = useState(true);
+
   const { user, loading, documentData, documentLoading, documentError, logout } = useAuth();
   const isDocumentDataLoaded = useRef(false);
 
@@ -176,11 +178,16 @@ function MainGame() {
 
   // LOAD PAGE
   useEffect(() => {
+    // loader to allow time for database vs local storage
+    setTimeout(() => {
+      setShowSpinner(false);
+    }, 2000);
+
     // show instructions if no previous game state for user
     if (!loadGameStateFromLocalStorage()) {
       setTimeout(() => {
         setIsInfoModalOpen(true);
-      }, INFO_MODAL_DELAY);
+      }, INFO_MODAL_DELAY + 3000);
     }
 
     setGameLoading(false);
@@ -354,99 +361,105 @@ function MainGame() {
 
   return (
     <>
-      <Title gameOn={gameOn} win={win} lose={lose} />
-      <GameContainer
-        showLanguageSelector={showLanguageSelector}
-        setShowLanguageSelector={setShowLanguageSelector}
-        handleChangeLanguage={handleChangeLanguage}
-        currentLanguageCode={currentLanguageCode}
-        setIsInfoModalOpen={setIsInfoModalOpen}
-        setIsEvcModalOpen={setIsEvcModalOpen}
-        setIsStatsModalOpen={setIsStatsModalOpen}
-        setIsSettingsModalOpen={setIsSettingsModalOpen}
-        setIsProfileModalOpen={setIsProfileModalOpen}
-        gameLoading={gameLoading}
-        gameOn={gameOn}
-        setGameOn={setGameOn}
-        filteredPokedex={filteredPokedex}
-        filteredInputList={filteredInputList}
-        showFilteredInputList={showFilteredInputList}
-        suggestionClicked={suggestionClicked}
-        setSuggestionClicked={setSuggestionClicked}
-        guessInput={guessInput}
-        setGuessInput={setGuessInput}
-        setGuessToCheck={setGuessToCheck}
-        guessFeedback={guessFeedback}
-        win={win}
-        lose={lose}
-        spriteUrl={spriteUrl}
-        errorMessage={errorMessage}
-        isAnimation={isAnimation}
-        answerAttack={answerAttack}
-        showAnswerAttack={showAnswerAttack}
-        isGymLeaderMode={isGymLeaderMode}
-        isEliteFourMode={isEliteFourMode}
-      />
-      <Footer
-        setIsSourcesModalOpen={setIsSourcesModalOpen}
-        setIsBugReportModalOpen={setIsBugReportModalOpen}
-        setIsDonateModalOpen={setIsDonateModalOpen}
-      />
-      <InstructionsModal
-        isOpen={isInfoModalOpen}
-        handleClose={() => setIsInfoModalOpen(false)}
-        showLanguageSelector={showLanguageSelector}
-        setShowLanguageSelector={setShowLanguageSelector}
-        handleChangeLanguage={handleChangeLanguage}
-        currentLanguageCode={currentLanguageCode}
-      />
-      <EvcModal isOpen={isEvcModalOpen} handleClose={() => setIsEvcModalOpen(false)} />
-      <StatsModal
-        isOpen={isStatsModalOpen}
-        handleClose={() => setIsStatsModalOpen(false)}
-        setIsStatsPokedexModalOpen={setIsStatsPokedexModalOpen}
-        guessFeedback={guessFeedback}
-        win={win}
-        lose={lose}
-        stats={stats}
-        isGymLeaderMode={isGymLeaderMode}
-        isEliteFourMode={isEliteFourMode}
-      />
-      <ProfileModal
-        isOpen={isProfileModalOpen}
-        handleClose={() => setIsProfileModalOpen(false)}
-        showLanguageSelector={showLanguageSelector}
-        setShowLanguageSelector={setShowLanguageSelector}
-        handleChangeLanguage={handleChangeLanguage}
-        currentLanguageCode={currentLanguageCode}
-        setIsSettingsModalOpen={setIsSettingsModalOpen}
-        setIsStatsPokedexModalOpen={setIsStatsPokedexModalOpen}
-      />
-      <SettingsModal
-        isOpen={isSettingsModalOpen}
-        handleClose={() => setIsSettingsModalOpen(false)}
-        isPokemonTrainerMode={isPokemonTrainerMode}
-        setIsPokemonTrainerMode={setIsPokemonTrainerMode}
-        isGymLeaderMode={isGymLeaderMode}
-        setIsGymLeaderMode={setIsGymLeaderMode}
-        isEliteFourMode={isEliteFourMode}
-        setIsEliteFourMode={setIsEliteFourMode}
-        guessFeedback={guessFeedback}
-      />
-      <PokedexModal
-        isOpen={isStatsPokedexModalOpen}
-        handleClose={() => setIsStatsPokedexModalOpen(false)}
-        filteredPokedex={filteredPokedex}
-        stats={stats}
-      />
-      <DataSourcesModal isOpen={isSourcesModalOpen} handleClose={() => setIsSourcesModalOpen(false)} />
-      <BugReportModal
-        isOpen={isBugReportModalOpen}
-        handleClose={() => setIsBugReportModalOpen(false)}
-        setIsBugReportSuccess={setIsBugReportSuccess}
-      />
-      {isBugReportSuccess && <BugReportSuccessMessage />}
-      {/* <DonateModal isOpen={isDonateModalOpen} handleClose={() => setIsDonateModalOpen(false)} /> */}
+      {showSpinner ? (
+        <div className="ball"></div>
+      ) : (
+        <>
+          <Title gameOn={gameOn} win={win} lose={lose} />
+          <GameContainer
+            showLanguageSelector={showLanguageSelector}
+            setShowLanguageSelector={setShowLanguageSelector}
+            handleChangeLanguage={handleChangeLanguage}
+            currentLanguageCode={currentLanguageCode}
+            setIsInfoModalOpen={setIsInfoModalOpen}
+            setIsEvcModalOpen={setIsEvcModalOpen}
+            setIsStatsModalOpen={setIsStatsModalOpen}
+            setIsSettingsModalOpen={setIsSettingsModalOpen}
+            setIsProfileModalOpen={setIsProfileModalOpen}
+            gameLoading={gameLoading}
+            gameOn={gameOn}
+            setGameOn={setGameOn}
+            filteredPokedex={filteredPokedex}
+            filteredInputList={filteredInputList}
+            showFilteredInputList={showFilteredInputList}
+            suggestionClicked={suggestionClicked}
+            setSuggestionClicked={setSuggestionClicked}
+            guessInput={guessInput}
+            setGuessInput={setGuessInput}
+            setGuessToCheck={setGuessToCheck}
+            guessFeedback={guessFeedback}
+            win={win}
+            lose={lose}
+            spriteUrl={spriteUrl}
+            errorMessage={errorMessage}
+            isAnimation={isAnimation}
+            answerAttack={answerAttack}
+            showAnswerAttack={showAnswerAttack}
+            isGymLeaderMode={isGymLeaderMode}
+            isEliteFourMode={isEliteFourMode}
+          />
+          <Footer
+            setIsSourcesModalOpen={setIsSourcesModalOpen}
+            setIsBugReportModalOpen={setIsBugReportModalOpen}
+            setIsDonateModalOpen={setIsDonateModalOpen}
+          />
+          <InstructionsModal
+            isOpen={isInfoModalOpen}
+            handleClose={() => setIsInfoModalOpen(false)}
+            showLanguageSelector={showLanguageSelector}
+            setShowLanguageSelector={setShowLanguageSelector}
+            handleChangeLanguage={handleChangeLanguage}
+            currentLanguageCode={currentLanguageCode}
+          />
+          <EvcModal isOpen={isEvcModalOpen} handleClose={() => setIsEvcModalOpen(false)} />
+          <StatsModal
+            isOpen={isStatsModalOpen}
+            handleClose={() => setIsStatsModalOpen(false)}
+            setIsStatsPokedexModalOpen={setIsStatsPokedexModalOpen}
+            guessFeedback={guessFeedback}
+            win={win}
+            lose={lose}
+            stats={stats}
+            isGymLeaderMode={isGymLeaderMode}
+            isEliteFourMode={isEliteFourMode}
+          />
+          <ProfileModal
+            isOpen={isProfileModalOpen}
+            handleClose={() => setIsProfileModalOpen(false)}
+            showLanguageSelector={showLanguageSelector}
+            setShowLanguageSelector={setShowLanguageSelector}
+            handleChangeLanguage={handleChangeLanguage}
+            currentLanguageCode={currentLanguageCode}
+            setIsSettingsModalOpen={setIsSettingsModalOpen}
+            setIsStatsPokedexModalOpen={setIsStatsPokedexModalOpen}
+          />
+          <SettingsModal
+            isOpen={isSettingsModalOpen}
+            handleClose={() => setIsSettingsModalOpen(false)}
+            isPokemonTrainerMode={isPokemonTrainerMode}
+            setIsPokemonTrainerMode={setIsPokemonTrainerMode}
+            isGymLeaderMode={isGymLeaderMode}
+            setIsGymLeaderMode={setIsGymLeaderMode}
+            isEliteFourMode={isEliteFourMode}
+            setIsEliteFourMode={setIsEliteFourMode}
+            guessFeedback={guessFeedback}
+          />
+          <PokedexModal
+            isOpen={isStatsPokedexModalOpen}
+            handleClose={() => setIsStatsPokedexModalOpen(false)}
+            filteredPokedex={filteredPokedex}
+            stats={stats}
+          />
+          <DataSourcesModal isOpen={isSourcesModalOpen} handleClose={() => setIsSourcesModalOpen(false)} />
+          <BugReportModal
+            isOpen={isBugReportModalOpen}
+            handleClose={() => setIsBugReportModalOpen(false)}
+            setIsBugReportSuccess={setIsBugReportSuccess}
+          />
+          {isBugReportSuccess && <BugReportSuccessMessage />}
+          {/* <DonateModal isOpen={isDonateModalOpen} handleClose={() => setIsDonateModalOpen(false)} /> */}
+        </>
+      )}
     </>
   );
 }

@@ -81,7 +81,7 @@ function GameContainer(props) {
   }
 
   return (
-    <div className="container mt-4 is-flex is-justify-content-center">
+    <div className="custom-game-container | container mt-4 is-flex is-justify-content-center">
       <div className="is-flex is-flex-direction-column">
         <Navbar
           setIsInfoModalOpen={setIsInfoModalOpen}

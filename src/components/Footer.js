@@ -7,7 +7,7 @@ import btcImg from "../img/btc.png";
 const Footer = ({ setIsSourcesModalOpen, setIsBugReportModalOpen, setIsDonateModalOpen }) => {
   const { t } = useTranslation();
   return (
-    <div className="is-flex is-flex-direction-column is-align-items-center is-justify-content-center mt-3 pb-5">
+    <div className="custom-footer | is-flex is-flex-direction-column is-align-items-center is-justify-content-center mt-3 pb-5">
       <p className="has-text-white">
         <Trans i18nKey="footer.createdBy">
           <span>Created by </span>
