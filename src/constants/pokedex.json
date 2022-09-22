@@ -19,6 +19,7 @@
     ],
     "evolutions": { "chainId": 1, "pokemonInChain": ["bulbasaur", "ivysaur", "venusaur"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif",
     "filtered": false
   },
   {
@@ -41,6 +42,7 @@
     ],
     "evolutions": { "chainId": 1, "pokemonInChain": ["bulbasaur", "ivysaur", "venusaur"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/2.gif",
     "filtered": false
   },
   {
@@ -63,6 +65,7 @@
     ],
     "evolutions": { "chainId": 1, "pokemonInChain": ["bulbasaur", "ivysaur", "venusaur"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif",
     "filtered": false
   },
   {
@@ -79,6 +82,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif",
     "filtered": false
   },
   {
@@ -95,6 +99,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/5.gif",
     "filtered": false
   },
   {
@@ -111,6 +116,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif",
     "filtered": false
   },
   {
@@ -127,6 +133,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif",
     "filtered": false
   },
   {
@@ -143,6 +150,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/8.gif",
     "filtered": false
   },
   {
@@ -159,6 +167,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/9.gif",
     "filtered": false
   },
   {
@@ -175,6 +184,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10.gif",
     "filtered": false
   },
   {
@@ -191,6 +201,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/11.gif",
     "filtered": false
   },
   {
@@ -207,6 +218,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/12.gif",
     "filtered": false
   },
   {
@@ -219,6 +231,7 @@
     "moves": ["poison-sting", "string-shot"],
     "evolutions": { "chainId": 5, "pokemonInChain": ["weedle", "kakuna", "beedrill"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/13.gif",
     "filtered": false
   },
   {
@@ -231,6 +244,7 @@
     "moves": ["harden"],
     "evolutions": { "chainId": 5, "pokemonInChain": ["weedle", "kakuna", "beedrill"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/14.gif",
     "filtered": false
   },
   {
@@ -243,6 +257,7 @@
     "moves": ["fury-attack", "twineedle", "pin-missile", "agility", "rage", "focus-energy"],
     "evolutions": { "chainId": 5, "pokemonInChain": ["weedle", "kakuna", "beedrill"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/15.gif",
     "filtered": false
   },
   {
@@ -255,6 +270,7 @@
     "moves": ["gust", "wing-attack", "whirlwind", "sand-attack", "agility", "quick-attack", "mirror-move"],
     "evolutions": { "chainId": 6, "pokemonInChain": ["pidgey", "pidgeotto", "pidgeot"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/16.gif",
     "filtered": false
   },
   {
@@ -267,6 +283,7 @@
     "moves": ["gust", "wing-attack", "whirlwind", "sand-attack", "agility", "quick-attack", "mirror-move"],
     "evolutions": { "chainId": 6, "pokemonInChain": ["pidgey", "pidgeotto", "pidgeot"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/17.gif",
     "filtered": false
   },
   {
@@ -279,6 +296,7 @@
     "moves": ["gust", "wing-attack", "whirlwind", "sand-attack", "agility", "quick-attack", "mirror-move"],
     "evolutions": { "chainId": 6, "pokemonInChain": ["pidgey", "pidgeotto", "pidgeot"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/18.gif",
     "filtered": false
   },
   {
@@ -291,6 +309,7 @@
     "moves": ["tackle", "tail-whip", "quick-attack", "focus-energy", "hyper-fang", "super-fang"],
     "evolutions": { "chainId": 7, "pokemonInChain": ["rattata", "raticate"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/19.gif",
     "filtered": false
   },
   {
@@ -303,6 +322,7 @@
     "moves": ["tackle", "tail-whip", "quick-attack", "focus-energy", "hyper-fang", "super-fang"],
     "evolutions": { "chainId": 7, "pokemonInChain": ["rattata", "raticate"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/20.gif",
     "filtered": false
   },
   {
@@ -315,6 +335,7 @@
     "moves": ["fury-attack", "leer", "growl", "peck", "drill-peck", "agility", "mirror-move"],
     "evolutions": { "chainId": 8, "pokemonInChain": ["spearow", "fearow"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/21.gif",
     "filtered": false
   },
   {
@@ -327,6 +348,7 @@
     "moves": ["fury-attack", "leer", "growl", "peck", "drill-peck", "agility", "mirror-move"],
     "evolutions": { "chainId": 8, "pokemonInChain": ["spearow", "fearow"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/22.gif",
     "filtered": false
   },
   {
@@ -339,6 +361,7 @@
     "moves": ["wrap", "poison-sting", "leer", "bite", "acid", "screech", "glare"],
     "evolutions": { "chainId": 9, "pokemonInChain": ["ekans", "arbok"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/23.gif",
     "filtered": false
   },
   {
@@ -351,6 +374,7 @@
     "moves": ["wrap", "poison-sting", "leer", "bite", "acid", "screech", "glare"],
     "evolutions": { "chainId": 9, "pokemonInChain": ["ekans", "arbok"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/24.gif",
     "filtered": false
   },
   {
@@ -363,6 +387,7 @@
     "moves": ["growl", "thunder-shock", "thunder-wave", "thunder", "agility", "quick-attack", "swift"],
     "evolutions": { "chainId": 10, "pokemonInChain": ["pikachu", "raichu"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif",
     "filtered": false
   },
   {
@@ -375,6 +400,7 @@
     "moves": ["growl", "thunder-shock", "thunder-wave"],
     "evolutions": { "chainId": 10, "pokemonInChain": ["pikachu", "raichu"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/26.gif",
     "filtered": false
   },
   {
@@ -387,6 +413,7 @@
     "moves": ["scratch", "sand-attack", "poison-sting", "swift", "fury-swipes", "slash"],
     "evolutions": { "chainId": 11, "pokemonInChain": ["sandshrew", "sandslash"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/27.gif",
     "filtered": false
   },
   {
@@ -399,6 +426,7 @@
     "moves": ["scratch", "sand-attack", "poison-sting", "swift", "fury-swipes", "slash"],
     "evolutions": { "chainId": 11, "pokemonInChain": ["sandshrew", "sandslash"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/28.gif",
     "filtered": false
   },
   {
@@ -415,6 +443,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/29.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/29.gif",
     "filtered": false
   },
   {
@@ -431,6 +460,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/30.gif",
     "filtered": false
   },
   {
@@ -447,6 +477,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/31.gif",
     "filtered": false
   },
   {
@@ -472,6 +503,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/32.gif",
     "filtered": false
   },
   {
@@ -497,6 +529,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/33.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/33.gif",
     "filtered": false
   },
   {
@@ -513,6 +546,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/34.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/34.gif",
     "filtered": false
   },
   {
@@ -525,6 +559,7 @@
     "moves": ["pound", "double-slap", "growl", "sing", "minimize", "defense-curl", "light-screen", "metronome"],
     "evolutions": { "chainId": 14, "pokemonInChain": ["clefairy", "clefable"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/35.gif",
     "filtered": false
   },
   {
@@ -537,6 +572,7 @@
     "moves": ["double-slap", "sing", "minimize", "metronome"],
     "evolutions": { "chainId": 14, "pokemonInChain": ["clefairy", "clefable"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/36.gif",
     "filtered": false
   },
   {
@@ -549,6 +585,7 @@
     "moves": ["tail-whip", "roar", "ember", "flamethrower", "fire-spin", "quick-attack", "confuse-ray"],
     "evolutions": { "chainId": 15, "pokemonInChain": ["vulpix", "ninetales"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/37.gif",
     "filtered": false
   },
   {
@@ -561,6 +598,7 @@
     "moves": ["tail-whip", "roar", "ember", "quick-attack"],
     "evolutions": { "chainId": 15, "pokemonInChain": ["vulpix", "ninetales"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/38.gif",
     "filtered": false
   },
   {
@@ -573,6 +611,7 @@
     "moves": ["pound", "double-slap", "body-slam", "double-edge", "sing", "disable", "defense-curl", "rest"],
     "evolutions": { "chainId": 16, "pokemonInChain": ["jigglypuff", "wigglytuff"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/39.gif",
     "filtered": false
   },
   {
@@ -585,6 +624,7 @@
     "moves": ["double-slap", "sing", "disable", "defense-curl"],
     "evolutions": { "chainId": 16, "pokemonInChain": ["jigglypuff", "wigglytuff"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/40.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/40.gif",
     "filtered": false
   },
   {
@@ -597,6 +637,7 @@
     "moves": ["wing-attack", "bite", "supersonic", "confuse-ray", "haze", "leech-life"],
     "evolutions": { "chainId": 17, "pokemonInChain": ["zubat", "golbat"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/41.gif",
     "filtered": false
   },
   {
@@ -609,6 +650,7 @@
     "moves": ["wing-attack", "bite", "supersonic", "screech", "confuse-ray", "haze", "leech-life"],
     "evolutions": { "chainId": 17, "pokemonInChain": ["zubat", "golbat"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/42.gif",
     "filtered": false
   },
   {
@@ -621,6 +663,7 @@
     "moves": ["acid", "absorb", "solar-beam", "poison-powder", "stun-spore", "sleep-powder", "petal-dance"],
     "evolutions": { "chainId": 18, "pokemonInChain": ["oddish", "gloom", "vileplume"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/43.gif",
     "filtered": false
   },
   {
@@ -633,6 +676,7 @@
     "moves": ["acid", "absorb", "solar-beam", "poison-powder", "stun-spore", "sleep-powder", "petal-dance"],
     "evolutions": { "chainId": 18, "pokemonInChain": ["oddish", "gloom", "vileplume"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/44.gif",
     "filtered": false
   },
   {
@@ -645,6 +689,7 @@
     "moves": ["acid", "poison-powder", "stun-spore", "sleep-powder", "petal-dance"],
     "evolutions": { "chainId": 18, "pokemonInChain": ["oddish", "gloom", "vileplume"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/45.gif",
     "filtered": false
   },
   {
@@ -657,6 +702,7 @@
     "moves": ["scratch", "growth", "stun-spore", "leech-life", "spore", "slash"],
     "evolutions": { "chainId": 19, "pokemonInChain": ["paras", "parasect"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/46.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/46.gif",
     "filtered": false
   },
   {
@@ -669,6 +715,7 @@
     "moves": ["scratch", "growth", "stun-spore", "leech-life", "spore", "slash"],
     "evolutions": { "chainId": 19, "pokemonInChain": ["paras", "parasect"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/47.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/47.gif",
     "filtered": false
   },
   {
@@ -681,6 +728,7 @@
     "moves": ["tackle", "disable", "psybeam", "poison-powder", "stun-spore", "sleep-powder", "psychic", "leech-life"],
     "evolutions": { "chainId": 20, "pokemonInChain": ["venonat", "venomoth"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/48.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/48.gif",
     "filtered": false
   },
   {
@@ -693,6 +741,7 @@
     "moves": ["tackle", "disable", "psybeam", "poison-powder", "stun-spore", "sleep-powder", "psychic", "leech-life"],
     "evolutions": { "chainId": 20, "pokemonInChain": ["venonat", "venomoth"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/49.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/49.gif",
     "filtered": false
   },
   {
@@ -705,6 +754,7 @@
     "moves": ["scratch", "sand-attack", "growl", "earthquake", "dig", "slash"],
     "evolutions": { "chainId": 21, "pokemonInChain": ["diglett", "dugtrio"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/50.gif",
     "filtered": false
   },
   {
@@ -717,6 +767,7 @@
     "moves": ["scratch", "sand-attack", "growl", "earthquake", "dig", "slash"],
     "evolutions": { "chainId": 21, "pokemonInChain": ["diglett", "dugtrio"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/51.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/51.gif",
     "filtered": false
   },
   {
@@ -729,6 +780,7 @@
     "moves": ["pay-day", "scratch", "bite", "growl", "screech", "fury-swipes", "slash"],
     "evolutions": { "chainId": 22, "pokemonInChain": ["meowth", "persian"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/52.gif",
     "filtered": false
   },
   {
@@ -741,6 +793,7 @@
     "moves": ["pay-day", "scratch", "bite", "growl", "screech", "fury-swipes", "slash"],
     "evolutions": { "chainId": 22, "pokemonInChain": ["meowth", "persian"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/53.gif",
     "filtered": false
   },
   {
@@ -753,6 +806,7 @@
     "moves": ["scratch", "tail-whip", "disable", "hydro-pump", "confusion", "fury-swipes"],
     "evolutions": { "chainId": 23, "pokemonInChain": ["psyduck", "golduck"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/54.gif",
     "filtered": false
   },
   {
@@ -765,6 +819,7 @@
     "moves": ["scratch", "tail-whip", "disable", "hydro-pump", "confusion", "fury-swipes"],
     "evolutions": { "chainId": 23, "pokemonInChain": ["psyduck", "golduck"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/55.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/55.gif",
     "filtered": false
   },
   {
@@ -777,6 +832,7 @@
     "moves": ["karate-chop", "scratch", "thrash", "leer", "seismic-toss", "focus-energy", "fury-swipes"],
     "evolutions": { "chainId": 24, "pokemonInChain": ["mankey", "primeape"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/56.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/56.gif",
     "filtered": false
   },
   {
@@ -789,6 +845,7 @@
     "moves": ["karate-chop", "scratch", "thrash", "leer", "seismic-toss", "focus-energy", "fury-swipes"],
     "evolutions": { "chainId": 24, "pokemonInChain": ["mankey", "primeape"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/57.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/57.gif",
     "filtered": false
   },
   {
@@ -801,6 +858,7 @@
     "moves": ["take-down", "leer", "bite", "roar", "ember", "flamethrower", "agility"],
     "evolutions": { "chainId": 25, "pokemonInChain": ["growlithe", "arcanine"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/58.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/58.gif",
     "filtered": false
   },
   {
@@ -813,6 +871,7 @@
     "moves": ["take-down", "leer", "roar", "ember"],
     "evolutions": { "chainId": 25, "pokemonInChain": ["growlithe", "arcanine"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/59.gif",
     "filtered": false
   },
   {
@@ -829,6 +888,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/60.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/60.gif",
     "filtered": false
   },
   {
@@ -845,6 +905,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/61.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/61.gif",
     "filtered": false
   },
   {
@@ -861,6 +922,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/62.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/62.gif",
     "filtered": false
   },
   {
@@ -873,6 +935,7 @@
     "moves": ["teleport"],
     "evolutions": { "chainId": 27, "pokemonInChain": ["abra", "kadabra", "alakazam"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/63.gif",
     "filtered": false
   },
   {
@@ -885,6 +948,7 @@
     "moves": ["disable", "psybeam", "confusion", "psychic", "teleport", "recover", "reflect"],
     "evolutions": { "chainId": 27, "pokemonInChain": ["abra", "kadabra", "alakazam"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/64.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/64.gif",
     "filtered": false
   },
   {
@@ -897,6 +961,7 @@
     "moves": ["disable", "psybeam", "confusion", "psychic", "teleport", "recover", "reflect"],
     "evolutions": { "chainId": 27, "pokemonInChain": ["abra", "kadabra", "alakazam"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/65.gif",
     "filtered": false
   },
   {
@@ -909,6 +974,7 @@
     "moves": ["karate-chop", "leer", "submission", "low-kick", "seismic-toss", "focus-energy"],
     "evolutions": { "chainId": 28, "pokemonInChain": ["machop", "machoke", "machamp"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/66.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/66.gif",
     "filtered": false
   },
   {
@@ -921,6 +987,7 @@
     "moves": ["karate-chop", "leer", "submission", "low-kick", "seismic-toss", "focus-energy"],
     "evolutions": { "chainId": 28, "pokemonInChain": ["machop", "machoke", "machamp"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/67.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/67.gif",
     "filtered": false
   },
   {
@@ -933,6 +1000,7 @@
     "moves": ["karate-chop", "leer", "submission", "low-kick", "seismic-toss", "focus-energy"],
     "evolutions": { "chainId": 28, "pokemonInChain": ["machop", "machoke", "machamp"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/68.gif",
     "filtered": false
   },
   {
@@ -959,6 +1027,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/69.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/69.gif",
     "filtered": false
   },
   {
@@ -985,6 +1054,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/70.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/70.gif",
     "filtered": false
   },
   {
@@ -1001,6 +1071,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/71.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/71.gif",
     "filtered": false
   },
   {
@@ -1023,6 +1094,7 @@
     ],
     "evolutions": { "chainId": 30, "pokemonInChain": ["tentacool", "tentacruel"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/72.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/72.gif",
     "filtered": false
   },
   {
@@ -1045,6 +1117,7 @@
     ],
     "evolutions": { "chainId": 30, "pokemonInChain": ["tentacool", "tentacruel"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/73.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/73.gif",
     "filtered": false
   },
   {
@@ -1057,6 +1130,7 @@
     "moves": ["tackle", "rock-throw", "earthquake", "harden", "defense-curl", "self-destruct", "explosion"],
     "evolutions": { "chainId": 31, "pokemonInChain": ["geodude", "graveler", "golem"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/74.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/74.gif",
     "filtered": false
   },
   {
@@ -1069,6 +1143,7 @@
     "moves": ["tackle", "rock-throw", "earthquake", "harden", "defense-curl", "self-destruct", "explosion"],
     "evolutions": { "chainId": 31, "pokemonInChain": ["geodude", "graveler", "golem"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/75.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/75.gif",
     "filtered": false
   },
   {
@@ -1081,6 +1156,7 @@
     "moves": ["tackle", "rock-throw", "earthquake", "harden", "defense-curl", "self-destruct", "explosion"],
     "evolutions": { "chainId": 31, "pokemonInChain": ["geodude", "graveler", "golem"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/76.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/76.gif",
     "filtered": false
   },
   {
@@ -1093,6 +1169,7 @@
     "moves": ["stomp", "take-down", "tail-whip", "growl", "ember", "fire-spin", "agility"],
     "evolutions": { "chainId": 32, "pokemonInChain": ["ponyta", "rapidash"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/77.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/77.gif",
     "filtered": false
   },
   {
@@ -1105,6 +1182,7 @@
     "moves": ["stomp", "take-down", "tail-whip", "growl", "ember", "fire-spin", "agility"],
     "evolutions": { "chainId": 32, "pokemonInChain": ["ponyta", "rapidash"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/78.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/78.gif",
     "filtered": false
   },
   {
@@ -1117,6 +1195,7 @@
     "moves": ["headbutt", "growl", "disable", "water-gun", "confusion", "psychic", "amnesia"],
     "evolutions": { "chainId": 33, "pokemonInChain": ["slowpoke", "slowbro"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/79.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/79.gif",
     "filtered": false
   },
   {
@@ -1129,6 +1208,7 @@
     "moves": ["headbutt", "growl", "disable", "water-gun", "confusion", "psychic", "withdraw", "amnesia"],
     "evolutions": { "chainId": 33, "pokemonInChain": ["slowpoke", "slowbro"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/80.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/80.gif",
     "filtered": false
   },
   {
@@ -1141,6 +1221,7 @@
     "moves": ["tackle", "supersonic", "sonic-boom", "thunder-shock", "thunder-wave", "screech", "swift"],
     "evolutions": { "chainId": 34, "pokemonInChain": ["magnemite", "magneton"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/81.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/81.gif",
     "filtered": false
   },
   {
@@ -1153,6 +1234,7 @@
     "moves": ["tackle", "supersonic", "sonic-boom", "thunder-shock", "thunder-wave", "screech", "swift"],
     "evolutions": { "chainId": 34, "pokemonInChain": ["magnemite", "magneton"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/82.gif",
     "filtered": false
   },
   {
@@ -1165,6 +1247,7 @@
     "moves": ["swords-dance", "sand-attack", "fury-attack", "leer", "peck", "agility", "slash"],
     "evolutions": { "chainId": 35, "pokemonInChain": ["farfetchd"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/83.gif",
     "filtered": false
   },
   {
@@ -1177,6 +1260,7 @@
     "moves": ["fury-attack", "growl", "peck", "drill-peck", "agility", "rage", "tri-attack"],
     "evolutions": { "chainId": 36, "pokemonInChain": ["doduo", "dodrio"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/84.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/84.gif",
     "filtered": false
   },
   {
@@ -1189,6 +1273,7 @@
     "moves": ["fury-attack", "growl", "peck", "drill-peck", "agility", "rage", "tri-attack"],
     "evolutions": { "chainId": 36, "pokemonInChain": ["doduo", "dodrio"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/85.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/85.gif",
     "filtered": false
   },
   {
@@ -1201,6 +1286,7 @@
     "moves": ["headbutt", "take-down", "growl", "ice-beam", "aurora-beam", "rest"],
     "evolutions": { "chainId": 37, "pokemonInChain": ["seel", "dewgong"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/86.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/86.gif",
     "filtered": false
   },
   {
@@ -1213,6 +1299,7 @@
     "moves": ["headbutt", "take-down", "growl", "ice-beam", "aurora-beam", "rest"],
     "evolutions": { "chainId": 37, "pokemonInChain": ["seel", "dewgong"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/87.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/87.gif",
     "filtered": false
   },
   {
@@ -1225,6 +1312,7 @@
     "moves": ["pound", "disable", "screech", "harden", "minimize", "sludge", "poison-gas", "acid-armor"],
     "evolutions": { "chainId": 38, "pokemonInChain": ["grimer", "muk"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/88.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/88.gif",
     "filtered": false
   },
   {
@@ -1237,6 +1325,7 @@
     "moves": ["pound", "disable", "screech", "harden", "minimize", "sludge", "poison-gas", "acid-armor"],
     "evolutions": { "chainId": 38, "pokemonInChain": ["grimer", "muk"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/89.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/89.gif",
     "filtered": false
   },
   {
@@ -1249,6 +1338,7 @@
     "moves": ["tackle", "leer", "supersonic", "ice-beam", "aurora-beam", "withdraw", "clamp"],
     "evolutions": { "chainId": 39, "pokemonInChain": ["shellder", "cloyster"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/90.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/90.gif",
     "filtered": false
   },
   {
@@ -1261,6 +1351,7 @@
     "moves": ["supersonic", "aurora-beam", "withdraw", "clamp", "spike-cannon"],
     "evolutions": { "chainId": 39, "pokemonInChain": ["shellder", "cloyster"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/91.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/91.gif",
     "filtered": false
   },
   {
@@ -1273,6 +1364,7 @@
     "moves": ["hypnosis", "night-shade", "confuse-ray", "lick", "dream-eater"],
     "evolutions": { "chainId": 40, "pokemonInChain": ["gastly", "haunter", "gengar"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/92.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/92.gif",
     "filtered": false
   },
   {
@@ -1285,6 +1377,7 @@
     "moves": ["hypnosis", "night-shade", "confuse-ray", "lick", "dream-eater"],
     "evolutions": { "chainId": 40, "pokemonInChain": ["gastly", "haunter", "gengar"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/93.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/93.gif",
     "filtered": false
   },
   {
@@ -1297,6 +1390,7 @@
     "moves": ["hypnosis", "night-shade", "confuse-ray", "lick", "dream-eater"],
     "evolutions": { "chainId": 40, "pokemonInChain": ["gastly", "haunter", "gengar"], "numberOfPokemonInChain": 3 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif",
     "filtered": false
   },
   {
@@ -1309,6 +1403,7 @@
     "moves": ["bind", "slam", "tackle", "rock-throw", "rage", "screech", "harden"],
     "evolutions": { "chainId": 41, "pokemonInChain": ["onix"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/95.gif",
     "filtered": false
   },
   {
@@ -1321,6 +1416,7 @@
     "moves": ["pound", "headbutt", "disable", "confusion", "psychic", "hypnosis", "meditate", "poison-gas"],
     "evolutions": { "chainId": 42, "pokemonInChain": ["drowzee", "hypno"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/96.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/96.gif",
     "filtered": false
   },
   {
@@ -1333,6 +1429,7 @@
     "moves": ["pound", "headbutt", "disable", "confusion", "psychic", "hypnosis", "meditate", "poison-gas"],
     "evolutions": { "chainId": 42, "pokemonInChain": ["drowzee", "hypno"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/97.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/97.gif",
     "filtered": false
   },
   {
@@ -1345,6 +1442,7 @@
     "moves": ["vice-grip", "guillotine", "stomp", "leer", "harden", "bubble", "crabhammer"],
     "evolutions": { "chainId": 43, "pokemonInChain": ["krabby", "kingler"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/98.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/98.gif",
     "filtered": false
   },
   {
@@ -1357,6 +1455,7 @@
     "moves": ["vice-grip", "guillotine", "stomp", "leer", "harden", "bubble", "crabhammer"],
     "evolutions": { "chainId": 43, "pokemonInChain": ["krabby", "kingler"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/99.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/99.gif",
     "filtered": false
   },
   {
@@ -1369,6 +1468,7 @@
     "moves": ["tackle", "sonic-boom", "screech", "light-screen", "self-destruct", "swift", "explosion"],
     "evolutions": { "chainId": 44, "pokemonInChain": ["voltorb", "electrode"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif",
     "filtered": false
   },
   {
@@ -1381,6 +1481,7 @@
     "moves": ["tackle", "sonic-boom", "screech", "light-screen", "self-destruct", "swift", "explosion"],
     "evolutions": { "chainId": 44, "pokemonInChain": ["voltorb", "electrode"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/101.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/101.gif",
     "filtered": false
   },
   {
@@ -1402,6 +1503,7 @@
     ],
     "evolutions": { "chainId": 45, "pokemonInChain": ["exeggcute", "exeggutor"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/102.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/102.gif",
     "filtered": false
   },
   {
@@ -1414,6 +1516,7 @@
     "moves": ["stomp", "hypnosis", "barrage"],
     "evolutions": { "chainId": 45, "pokemonInChain": ["exeggcute", "exeggutor"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/103.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/103.gif",
     "filtered": false
   },
   {
@@ -1426,6 +1529,7 @@
     "moves": ["thrash", "leer", "growl", "rage", "focus-energy", "bone-club", "bonemerang"],
     "evolutions": { "chainId": 46, "pokemonInChain": ["cubone", "marowak"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/104.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/104.gif",
     "filtered": false
   },
   {
@@ -1438,6 +1542,7 @@
     "moves": ["thrash", "leer", "growl", "rage", "focus-energy", "bone-club", "bonemerang"],
     "evolutions": { "chainId": 46, "pokemonInChain": ["cubone", "marowak"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/105.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/105.gif",
     "filtered": false
   },
   {
@@ -1450,6 +1555,7 @@
     "moves": ["double-kick", "mega-kick", "jump-kick", "rolling-kick", "meditate", "focus-energy", "high-jump-kick"],
     "evolutions": { "chainId": 47, "pokemonInChain": ["hitmonlee", "hitmonchan"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/106.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/106.gif",
     "filtered": false
   },
   {
@@ -1462,6 +1568,7 @@
     "moves": ["comet-punch", "mega-punch", "fire-punch", "ice-punch", "thunder-punch", "counter", "agility"],
     "evolutions": { "chainId": 47, "pokemonInChain": ["hitmonlee", "hitmonchan"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/107.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/107.gif",
     "filtered": false
   },
   {
@@ -1474,6 +1581,7 @@
     "moves": ["slam", "stomp", "wrap", "supersonic", "disable", "screech", "defense-curl"],
     "evolutions": { "chainId": 48, "pokemonInChain": ["lickitung"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/108.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/108.gif",
     "filtered": false
   },
   {
@@ -1486,6 +1594,7 @@
     "moves": ["tackle", "smokescreen", "haze", "self-destruct", "smog", "sludge", "explosion"],
     "evolutions": { "chainId": 49, "pokemonInChain": ["koffing", "weezing"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/109.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/109.gif",
     "filtered": false
   },
   {
@@ -1498,6 +1607,7 @@
     "moves": ["tackle", "smokescreen", "haze", "self-destruct", "smog", "sludge", "explosion"],
     "evolutions": { "chainId": 49, "pokemonInChain": ["koffing", "weezing"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/110.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/110.gif",
     "filtered": false
   },
   {
@@ -1510,6 +1620,7 @@
     "moves": ["stomp", "horn-attack", "fury-attack", "horn-drill", "take-down", "tail-whip", "leer"],
     "evolutions": { "chainId": 50, "pokemonInChain": ["rhyhorn", "rhydon"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/111.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/111.gif",
     "filtered": false
   },
   {
@@ -1522,6 +1633,7 @@
     "moves": ["stomp", "horn-attack", "fury-attack", "horn-drill", "take-down", "tail-whip", "leer"],
     "evolutions": { "chainId": 50, "pokemonInChain": ["rhyhorn", "rhydon"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/112.gif",
     "filtered": false
   },
   {
@@ -1534,6 +1646,7 @@
     "moves": ["pound", "double-slap", "double-edge", "growl", "sing", "minimize", "defense-curl", "light-screen"],
     "evolutions": { "chainId": 51, "pokemonInChain": ["chansey"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/113.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/113.gif",
     "filtered": false
   },
   {
@@ -1546,6 +1659,7 @@
     "moves": ["bind", "slam", "absorb", "growth", "poison-powder", "stun-spore", "sleep-powder", "constrict"],
     "evolutions": { "chainId": 52, "pokemonInChain": ["tangela"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/114.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/114.gif",
     "filtered": false
   },
   {
@@ -1558,6 +1672,7 @@
     "moves": ["comet-punch", "mega-punch", "tail-whip", "leer", "bite", "rage", "dizzy-punch"],
     "evolutions": { "chainId": 53, "pokemonInChain": ["kangaskhan"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/115.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/115.gif",
     "filtered": false
   },
   {
@@ -1570,6 +1685,7 @@
     "moves": ["leer", "water-gun", "hydro-pump", "agility", "smokescreen", "bubble"],
     "evolutions": { "chainId": 54, "pokemonInChain": ["horsea", "seadra"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/116.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/116.gif",
     "filtered": false
   },
   {
@@ -1582,6 +1698,7 @@
     "moves": ["leer", "water-gun", "hydro-pump", "agility", "smokescreen", "bubble"],
     "evolutions": { "chainId": 54, "pokemonInChain": ["horsea", "seadra"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/117.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/117.gif",
     "filtered": false
   },
   {
@@ -1594,6 +1711,7 @@
     "moves": ["horn-attack", "fury-attack", "horn-drill", "tail-whip", "supersonic", "peck", "agility", "waterfall"],
     "evolutions": { "chainId": 55, "pokemonInChain": ["goldeen", "seaking"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/118.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/118.gif",
     "filtered": false
   },
   {
@@ -1606,6 +1724,7 @@
     "moves": ["horn-attack", "fury-attack", "horn-drill", "tail-whip", "supersonic", "peck", "agility", "waterfall"],
     "evolutions": { "chainId": 55, "pokemonInChain": ["goldeen", "seaking"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/119.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/119.gif",
     "filtered": false
   },
   {
@@ -1618,6 +1737,7 @@
     "moves": ["tackle", "water-gun", "hydro-pump", "recover", "harden", "minimize", "light-screen", "swift"],
     "evolutions": { "chainId": 56, "pokemonInChain": ["staryu", "starmie"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/120.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/120.gif",
     "filtered": false
   },
   {
@@ -1630,6 +1750,7 @@
     "moves": ["tackle", "water-gun", "harden"],
     "evolutions": { "chainId": 56, "pokemonInChain": ["staryu", "starmie"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/121.gif",
     "filtered": false
   },
   {
@@ -1642,6 +1763,7 @@
     "moves": ["double-slap", "confusion", "meditate", "barrier", "light-screen", "substitute"],
     "evolutions": { "chainId": 57, "pokemonInChain": ["mr-mime"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/122.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/122.gif",
     "filtered": false
   },
   {
@@ -1654,6 +1776,7 @@
     "moves": ["swords-dance", "leer", "agility", "quick-attack", "double-team", "focus-energy", "slash"],
     "evolutions": { "chainId": 58, "pokemonInChain": ["scyther"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/123.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/123.gif",
     "filtered": false
   },
   {
@@ -1666,6 +1789,7 @@
     "moves": ["pound", "double-slap", "ice-punch", "body-slam", "thrash", "blizzard", "lick", "lovely-kiss"],
     "evolutions": { "chainId": 59, "pokemonInChain": ["jynx"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/124.gif",
     "filtered": false
   },
   {
@@ -1678,6 +1802,7 @@
     "moves": ["thunder-punch", "leer", "thunder-shock", "thunder", "quick-attack", "screech", "light-screen"],
     "evolutions": { "chainId": 60, "pokemonInChain": ["electabuzz"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/125.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/125.gif",
     "filtered": false
   },
   {
@@ -1690,6 +1815,7 @@
     "moves": ["fire-punch", "leer", "ember", "flamethrower", "smokescreen", "confuse-ray", "smog"],
     "evolutions": { "chainId": 61, "pokemonInChain": ["magmar"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/126.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/126.gif",
     "filtered": false
   },
   {
@@ -1702,6 +1828,7 @@
     "moves": ["vice-grip", "guillotine", "swords-dance", "seismic-toss", "harden", "focus-energy", "slash"],
     "evolutions": { "chainId": 62, "pokemonInChain": ["pinsir"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/127.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/127.gif",
     "filtered": false
   },
   {
@@ -1714,6 +1841,7 @@
     "moves": ["stomp", "tackle", "take-down", "tail-whip", "leer", "rage"],
     "evolutions": { "chainId": 63, "pokemonInChain": ["tauros"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/128.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/128.gif",
     "filtered": false
   },
   {
@@ -1726,6 +1854,7 @@
     "moves": ["tackle", "splash"],
     "evolutions": { "chainId": 64, "pokemonInChain": ["magikarp", "gyarados"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/129.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/129.gif",
     "filtered": false
   },
   {
@@ -1738,6 +1867,7 @@
     "moves": ["leer", "bite", "hydro-pump", "hyper-beam", "dragon-rage"],
     "evolutions": { "chainId": 64, "pokemonInChain": ["magikarp", "gyarados"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/130.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/130.gif",
     "filtered": false
   },
   {
@@ -1750,6 +1880,7 @@
     "moves": ["body-slam", "growl", "sing", "mist", "water-gun", "hydro-pump", "ice-beam", "confuse-ray"],
     "evolutions": { "chainId": 65, "pokemonInChain": ["lapras"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/131.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/131.gif",
     "filtered": false
   },
   {
@@ -1762,6 +1893,7 @@
     "moves": ["transform"],
     "evolutions": { "chainId": 66, "pokemonInChain": ["ditto"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/132.gif",
     "filtered": false
   },
   {
@@ -1778,6 +1910,7 @@
       "numberOfPokemonInChain": 2
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/133.gif",
     "filtered": false
   },
   {
@@ -1805,6 +1938,7 @@
       "numberOfPokemonInChain": 2
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/134.gif",
     "filtered": false
   },
   {
@@ -1832,6 +1966,7 @@
       "numberOfPokemonInChain": 2
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/135.gif",
     "filtered": false
   },
   {
@@ -1859,6 +1994,7 @@
       "numberOfPokemonInChain": 2
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/136.gif",
     "filtered": false
   },
   {
@@ -1871,6 +2007,7 @@
     "moves": ["tackle", "psybeam", "agility", "recover", "sharpen", "conversion", "tri-attack"],
     "evolutions": { "chainId": 68, "pokemonInChain": ["porygon"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/137.gif",
     "filtered": false
   },
   {
@@ -1883,6 +2020,7 @@
     "moves": ["horn-attack", "leer", "water-gun", "hydro-pump", "withdraw", "spike-cannon"],
     "evolutions": { "chainId": 69, "pokemonInChain": ["omanyte", "omastar"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/138.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/138.gif",
     "filtered": false
   },
   {
@@ -1895,6 +2033,7 @@
     "moves": ["horn-attack", "leer", "water-gun", "hydro-pump", "withdraw", "spike-cannon"],
     "evolutions": { "chainId": 69, "pokemonInChain": ["omanyte", "omastar"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/139.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/139.gif",
     "filtered": false
   },
   {
@@ -1907,6 +2046,7 @@
     "moves": ["scratch", "leer", "hydro-pump", "absorb", "harden", "slash"],
     "evolutions": { "chainId": 70, "pokemonInChain": ["kabuto", "kabutops"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/140.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/140.gif",
     "filtered": false
   },
   {
@@ -1919,6 +2059,7 @@
     "moves": ["scratch", "leer", "hydro-pump", "absorb", "harden", "slash"],
     "evolutions": { "chainId": 70, "pokemonInChain": ["kabuto", "kabutops"], "numberOfPokemonInChain": 2 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/141.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/141.gif",
     "filtered": false
   },
   {
@@ -1931,6 +2072,7 @@
     "moves": ["wing-attack", "take-down", "bite", "supersonic", "hyper-beam", "agility"],
     "evolutions": { "chainId": 71, "pokemonInChain": ["aerodactyl"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/142.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/142.gif",
     "filtered": false
   },
   {
@@ -1943,6 +2085,7 @@
     "moves": ["headbutt", "body-slam", "double-edge", "hyper-beam", "harden", "amnesia", "rest"],
     "evolutions": { "chainId": 72, "pokemonInChain": ["snorlax"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/143.gif",
     "filtered": false
   },
   {
@@ -1955,6 +2098,7 @@
     "moves": ["mist", "ice-beam", "blizzard", "peck", "agility"],
     "evolutions": { "chainId": 73, "pokemonInChain": ["articuno"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/144.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/144.gif",
     "filtered": false
   },
   {
@@ -1967,6 +2111,7 @@
     "moves": ["drill-peck", "thunder-shock", "thunder", "agility", "light-screen"],
     "evolutions": { "chainId": 74, "pokemonInChain": ["zapdos"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/145.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/145.gif",
     "filtered": false
   },
   {
@@ -1979,6 +2124,7 @@
     "moves": ["leer", "peck", "fire-spin", "agility", "sky-attack"],
     "evolutions": { "chainId": 75, "pokemonInChain": ["moltres"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/146.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/146.gif",
     "filtered": false
   },
   {
@@ -1995,6 +2141,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/147.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/147.gif",
     "filtered": false
   },
   {
@@ -2011,6 +2158,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/148.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/148.gif",
     "filtered": false
   },
   {
@@ -2027,6 +2175,7 @@
       "numberOfPokemonInChain": 3
     },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/149.gif",
     "filtered": false
   },
   {
@@ -2039,6 +2188,7 @@
     "moves": ["disable", "mist", "confusion", "psychic", "recover", "barrier", "swift", "amnesia"],
     "evolutions": { "chainId": 77, "pokemonInChain": ["mewtwo"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/150.gif",
     "filtered": false
   },
   {
@@ -2051,6 +2201,7 @@
     "moves": ["pound", "mega-punch", "psychic", "metronome", "transform"],
     "evolutions": { "chainId": 78, "pokemonInChain": ["mew"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/151.gif",
     "filtered": false
   }
 ]

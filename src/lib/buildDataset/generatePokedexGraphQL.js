@@ -62,7 +62,7 @@ const query = `query gen1Query {
     const types = organizeTypes(pokemon.pokemon_v2_pokemontypes);
     const moves = organizeMoves(pokemon.pokemon_v2_pokemonmoves);
     const evolutions = organizeEvolutions(pokemon.pokemon_v2_pokemonspecy);
-    const spriteUrl = parseSpriteUrl(pokemon.pokemon_v2_pokemonsprites);
+    const [spriteUrl, animatedSpriteUrl] = parseSpriteUrl(pokemon.pokemon_v2_pokemonsprites);
 
     organizedPokedex.push({
       id: pokemon.id,
@@ -74,6 +74,7 @@ const query = `query gen1Query {
       moves: moves,
       evolutions: evolutions,
       spriteUrl: spriteUrl,
+      animatedSpriteUrl: animatedSpriteUrl,
       filtered: false,
     });
   });
@@ -83,7 +84,7 @@ const query = `query gen1Query {
   // modify eevee evolution chain
   const eeveeChain = [132, 133, 134, 135];
   eeveeChain.forEach((pokemon) => {
-    console.log(organizedPokedex[pokemon]);
+    // console.log(organizedPokedex[pokemon]);
     organizedPokedex[pokemon].evolutions.numberOfPokemonInChain = 2;
   });
 
@@ -120,7 +121,9 @@ async function fetchData() {
 function parseSpriteUrl(allSprites) {
   const spriteString = allSprites[0].sprites;
   const spriteObject = JSON.parse(spriteString);
-  return spriteObject.front_default;
+  // console.log(spriteObject);
+  console.log(spriteObject.versions["generation-v"]["black-white"].animated.front_default);
+  return [spriteObject.front_default, spriteObject.versions["generation-v"]["black-white"].animated.front_default];
 }
 
 function organizeStats(unorganizedStats) {

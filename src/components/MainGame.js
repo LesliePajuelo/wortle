@@ -129,7 +129,8 @@ function MainGame() {
   }
 
   function renderGameWin() {
-    setSpriteUrl(answer.spriteUrl);
+    // setSpriteUrl(answer.spriteUrl);
+    setSpriteUrl(answer.animatedSpriteUrl);
     const updatedStats = calculateStats(stats, answer.name, guessFeedback, true);
     setStats(updatedStats);
     setWin(true);
@@ -146,7 +147,8 @@ function MainGame() {
   }
 
   function renderGameLoss() {
-    setSpriteUrl(answer.spriteUrl);
+    // setSpriteUrl(answer.spriteUrl);
+    setSpriteUrl(answer.animatedSpriteUrl);
     const updatedStats = calculateStats(stats, answer.name, guessFeedback, false);
     setStats(updatedStats);
     setLose(true);

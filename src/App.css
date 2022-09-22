@@ -656,12 +656,18 @@ body {
 
 .custom-sprite-img {
   position: absolute;
-  width: 35%;
-  left: 12%;
-  top: 20%;
   z-index: 1;
 
-  animation: float infinite 3s ease-in-out;
+  /* for non-animated sprite */
+  /* animation: float infinite 3s ease-in-out; */
+  /* width: 35%; */
+  /* left: 12%; */
+  /* top: 20%; */
+
+  /* for animated sprite */
+  width: 20%;
+  left: 18%;
+  top: 35%;
 }
 
 @keyframes float {
