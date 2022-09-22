@@ -41,6 +41,15 @@ const DataSourcesModal = ({ isOpen, handleClose }) => {
             <div className="custom-source-div">
               <img className="custom-pokeball-bullet" src={pokeball} />
               <p className="has-text-white is-size-7-mobile">
+                <span>Pokéball loading spinner from </span>
+                <a className="has-text-white is-underlined" href="https://codepen.io/notelho/" target="_blank">
+                  Nathan Botelho
+                </a>
+              </p>
+            </div>
+            <div className="custom-source-div">
+              <img className="custom-pokeball-bullet" src={pokeball} />
+              <p className="has-text-white is-size-7-mobile">
                 <span>Professor Oak image from </span>
                 <a
                   className="has-text-white is-underlined"
