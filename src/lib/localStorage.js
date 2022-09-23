@@ -1,6 +1,7 @@
 const LOCAL_STORAGE_PREFIX = "SQWORDL";
 const LOCAL_STORAGE_GAMESTATE = `${LOCAL_STORAGE_PREFIX}.gameState`;
 const LOCAL_STORAGE_STATS = `${LOCAL_STORAGE_PREFIX}.stats`;
+const LOCAL_STORAGE_WELCOME_MODAL = `${LOCAL_STORAGE_PREFIX}.welcome-message-seen`;
 
 // TODO - INCORPORATE FIRESTORE
 export function loadLanguagePreferenceFromLocalStorage() {
@@ -24,4 +25,13 @@ export function loadGameStateFromLocalStorage() {
 
 export function saveGameStateToLocalStorage(gameState) {
   localStorage.setItem(LOCAL_STORAGE_GAMESTATE, JSON.stringify(gameState));
+}
+
+export function loadWelcomeModalSeenFromLocalStorage() {
+  const welcomeModalSeen = localStorage.getItem(LOCAL_STORAGE_WELCOME_MODAL);
+  return welcomeModalSeen ? true : false;
+}
+
+export function saveWelcomeModalSeenToLocalStorage() {
+  localStorage.setItem(LOCAL_STORAGE_WELCOME_MODAL, JSON.stringify(true));
 }

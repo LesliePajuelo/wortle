@@ -27,7 +27,10 @@ import {
   loadGameStateFromLocalStorage,
   saveGameStateToLocalStorage,
   loadStatsFromLocalStorage,
+  loadWelcomeModalSeenFromLocalStorage,
+  saveWelcomeModalSeenToLocalStorage,
 } from "../lib/localStorage";
+import delay from "../lib/delay";
 import { FLIP_DURATION_GAME_OVER, STATS_MODAL_DELAY, ATTACK_DELAY, INFO_MODAL_DELAY } from "../constants/settings";
 import BugReportSuccessMessage from "./modals/bugReportModal/BugReportSuccessMessage";
 import DonateModal from "./modals/DonateModal";
@@ -180,19 +183,18 @@ function MainGame() {
 
   // LOAD PAGE
   useEffect(() => {
-    // loader to allow time for database vs local storage
-    setTimeout(() => {
+    (async () => {
+      // loader to allow some time for database vs local storage for better user experience
+      await delay(2000);
       setShowSpinner(false);
-    }, 2000);
-
-    // show instructions if no previous game state for user
-    if (!loadGameStateFromLocalStorage()) {
-      setTimeout(() => {
+      // show welcome modal to new user
+      if (!loadWelcomeModalSeenFromLocalStorage()) {
+        await delay(1000);
         setIsInfoModalOpen(true);
-      }, INFO_MODAL_DELAY + 3000);
-    }
-
-    setGameLoading(false);
+        saveWelcomeModalSeenToLocalStorage();
+      }
+      setGameLoading(false);
+    })();
   }, []);
 
   // LOAD STATE FROM FIRESTORE THE FIRST TIME DOCUMENTDATA IS NOT NULL
