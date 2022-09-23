@@ -14,6 +14,10 @@ function Title({ gameOn, win, lose }) {
         <div className="is-flex is-align-items-center">
           <figure className="image custom-squirtle-image-left">
             <img className="" src={squirtle} />
+            {/* <img
+              className=""
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif"
+            /> */}
           </figure>
           <img
             className={`custom-title-img ${gameOn || win || lose ? "custom-title-img-game-on-mobile" : ""}`}
@@ -21,6 +25,10 @@ function Title({ gameOn, win, lose }) {
           />
           <figure className="image custom-squirtle-image-right">
             <img className="" src={squirtle} />
+            {/* <img
+              className=""
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif"
+            /> */}
           </figure>
         </div>
       </nav>

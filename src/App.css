@@ -124,6 +124,8 @@ body {
   position: relative;
   top: -5px;
   width: 128px;
+  /* width: 50px; */
+  /* margin: 0 10px; */
 }
 
 .custom-squirtle-image-left {
