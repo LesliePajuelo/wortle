@@ -13,7 +13,7 @@ const EvcModal = ({ isOpen, handleClose }) => {
               </p>
               <p>
                 If you guess Wartortle, the EvC will be 3 because there are 3 Pokémon in Wartortle's evolution chain
-                (Sqwordle, Wartortle, Blastoise). This is the case, even though Wartortle is the second (#2) evolution
+                (Squirtle, Wartortle, Blastoise). This is the case, even though Wartortle is the second (#2) evolution
                 in the chain.
               </p>
             </div>
