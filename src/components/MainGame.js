@@ -339,6 +339,8 @@ function MainGame() {
         saveGameStateToLocalStorage({ ...updatedGameState });
       }
     }
+    // allow users to guess the same pokemon twice
+    setGuessToCheck(null);
   }, [guessFeedback]);
 
   // STORE GAMESTATE AFTER WIN OR LOSS
