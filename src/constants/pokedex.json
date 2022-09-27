@@ -1553,7 +1553,7 @@
     "stats": { "hp": 50, "attack": 120, "defense": 53, "special-attack": 35, "special-defense": 110, "speed": 87 },
     "types": ["fighting"],
     "moves": ["double-kick", "mega-kick", "jump-kick", "rolling-kick", "meditate", "focus-energy", "high-jump-kick"],
-    "evolutions": { "chainId": 47, "pokemonInChain": ["hitmonlee", "hitmonchan"], "numberOfPokemonInChain": 2 },
+    "evolutions": { "chainId": 47, "pokemonInChain": ["hitmonlee"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/106.png",
     "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/106.gif",
     "filtered": false
@@ -1566,7 +1566,7 @@
     "stats": { "hp": 50, "attack": 105, "defense": 79, "special-attack": 35, "special-defense": 110, "speed": 76 },
     "types": ["fighting"],
     "moves": ["comet-punch", "mega-punch", "fire-punch", "ice-punch", "thunder-punch", "counter", "agility"],
-    "evolutions": { "chainId": 47, "pokemonInChain": ["hitmonlee", "hitmonchan"], "numberOfPokemonInChain": 2 },
+    "evolutions": { "chainId": 47, "pokemonInChain": ["hitmonchan"], "numberOfPokemonInChain": 1 },
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/107.png",
     "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/107.gif",
     "filtered": false

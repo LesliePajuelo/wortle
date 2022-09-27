@@ -4,6 +4,7 @@
 GraphQL database issues to be aware of for Gen 1 query (all addressed in code below):
 - [ ] Clefairy/Clefable & Jigglypuff/Wigglytuff types need to change from Fairy to Normal
 - [ ] Eevee evolution chain issues
+- [ ] hitmonchan and hitmonlee come back as evolution chain 2. not the case for gen 1
 - [ ] Duplicate moves
 - [ ] Sprites data comes in as a giant string that needs to be parsed
   */
@@ -92,6 +93,14 @@ const query = `query gen1Query {
   const clefairyChain = [34, 35];
   clefairyChain.forEach((pokemon) => {
     organizedPokedex[pokemon].types.push("normal");
+  });
+
+  // modify hitmonchan and hitmonlee to evolution chain 1
+  const hitmonChain = [105, 106];
+  hitmonChain.forEach((pokemon) => {
+    organizedPokedex[pokemon].evolutions["pokemonInChain"] = [organizedPokedex[pokemon].name];
+    organizedPokedex[pokemon].evolutions["numberOfPokemonInChain"] =
+      organizedPokedex[pokemon].evolutions["pokemonInChain"].length;
   });
 
   const pokedexStringified = JSON.stringify(organizedPokedex);
