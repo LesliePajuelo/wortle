@@ -79,6 +79,10 @@ function GameContainer(props) {
     const sanitizedInput = input.trim().toLowerCase();
     setGuessToCheck(sanitizedInput);
   }
+  let newFiltered = filteredPokedex.filter((pokemon)=>{
+    return !pokemon.filtered
+
+  })
 
   return (
     <div className="custom-game-container | container mt-4 is-flex is-justify-content-center">
@@ -113,7 +117,7 @@ function GameContainer(props) {
                     <img className="custom-pokedex-title-img" src={pokedexTitle} />
                   </div>
                   <div className="custom-sprite-gallery-images">
-                    {filteredPokedex.map((pokemon, index) => {
+                    {newFiltered.map((pokemon, index) => {
                       return (
                         <Sprite
                           key={index}

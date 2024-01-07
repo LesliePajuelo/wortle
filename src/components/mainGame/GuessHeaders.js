@@ -21,8 +21,8 @@ function GuessHeaders({ setIsEvcModalOpen }) {
             />
           </span>
         </div>
-        <div className="column pt-1 pb-1 has-text-black has-text-weight-bold has-text-centered is-uppercase">Att</div>
-        <div className="column pt-1 pb-1 has-text-black has-text-weight-bold has-text-centered is-uppercase">Def</div>
+        {/* <div className="column pt-1 pb-1 has-text-black has-text-weight-bold has-text-centered is-uppercase">Att</div> */}
+        {/* <div className="column pt-1 pb-1 has-text-black has-text-weight-bold has-text-centered is-uppercase">Def</div> */}
         <div className="column pt-1 pb-1 has-text-black has-text-weight-bold has-text-centered is-uppercase">Ht</div>
         <div className="column pt-1 pb-1 has-text-black has-text-weight-bold has-text-centered is-uppercase">Wt</div>
       </div>

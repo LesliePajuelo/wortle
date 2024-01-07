@@ -20,7 +20,7 @@ import filterPokemonInput from "../lib/filterPokemonInput";
 import generateFeedback from "../lib/generateFeedback";
 import filterPokedex from "../lib/filterPokedex";
 import calculateStats, { loadStats } from "../lib/calculateStats";
-import { answer, index } from "../lib/generateDailyAnswer";
+import { generateDailyAnswer, answer, index } from "../lib/generateDailyAnswer";
 import {
   loadLanguagePreferenceFromLocalStorage,
   saveStatsToLocalStorage,
@@ -183,6 +183,7 @@ function MainGame() {
 
   // LOAD PAGE
   useEffect(() => {
+
     (async () => {
       // loader to allow some time for database vs local storage for better user experience
       await delay(2000);
