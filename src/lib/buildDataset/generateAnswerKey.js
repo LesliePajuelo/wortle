@@ -3,10 +3,10 @@ const Pokedex = require("../../constants/pokedex.json");
 
 const pokedex = Pokedex;
 const POKEMON_ID_START = 1;
-const POKEMON_ID_END = 151;
+const POKEMON_ID_END = 492;
 const UNIQUE_MOVE_CUTOFF = 1;
 const MIN_POKEMON_REPEAT = 20;
-const NUM_ANSWERS = 1000;
+const NUM_ANSWERS = 50000;
 
 // MAIN FUNCTION
 (async () => {
@@ -21,7 +21,8 @@ const NUM_ANSWERS = 1000;
   tempMoves.push({ pokemon: firstPokemon.name, moves: firstPokemonMovesNames });
 
   for (const pokemon of pokedex) {
-    if (pokemon.evolutions.includes(tempMoves[tempMoves.length - 1].pokemon)) {
+    console.log(pokemon, pokemon.evolutions)
+    if (pokemon.evolutions.pokemonInChain.includes(tempMoves[tempMoves.length - 1].pokemon)) {
       // console.log(`${pokemon.name} in list already`);
       let moveNames = [];
       for (const move of pokemon.moves) {
@@ -58,7 +59,7 @@ const NUM_ANSWERS = 1000;
       randomNumber = Math.floor(Math.random() * (POKEMON_ID_END - POKEMON_ID_START) + POKEMON_ID_START);
       pokemon = pokedex[randomNumber];
       answer = pokemon.name;
-      console.log(`answer ${i}: ${answer}`);
+      // console.log(`answer ${i}: ${answer}`);
 
       const prevTwentyAnswers = answerKey.map((item) => item.answer).slice(-20);
       if (!prevTwentyAnswers.includes(answer)) {
@@ -78,22 +79,22 @@ const NUM_ANSWERS = 1000;
       // while loop to filter out moves that are unique or shared between less than X pokemon. Exception: Abra only knows teleport and ditto only knows transform.
       while (isMoveUnique) {
         const randomNumber = Math.floor(Math.random() * (numMoves - 0) + 0);
-        const randomMove = pokemon.moves[randomNumber].move;
+        const randomMove = pokemon?.moves[randomNumber];
         const moveCount = moveList.filter((move) => move === randomMove);
-        if (moveCount.length > UNIQUE_MOVE_CUTOFF || answer === "abra" || answer === "ditto") {
+        // if (moveCount.length > UNIQUE_MOVE_CUTOFF || answer === "abra" || answer === "ditto") {
           // if (moveCount.length > 1 || randomMove === "teleport") {
           move = randomMove;
           isMoveUnique = false;
-        } else {
+        // } else {
           console.log(randomMove);
-        }
+        // }
       }
       randomAttacks.push(move);
     }
 
     answerKey.push({ answer, randomAttacks });
   }
-
+  console.log("how many? ", answerKey.length)
   const answerKeyStringified = JSON.stringify(answerKey);
   fs.writeFile("answerKey.json", answerKeyStringified, "utf8", function (error) {
     if (error) {

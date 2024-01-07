@@ -2,7 +2,7 @@ const fs = require("fs");
 const Pokedex = require("../../constants/pokedex.json");
 
 const POKEMON_ID_START = 1;
-const POKEMON_ID_END = 151;
+const POKEMON_ID_END = 492;
 const UNIQUE_MOVE_CUTOFF = 1;
 const MIN_POKEMON_REPEAT = 20;
 const NUM_ATTACKS = 5;
@@ -17,7 +17,7 @@ const NUM_ANSWERS = 1000;
   movesByEvolutionChain.push({ pokemon: firstPokemon.name, moves: firstPokemon.moves });
 
   for (const pokemon of Pokedex) {
-    if (pokemon.evolutions.pokemonInChain.includes(movesByEvolutionChain[movesByEvolutionChain.length - 1].pokemon)) {
+    if (Array.isArray(pokemon.evolutions) && Array.isArray(pokemon?.evolutions.pokemonInChain) &&  pokemon?.evolutions.pokemonInChain.includes(movesByEvolutionChain[movesByEvolutionChain.length - 1].pokemon)) {
       // merge moveset without duplicates
       const previousArray = movesByEvolutionChain[movesByEvolutionChain.length - 1].moves;
       const newArray = [...new Set([...previousArray, ...pokemon.moves])];
@@ -81,7 +81,7 @@ const NUM_ANSWERS = 1000;
   }
 
   const answerKeyStringified = JSON.stringify(answerKey);
-  fs.writeFile("answerKey.json", answerKeyStringified, "utf8", function (error) {
+  fs.writeFile("answerKey2.json", answerKeyStringified, "utf8", function (error) {
     if (error) {
       console.log("An error occured while writing JSON Object to file.");
       return console.log(error);
