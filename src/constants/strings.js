@@ -1,5 +1,5 @@
-export const dailyGameUrl = "https://www.sqwordle.io/";
-export const safariZoneUrl = "http://localhost:3000";
+export const dailyGameUrl = "https://wortle.envirotechie.com/";
+export const safariZoneUrl = "https://wortle.envirotechie.com/";
 // FOR BETA SITE:
 // export const dailyGameUrl = "https://sqwordle-beta.netlify.app/";
 // export const safariZoneUrl = "https://sqwordle-safari-zone-beta.netlify.app/";
