@@ -14,12 +14,11 @@ const XLSX = require("xlsx");
 async function safeAwait(promise) {
   try {
       const result = await promise;
-      return [null, result]; // Returns an array with error as null and the result
+      return [null, result];
   } catch (error) {
-      return [error, null]; // Returns an array with the error and result as null
+      return [error, null]; 
   }
 }
-
 
 const Workbook = XLSX.readFile("./pokemon-move-translations.xlsx");
 const movesWorksheet = XLSX.utils.sheet_to_json(Workbook.Sheets["gen1Moves"]);
@@ -44,7 +43,7 @@ async function fetchPokedex() {
   console.log("fetching initial pokemon information...");
   const offset = 151
   const limit = 341
-  const [error,allPokemonResponse] = await safeAwait(fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`));
+  const [error, allPokemonResponse] = await safeAwait(fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`));
   error ? console.log('allPokemonResponse', error) : null;
   console.log("initial information fetched!");
   const allPokemonJson = await allPokemonResponse.json().catch((error)=>{console.log('allPokemon', error)});;
