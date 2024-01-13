@@ -3,7 +3,7 @@
 import Pokedex from "../constants/pokedex.json";
 
 const POKEMON_ID_START = 1;
-const POKEMON_ID_END = 151;
+const POKEMON_ID_END = 492;
 
 export function generateSafariZoneAnswer() {
   const randomNumber = Math.floor(Math.random() * (POKEMON_ID_END - POKEMON_ID_START) + POKEMON_ID_START);
