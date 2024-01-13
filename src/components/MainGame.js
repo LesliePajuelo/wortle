@@ -21,6 +21,7 @@ import generateFeedback from "../lib/generateFeedback";
 import filterPokedex from "../lib/filterPokedex";
 import calculateStats, { loadStats } from "../lib/calculateStats";
 import { generateDailyAnswer, answer, index } from "../lib/generateDailyAnswer";
+
 import {
   loadLanguagePreferenceFromLocalStorage,
   saveStatsToLocalStorage,
@@ -38,6 +39,7 @@ import { updateLanguagePreference, updateUserGameState, updateUserStats } from "
 import ProfileModal from "./modals/ProfileModal";
 import EvcModal from "./modals/EvcModal";
 
+console.log('answer', answer)
 function MainGame() {
   const { t, i18n } = useTranslation();
 

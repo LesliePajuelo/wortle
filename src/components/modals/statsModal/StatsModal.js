@@ -15,6 +15,7 @@ import soulBadge from "../../../img/badges/soul-badge-210.png";
 import marshBadge from "../../../img/badges/marsh-badge-210.png";
 import volcanoBadge from "../../../img/badges/volcano-badge-210.png";
 import earthBadge from "../../../img/badges/earth-badge-210.png";
+import stoneBadge from "../../../img/badges/Stonebadge.png";
 import GuessDistribution from "./GuessDistribution";
 import GymBadge from "./GymBadge";
 import { trainerQuotes, dailyGameUrl, safariZoneUrl } from "../../../constants/strings";
@@ -213,6 +214,16 @@ const StatsModal = (props) => {
                 badgeLocalStorage={"Earth Badge"}
                 location={t("statsModal.gymBadges.earthBadge.gym")}
                 description={t("statsModal.gymBadges.earthBadge.description")}
+                stats={stats}
+              />
+            </div>
+            <div className="custom-gym-badge-div">
+              <GymBadge
+                badgeImg={stoneBadge}
+                badgeName={t("statsModal.gymBadges.boulderBadge.name")}
+                badgeLocalStorage={"Boulder Badge"}
+                location={t("statsModal.gymBadges.boulderBadge.gym")}
+                description={t("statsModal.gymBadges.boulderBadge.description")}
                 stats={stats}
               />
             </div>

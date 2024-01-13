@@ -36,7 +36,7 @@ const PokedexModal = ({ isOpen, handleClose, filteredPokedex, stats }) => {
           <img className="custom-pokedex-stats-img" src={pokedexImg} alt="" />
           {/* {showErrorMessage && <div className="notification is-warning">You do not have this pokemons</div>} */}
 
-          <p className="custom-stats-pokedex-counter">{`${stats.pokemonCaught.length}`}/151</p>
+          <p className="custom-stats-pokedex-counter">{`${stats.pokemonCaught.length}`}/492</p>
           <div className="custom-stats-pokedex-gallery">
             <div className="custom-sprite-gallery-images">
               {filteredPokedex.map((pokemon, index) => {
