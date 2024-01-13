@@ -35,7 +35,6 @@ export function generateDailyAnswer(region) {
   const sqwordleStartDate = generateRandomDate(new Date(2023, 0, 1), new Date());
   const msOffset = Date.now() - sqwordleStartDate;
   const dayOffset = msOffset / MILLISECONDS_TO_DAYS;
-console.log('regions[region]', region, regions[region])
   const POKEMON_ID_START = regions[region]?.start || 1;
   const POKEMON_ID_END = regions[region]?.end || 151;
 
@@ -47,7 +46,7 @@ console.log('regions[region]', region, regions[region])
 
   const tomorrow = sqwordleStartDate.valueOf() + (index + 1) * MILLISECONDS_TO_DAYS;
   const answerName = AnswerKey[index].answer;
-  
+  console.log('answer', answer)
   return { answer, index, tomorrow };
 }
 
