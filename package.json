@@ -1,7 +1,7 @@
 {
-  "name": "sqwordle",
-  "version": "0.1.0",
-  "description": "Guess the mystery pokemon in six tries. Inspired by the popular game Wordle.",
+  "name": "wortle",
+  "version": "0.2.0",
+  "description": "Guess the mystery pokemon in six tries. A fork of sqwordle.",
   "author": "Leslie Pajuelo",
   "license": "MIT",
   "private": true,
