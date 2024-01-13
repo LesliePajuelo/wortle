@@ -11,6 +11,24 @@ const DataSourcesModal = ({ isOpen, handleClose }) => {
         </header>
         <section className="modal-card-body has-background-dark has-text-white">
           <div className="content">
+          <div className="custom-source-div">
+              <img className="custom-pokeball-bullet" src={pokeball} />
+              <p className="has-text-white is-size-7-mobile">
+                <span>Forked from </span>
+                <a
+                  className="has-text-white is-underlined"
+                  href="https://sqwordle.io"
+                  target="_blank"
+                >
+                  Sqwordle
+                </a>
+                <span> (created by </span>
+                <a className="has-text-white is-underlined" href="https://github.com/nmfretz/sqwordle" target="_blank">
+                  Nathan Fretz
+                </a>
+                <span>)</span>
+              </p>
+            </div>
             <div className="custom-source-div">
               <img className="custom-pokeball-bullet" src={pokeball} />
               <p className="has-text-white is-size-7-mobile">
@@ -124,7 +142,7 @@ const DataSourcesModal = ({ isOpen, handleClose }) => {
           </div>
         </section>
         <footer className="modal-card-foot">
-          <p className="has-text-weight-bold">New SQWORDLE available every day!</p>
+          <p className="has-text-weight-bold">New WORTLE available every day!</p>
         </footer>
       </div>
     </div>

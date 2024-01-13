@@ -1,7 +1,9 @@
-# Sqwordle - Wordle for Pokémon!
+# Wortle - Wordle for Pokémon!
 
-https://www.sqwordle.io<br />
+https://wortle.envirotechie.com/<br />
 A daily Pokémon guessing game, inspired by the popular game [Wordle](https://www.nytimes.com/games/wordle/index.html) by [Josh Wardle](https://twitter.com/powerlanguish).
+
+Forked from Sqwordle by https://twitter.com/nmfretz
 
 <img src="https://user-images.githubusercontent.com/85373263/157137604-0b153d73-a46f-4a78-9d97-defc37c9ac2a.png" width="50%"/>
 
@@ -23,7 +25,7 @@ A daily Pokémon guessing game, inspired by the popular game [Wordle](https://ww
 - The mystery Pokémon will attack you after each guess, giving you an additional clue as to who it is.
 - There are 3 difficulty modes. For example, Gym Leader mode disables the mystery Pokémon attacks.
 - Your stats are shown and you can share your results, like in Wordle. When you share results, a random Trainer quote is included from Red/Blue (e.g, "Hi! I like shorts! They're comfy and easy to wear!" -Youngster).
-- There is a Safari Zone where you can play unlimited Sqwordle, but your activity doesn't contribute to your stats.
+- There is a Safari Zone where you can play unlimited Wortle, but your activity doesn't contribute to your stats.
 
 ### TODOS
 

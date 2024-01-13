@@ -65,7 +65,7 @@ const Signup = () => {
             <div className="content">
               <p className="is-size-7">
                 To make sure your existing stats get added to your account, make sure you are currently on the device
-                that stores your data (the device you always use to play Sqwordle) before creating your account.
+                that stores your data (the device you always use to play Wortle) before creating your account.
               </p>
               <form name="submit-bug-report" action="/?success=true" method="POST" data-netlify="true">
                 <input type="hidden" name="form-name" value="submit-bug-report" />

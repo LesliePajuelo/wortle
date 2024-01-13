@@ -16,8 +16,8 @@ const BugReportSuccessMessage = () => {
               <img src={bugCatcherPNG} alt="picture of a bug catcher sprite" />
               <p className="mt-2 mb-1">Thanks Bug Catcher!</p>
               <p className="">Your report was successfully submitted.</p>
-              <a className="has-text-white is-underlined" href="https://www.sqwordle.io/">
-                Return to SQWORDLE
+              <a className="has-text-white is-underlined" href="https://wortle.envirotechie.com/">
+                Return to WORTLE
               </a>
             </div>
           </div>

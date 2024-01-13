@@ -1,8 +1,5 @@
 export const dailyGameUrl = "https://wortle.envirotechie.com/";
 export const safariZoneUrl = "https://wortle.envirotechie.com/";
-// FOR BETA SITE:
-// export const dailyGameUrl = "https://sqwordle-beta.netlify.app/";
-// export const safariZoneUrl = "https://sqwordle-safari-zone-beta.netlify.app/";
 
 export const trainerQuotes = [
   { quote: "Hey! You have #POKEMON! Come on! Let's battle'em!", trainer: "Bug Catcher" },

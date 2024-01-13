@@ -14,8 +14,8 @@
   "winMessage": "was caught!",
   "loseMessage": "You missed ",
   "footer": {
-    "createdBy": "Created by <1>Nathan Fretz</1>",
-    "inspiredBy": "Inspired by <1>Wordle</1> (created by <3>Josh Wardle</3>)",
+    "createdBy": "Modified by <1>Leslie Pajuelo and Liam Flores </1>",
+    "inspiredBy": "Forked from <1>Sqwordle</1> (created by <3>Nathan Fretz</3>)",
     "sources": "sources",
     "suggestions": "Suggestions for improvements/changes very welcome at this <1>Reddit Post</1> or <3>Twitter Thread</3>",
     "ko-fi": "buy me a"

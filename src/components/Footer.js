@@ -10,9 +10,9 @@ const Footer = ({ setIsSourcesModalOpen, setIsBugReportModalOpen, setIsDonateMod
     <div className="custom-footer | is-flex is-flex-direction-column is-align-items-center is-justify-content-center mt-3 pb-5">
       <p className="has-text-white">
         <Trans i18nKey="footer.createdBy">
-          <span>Created by </span>
-          <a className="has-text-white is-underlined" href="https://twitter.com/nmfretz" target="_blank">
-            Nathan Fretz
+          <span>Modified by </span>
+          <a className="has-text-white is-underlined" href="https://github.com/LesliePajuelo/wortle" target="_blank">
+            Leslie Pajuelo
           </a>
         </Trans>
       </p>

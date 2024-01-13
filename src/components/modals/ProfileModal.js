@@ -110,7 +110,7 @@ const ProfileModal = (props) => {
             {user && (
               <p className="has-text-centered is-size-7">
                 🌟 NEW 🌟 Change your profile picture to any Pokémon that you have guessed correctly while playing
-                Sqwordle, including the Gen 1 starters (bulbasaur, charmander, and squirtle).
+                Wortle, including the Gen 1 starters (bulbasaur, charmander, and squirtle).
               </p>
             )}
             {!user && (

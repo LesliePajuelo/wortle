@@ -86,7 +86,7 @@ const StatsModal = (props) => {
 
     const link = dailyGameUrl;
 
-    const statsToCopy = `Sqwordle #${gameNumber} ${numGuesses}/6${gameMode}\n${statText}\n\n"${randomQuote.quote}" -${randomQuote.trainer}\n${link}`;
+    const statsToCopy = `Wortle #${gameNumber} ${numGuesses}/6${gameMode}\n${statText}\n\n"${randomQuote.quote}" -${randomQuote.trainer}\n${link}`;
 
     const DataToShare = { text: statsToCopy };
     let shareSuccess = false;
