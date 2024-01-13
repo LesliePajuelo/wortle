@@ -20,7 +20,8 @@ import filterPokemonInput from "../lib/filterPokemonInput";
 import generateFeedback from "../lib/generateFeedback";
 import filterPokedex from "../lib/filterPokedex";
 import calculateStats, { loadStats } from "../lib/calculateStats";
-import { generateDailyAnswer, answer, index } from "../lib/generateDailyAnswer";
+// import { generateDailyAnswer, index } from "../lib/generateDailyAnswer";
+import { generateSafariZoneAnswer } from "../lib/generateSafariZoneAnswer";
 
 import {
   loadLanguagePreferenceFromLocalStorage,
@@ -39,7 +40,6 @@ import { updateLanguagePreference, updateUserGameState, updateUserStats } from "
 import ProfileModal from "./modals/ProfileModal";
 import EvcModal from "./modals/EvcModal";
 
-console.log('answer', answer)
 function MainGame() {
   const { t, i18n } = useTranslation();
 
@@ -49,6 +49,30 @@ function MainGame() {
   const isDocumentDataLoaded = useRef(false);
 
   // TODO - refactor these using bootstrap pattern
+  const [isAnswer, setAnswer] = useState({
+    "id": 1,
+    "name": "bulbasaur",
+    "height": 7,
+    "weight": 69,
+    "stats": { "hp": 45, "attack": 49, "defense": 49, "special-attack": 65, "special-defense": 65, "speed": 45 },
+    "types": ["grass", "poison"],
+    "moves": [
+      "vine-whip",
+      "tackle",
+      "growl",
+      "leech-seed",
+      "growth",
+      "razor-leaf",
+      "solar-beam",
+      "poison-powder",
+      "sleep-powder"
+    ],
+    "evolutions": { "chainId": 1, "pokemonInChain": ["bulbasaur", "ivysaur", "venusaur"], "numberOfPokemonInChain": 3 },
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+    "animatedSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif",
+    "filtered": false
+  })
+  const [index, setIndex] = useState(1);
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
   const [isEvcModalOpen, setIsEvcModalOpen] = useState(false);
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false);
@@ -59,6 +83,7 @@ function MainGame() {
   const [isBugReportSuccess, setIsBugReportSuccess] = useState(false);
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [whichRegion, setWhichRegion] = useState("kanto");
 
   const [isPokemonTrainerMode, setIsPokemonTrainerMode] = useState(() => {
     const gameState = loadGameStateFromLocalStorage();
@@ -135,8 +160,8 @@ function MainGame() {
 
   function renderGameWin() {
     // setSpriteUrl(answer.spriteUrl);
-    setSpriteUrl(answer.animatedSpriteUrl);
-    const updatedStats = calculateStats(stats, answer.name, guessFeedback, true);
+    setSpriteUrl(isAnswer.animatedSpriteUrl);
+    const updatedStats = calculateStats(stats, isAnswer.name, guessFeedback, true);
     setStats(updatedStats);
     setWin(true);
     setGameOn(false);
@@ -153,8 +178,8 @@ function MainGame() {
 
   function renderGameLoss() {
     // setSpriteUrl(answer.spriteUrl);
-    setSpriteUrl(answer.animatedSpriteUrl);
-    const updatedStats = calculateStats(stats, answer.name, guessFeedback, false);
+    setSpriteUrl(isAnswer.animatedSpriteUrl);
+    const updatedStats = calculateStats(stats, isAnswer.name, guessFeedback, false);
     setStats(updatedStats);
     setLose(true);
     setGameOn(false);
@@ -220,8 +245,9 @@ function MainGame() {
 
       const gameState = documentData.data().gameState;
       let userFeedback = [];
-      if (gameState && gameState.guessFeedback && gameState.solutionIndex === index) {
-        console.log("reloading guessFeedback from database");
+      // if (gameState && !gameState.guessFeedback && gameState.solutionIndex === index) {
+      if(false){  
+      console.log("reloading guessFeedback from database");
         // restore  game state
         userFeedback = gameState.guessFeedback;
         let filteredPokemon = cloneDeep(Pokedex);
@@ -301,7 +327,8 @@ function MainGame() {
       return;
     }
 
-    const feedback = generateFeedback(guessedPokemon, answer, guessFeedback);
+    console.log("call generateFeedback", 1, guessedPokemon, 2, isAnswer, 4, guessFeedback)
+    const feedback = generateFeedback(guessedPokemon, isAnswer, guessFeedback);
     setGuessFeedback(feedback);
 
     const filteredData = filterPokedex(feedback[feedback.length - 1], cloneDeep(filteredPokedex));
@@ -316,7 +343,7 @@ function MainGame() {
   useEffect(() => {
     if (!guessToCheck) return;
 
-    if (answer.name === guessToCheck) {
+    if (isAnswer.name === guessToCheck) {
       // gameState saved in below useEffect hook
       renderGameWin();
     } else if (guessFeedback.length === 6) {
@@ -406,6 +433,12 @@ function MainGame() {
             showAnswerAttack={showAnswerAttack}
             isGymLeaderMode={isGymLeaderMode}
             isEliteFourMode={isEliteFourMode}
+            whichRegion={whichRegion}
+            setWhichRegion={setWhichRegion}
+            isAnswer={isAnswer}
+            setAnswer={setAnswer}
+            index={index}
+            setIndex={setIndex}
           />
           <Footer
             setIsSourcesModalOpen={setIsSourcesModalOpen}

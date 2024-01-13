@@ -3,7 +3,8 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
 
   // check if guess is in evolution-family
   let evolutionCheck;
-  if (guessedPokemon.name === answer.name) {
+  
+  if (guessedPokemon.name === answer?.name) {
     evolutionCheck = "success";
   } else if (guessedPokemon.evolutions.pokemonInChain.includes(answer.name)) {
     evolutionCheck = "warning-dark";
@@ -14,6 +15,7 @@ export default function generateFeedback(guessedPokemon, answer, guessFeedback) 
 
   // number of evolutions
   let numEvolutionCheck;
+  console.log('in generate feedbakc', answer)
   if (guessedPokemon.evolutions.numberOfPokemonInChain === answer.evolutions.numberOfPokemonInChain) {
     numEvolutionCheck = "success";
   } else {

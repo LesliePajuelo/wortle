@@ -12,6 +12,8 @@ import GuessFeedback from "./GuessFeedback";
 import RemainingGuesses from "./RemainingGuesses";
 import GameOver from "../alerts/GameOver";
 import AnswerAttack from "../alerts/AnswerAttack";
+import Regions from "../../constants/regions";
+import { generateDailyAnswer, index } from "../../lib/generateDailyAnswer";
 
 function GameContainer(props) {
   const {
@@ -45,15 +47,30 @@ function GameContainer(props) {
     showAnswerAttack,
     isGymLeaderMode,
     isEliteFourMode,
+    whichRegion,
+    setWhichRegion,
+    isAnswer,
+    setAnswer
   } = props;
 
   const { t } = useTranslation();
 
   const guessNumber = [1, 2, 3, 4, 5, 6];
 
-  function handleStartGame() {
+  let globalAnswer = {}
+  function handleStartGame(e) {
+    // console.log('handleStartGame', whichRegion, e.target.innerText.toLowerCase())
+    setWhichRegion(e.target.innerText.toLowerCase())
+    // const {newAnswer, newIndex, newTomorrow} = generateDailyAnswer(whichRegion)
+    const newAnswer = generateDailyAnswer(e.target.innerText.toLowerCase())
+
+    setAnswer(newAnswer.answer)
+    globalAnswer = newAnswer.answer
+
+
     if (gameLoading) return;
     setGameOn(true);
+
   }
 
   function handleGuessInput(e) {
@@ -80,7 +97,7 @@ function GameContainer(props) {
     setGuessToCheck(sanitizedInput);
   }
   let newFiltered = filteredPokedex.filter((pokemon)=>{
-    return !pokemon.filtered
+    return !pokemon.filtered && pokemon.id >= Regions[whichRegion].start && pokemon.id <= Regions[whichRegion].end;
 
   })
 
@@ -102,14 +119,17 @@ function GameContainer(props) {
             <div className={`card-image ${gameOn && "custom-card-image"}`}>
               {/* Pokeball start button */}
               {!gameOn && !win && !lose && (
-                <div className="custom-start-img">
-                  <button className="custom-start-text is-loading" onClick={handleStartGame}>
-                    {gameLoading ? t("gameLoading") : t("gameStart")}
-                  </button>
-                  <img className="" src={pokeball} alt="Placeholder image" onClick={handleStartGame} />
+                // <div className="custom-start-img">
+                //   <button className="custom-start-text is-loading" onClick={handleStartGame}>
+                //     {gameLoading ? t("gameLoading") : t("gameStart")}
+                //   </button>
+                //   <img className="" src={pokeball} alt="Placeholder image" onClick={handleStartGame} />
+                // </div>
+                <div>
+                  <button onClick={handleStartGame}>KANTO</button>
+                  <button onClick={handleStartGame}>JOHTO</button>
                 </div>
               )}
-
               {/* Show pokedex or who's that pokemon image */}
               {gameOn ? (
                 <div className="custom-sprite-gallery">
@@ -118,6 +138,7 @@ function GameContainer(props) {
                   </div>
                   <div className="custom-sprite-gallery-images">
                     {newFiltered.map((pokemon, index) => {
+                      
                       return (
                         <Sprite
                           key={index}
@@ -160,7 +181,7 @@ function GameContainer(props) {
                 </figure>
               )} */}
               {(win || lose) && <img className="custom-sprite-img" src={spriteUrl} alt="Placeholder image" />}
-              {(win || lose) && <GameOver win={win} lose={lose} isAnimation={isAnimation} />}
+              {(win || lose) && <GameOver win={win} lose={lose} isAnimation={isAnimation} isAnswer={isAnswer} />}
             </div>
 
             {/* show guess input area */}

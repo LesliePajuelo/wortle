@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { answer } from "../../lib/generateDailyAnswer";
 
-const GameOver = ({ win, lose, isAnimation }) => {
+const GameOver = ({ win, lose, isAnimation, isAnswer }) => {
   const { t } = useTranslation();
 
   return (
@@ -12,14 +11,14 @@ const GameOver = ({ win, lose, isAnimation }) => {
     >
       {win && (
         <>
-          <span className="is-uppercase">{answer.name} </span>
+          <span className="is-uppercase">{isAnswer.name} </span>
           <span>{t("winMessage")}</span>
         </>
       )}
       {lose && (
         <>
           <span>{t("loseMessage")}</span>
-          <span className="is-uppercase">{answer.name}</span>
+          <span className="is-uppercase">{isAnswer.name}</span>
         </>
       )}
     </div>

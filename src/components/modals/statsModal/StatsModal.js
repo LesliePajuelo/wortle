@@ -19,7 +19,7 @@ import stoneBadge from "../../../img/badges/Stonebadge.png";
 import GuessDistribution from "./GuessDistribution";
 import GymBadge from "./GymBadge";
 import { trainerQuotes, dailyGameUrl, safariZoneUrl } from "../../../constants/strings";
-import { index, tomorrow as nextWordleDate } from "../../../lib/generateDailyAnswer";
+// import { index, tomorrow as nextWordleDate } from "../../../lib/generateDailyAnswer";
 
 const StatsModal = (props) => {
   const {
@@ -77,7 +77,9 @@ const StatsModal = (props) => {
       statText += `\n${stat}`;
     });
 
-    const gameNumber = index + 1;
+    // TODO give it an actual game number
+    const gameNumber = Math.floor(Math.random()*1000);
+
     const numGuesses = lose ? "X" : stats.length;
     const gameMode = isGymLeaderMode ? "*" : isEliteFourMode ? "**" : "";
 
@@ -119,7 +121,9 @@ const StatsModal = (props) => {
       navigator.share
     );
   }
-
+  const currentDate = new Date();
+  const nextWordleDate = currentDate.setDate(currentDate.getDate() + 1);
+  
   return (
     <div className={`modal ${isOpen ? "is-active" : ""}`}>
       <div className="modal-background" onClick={handleClose}></div>

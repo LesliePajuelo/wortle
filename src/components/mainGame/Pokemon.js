@@ -31,7 +31,7 @@ function Pokemon({ pokeman, setGuessInput, setSuggestionClicked, isEliteFourMode
   return (
     <>
       <button
-        className={`mb-0 custom-filter-suggestion-item-button ${
+        className={`pokeman mb-0 custom-filter-suggestion-item-button ${
           pokeman.filtered && !isEliteFourMode ? "custom-filtered-text" : ""
         }`}
         onKeyDown={handleUpKeyList}
