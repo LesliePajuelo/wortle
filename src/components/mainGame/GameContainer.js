@@ -128,6 +128,8 @@ function GameContainer(props) {
                 <div>
                   <button onClick={handleStartGame}>KANTO</button>
                   <button onClick={handleStartGame}>JOHTO</button>
+                  <button onClick={handleStartGame}>HOEHN</button>
+                  <button onClick={handleStartGame}>SINNOH</button>
                 </div>
               )}
               {/* Show pokedex or who's that pokemon image */}
